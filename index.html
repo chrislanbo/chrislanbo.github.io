@@ -61,9 +61,293 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-dad" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-未整理文件" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/04/11/dad/" class="article-date">
+    <a href="/2017/04/11/未整理文件/" class="article-date">
+  <time datetime="2017-04-11T08:10:34.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/未整理文件/">未整理文件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Mac命令行tab自动补全"><a href="#Mac命令行tab自动补全" class="headerlink" title="Mac命令行tab自动补全"></a>Mac命令行tab自动补全</h3><p>打开Terminal应用程序<br>输入 nano .inputrc<br>会创建一个.inputrc的文件</p>
+<p>再输入以下语句：<br>set completion-ignore-case on<br>set show-all-if-ambiguous on<br>TAB:menu-complete<br>输入完毕后<br>按下 Control ＋ o<br>然后关闭、重启</p>
+<h3 id="Mac-快捷键显示隐藏文件"><a href="#Mac-快捷键显示隐藏文件" class="headerlink" title="Mac 快捷键显示隐藏文件"></a>Mac 快捷键显示隐藏文件</h3><p>Command+Shift+. 可以显示隐藏文件、文件夹，再按一次，恢复隐藏；<br>finder下使用Command+Shift+G 可以前往任何文件夹，包括隐藏文件夹。</p>
+<h3 id="webstorm-注册"><a href="#webstorm-注册" class="headerlink" title="webstorm 注册"></a>webstorm 注册</h3><p>注册时，在打开的License Activation窗口中选择“License server”，在输入框输入下面的网址：<br><a href="http://idea.iteblog.com/key.php" target="_blank" rel="external">http://idea.iteblog.com/key.php</a><br>点击：Activate即可。</p>
+<h3 id="Vue-npm-install-报错"><a href="#Vue-npm-install-报错" class="headerlink" title="Vue npm install 报错"></a>Vue npm install 报错</h3><p>错误：<br>phantomjs-prebuilt@2.1.14 install: node install.js<br>解决方法：有些不能通过<code>npm i</code>统一安装依赖，需要单独安装<br>npm install phantomjs-prebuilt@2.1.14 –ignore-scripts</p>
+<h3 id="hexo博客"><a href="#hexo博客" class="headerlink" title="hexo博客"></a>hexo博客</h3><pre><code>git config --global user.name &quot;chrislanbo&quot;// 你的github用户名
+git config --global user.email  &quot;chrislanbo@outlook.com&quot;
+
+ssh-keygen -t rsa -C &quot;chrislanbo@163.com&quot;
+ssh -T git@github.com
+npm install hexo-deployer-git --save
+</code></pre><p>###Hexo文件配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  ##deploy:后面必须要有空格</div><div class="line">deploy: </div><div class="line">  type: git</div><div class="line">  repo: https://github.com/chrislanbo/chrislanbo.github.io.git</div><div class="line">  branch: master</div><div class="line">  ##项目名前缀需要和用户名一致</div></pre></td></tr></table></figure></p>
+<p>###跨域<br>chrome浏览器中跨域问题，可以安装插件解决， 插件地址  <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi" target="_blank" rel="external">https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi</a></p>
+<h3 id="git提交"><a href="#git提交" class="headerlink" title="git提交"></a>git提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:chrislanbo/blog.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
+<h3 id="ES2015风格的计算属性命名功能来使用一个常量作为函数名"><a href="#ES2015风格的计算属性命名功能来使用一个常量作为函数名" class="headerlink" title="ES2015风格的计算属性命名功能来使用一个常量作为函数名"></a>ES2015风格的计算属性命名功能来使用一个常量作为函数名</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[SOME_MUTATION] (state) &#123;</div><div class="line">      // mutate state</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+<p>ES2016风格 常量作为函数名<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SOME_MUTATION(state) &#123;</div><div class="line">      // mutate state</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<h3 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h3><p>默认输出中的一些做法<br>name 作为输出端的标签名使用<br>components 导入其他的组件需要再此处注册<br>data() 定义属性，并赋值<br>computed 实时计算，检测到数据发生变动时就会执行对相应数据有引用的函数(会有缓存，不希望有缓存，请用 method 替代)<br>计算属性默认只有 getter ，不过在需要时你也可以提供一个 setter ，通过setter更新数据get:{} set:{}</p>
+<p>watch 当你想要在数据变化响应时，调用该属性中的发<br>methods 属性内定义方法，使用this.&lt;方法名&gt; 进行调用</p>
+<p>created vue实例创建后，被调用<br>mounted<br>updated<br>destroyed<br><a href="https://cn.vuejs.org/images/lifecycle.png" target="_blank" rel="external"></a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/未整理文件/" data-id="cj1ed1zkr00059i8yn6vo25va" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue开发环境搭建双平台版" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/Vue开发环境搭建双平台版/" class="article-date">
+  <time datetime="2017-04-11T07:56:08.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/Vue开发环境搭建双平台版/">Vue开发环境搭建双平台版</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Homebrew-Mac系统的包管理器"><a href="#Homebrew-Mac系统的包管理器" class="headerlink" title="Homebrew, Mac系统的包管理器"></a>Homebrew, Mac系统的包管理器</h3><p>在命令行输入<br><code>cd ~ &amp; /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
+<h3 id="如果你看到EACCES-permission-denied这样的权限报错，可以使用下面的命令修复："><a href="#如果你看到EACCES-permission-denied这样的权限报错，可以使用下面的命令修复：" class="headerlink" title="如果你看到EACCES: permission denied这样的权限报错，可以使用下面的命令修复："></a>如果你看到EACCES: permission denied这样的权限报错，可以使用下面的命令修复：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/local</div></pre></td></tr></table></figure>
+<h3 id="可能发生的错误"><a href="#可能发生的错误" class="headerlink" title="可能发生的错误"></a>可能发生的错误</h3><p>You have not agreed to the Xcode license.<br>Before running the installer again please agree to the license by opening<br>Xcode.app or running:<br>    sudo xcodebuild -license<br>查看协议：sudo xcodebuild -license<br>允许协议：在命令行输入agree </p>
+<h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p><code>brew install node</code></p>
+<h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org --global npm config set disturl https://npm.taobao.org/dist --global</div></pre></td></tr></table></figure>
+<h3 id="安装vue"><a href="#安装vue" class="headerlink" title="安装vue"></a>安装vue</h3><p><code>npm install -g vue-cli</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/Vue开发环境搭建双平台版/" data-id="cj1ed1zk600009i8yqplcf3ao" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Vue/">Vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/环境搭建/">环境搭建</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-《拾·微》api接口" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/《拾·微》api接口/" class="article-date">
+  <time datetime="2017-04-11T07:40:48.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/《拾·微》api接口/">《拾·微》api接口</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="api-接口—-《拾·微》"><a href="#api-接口—-《拾·微》" class="headerlink" title="api 接口—-《拾·微》"></a>api 接口—-《拾·微》</h1><ul>
+<li><p>分类数据: <a href="http://gank.io/api/data/数据类型/请求个数/第几页" target="_blank" rel="external">http://gank.io/api/data/数据类型/请求个数/第几页</a></p>
+<ul>
+<li>数据类型： 福利 | Android | iOS | 休息视频 | 拓展资源 | 前端 | all</li>
+<li>请求个数： 数字，大于0</li>
+<li><p>第几页：数字，大于0</p>
+</li>
+<li><p>例：</p>
+</li>
+<li><a href="http://gank.io/api/data/Android/10/1" target="_blank" rel="external">http://gank.io/api/data/Android/10/1</a></li>
+<li><a href="http://gank.io/api/data/福利/10/1" target="_blank" rel="external">http://gank.io/api/data/福利/10/1</a></li>
+<li><a href="http://gank.io/api/data/iOS/10/2" target="_blank" rel="external">http://gank.io/api/data/iOS/10/2</a></li>
+<li><a href="http://gank.io/api/data/all/20/2" target="_blank" rel="external">http://gank.io/api/data/all/20/2</a></li>
+</ul>
+</li>
+<li><p>每日数据： <a href="http://gank.io/api/day/年/月/日" target="_blank" rel="external">http://gank.io/api/day/年/月/日</a></p>
+<ul>
+<li>例：</li>
+<li><a href="http://gank.io/api/day/2015/08/06" target="_blank" rel="external">http://gank.io/api/day/2015/08/06</a></li>
+</ul>
+</li>
+<li><p>随机数据：<a href="http://gank.io/api/random/data/分类/个数" target="_blank" rel="external">http://gank.io/api/random/data/分类/个数</a></p>
+<ul>
+<li>数据类型：福利 | Android | iOS | 休息视频 | 拓展资源 | 前端</li>
+<li><p>个数： 数字，大于0</p>
+</li>
+<li><p>例：<a href="http://gank.io/api/random/data/Android/20" target="_blank" rel="external">http://gank.io/api/random/data/Android/20</a>    </p>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>`key = 7bb45624a1ac6a2cd42719716d8f77f6`
+</code></pre><p>   【按照时间查询笑话】 <a href="http://japi.juhe.cn/joke/content/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237" target="_blank" rel="external">http://japi.juhe.cn/joke/content/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237</a><br>   【按照时间查询趣图】<a href="http://japi.juhe.cn/joke/img/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237" target="_blank" rel="external">http://japi.juhe.cn/joke/img/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237</a></p>
+<ul>
+<li>sort    string    是    类型，desc:指定时间之前发布的，asc:指定时间之后发布的</li>
+<li>time    string    是    时间戳（10位），如：1418816972</li>
+<li>page    int    否    当前页数,默认1</li>
+<li>pagesize    int    否    每次返回条数,默认1,最大20</li>
+<li>key    string    是    您申请的key<br>【最新笑话】 <a href="http://japi.juhe.cn/joke/content/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10" target="_blank" rel="external">http://japi.juhe.cn/joke/content/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10</a><br>【最新趣图】<a href="http://japi.juhe.cn/joke/img/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10" target="_blank" rel="external">http://japi.juhe.cn/joke/img/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10</a></li>
+<li>page    int    否    当前页数,默认1</li>
+<li>pagesize    int    否    每次返回条数,默认1,最大20</li>
+<li>key    string    是    您申请的key</li>
+</ul>
+<p>【随机获取图/文】<a href="http://v.juhe.cn/joke/randJoke.php?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;type=pic" target="_blank" rel="external">http://v.juhe.cn/joke/randJoke.php?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;type=pic</a></p>
+<ul>
+<li>key    string    是    你申请的key</li>
+<li><p>type    string    否    类型(pic:趣图,不传默认为笑话)</p>
+<hr>
+<p>返回数据</p>
+<pre><code>error_code    int        状态码
+ reason      string    提示信息
+ result      string    返回内容
+ content      string    笑话内容或题目
+ hashId      string    笑话或趣图的唯一标识
+ unixtime    long    笑话或趣图更新的时间戳
+ url          string    趣图地址(只有是趣图的时候才返回此字段)
+</code></pre></li>
+</ul>
+<hr>
+<pre><code>`key =  12150ee73eef17e0eb4eed6d30d9498d`
+</code></pre><p>【微信精选】    <a href="http://v.juhe.cn/weixin/query?key=12150ee73eef17e0eb4eed6d30d9498d&amp;ps=10" target="_blank" rel="external">http://v.juhe.cn/weixin/query?key=12150ee73eef17e0eb4eed6d30d9498d&amp;ps=10</a></p>
+<ul>
+<li>pno    int    否    当前页数，默认1</li>
+<li>ps    int    否    每页返回条数，最大50，默认20</li>
+<li>key    string    是    应用APPKEY</li>
+<li>dtype    string    否    返回数据的格式,xml或json，默认json</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/《拾·微》api接口/" data-id="cj1ed1zkn00049i8yrdjftimd" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/api/">api</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/拾·微/">拾·微</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Vue中class与style绑定详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/Vue中class与style绑定详解/" class="article-date">
+  <time datetime="2017-04-11T07:31:00.000Z" itemprop="datePublished">2017-04-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/11/Vue中class与style绑定详解/">Vue中class与style绑定详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>vue中用v-bind处理元素的class列表和它内联样式(Style)之间的数据绑定。因为两者都是属性，所以可以表达式计算出最终字符串，或者手动拼接。针对class和style，表达式结果可以是””,[],{}。</p>
+<blockquote>
+<p>ps： <code>v-bind:</code>可以缩写成<code>:</code></p>
+</blockquote>
+<p>##绑定HTML Class</p>
+<p>###对象</p>
+<ul>
+<li>传给v-bind:class一个对象，动态切换class，<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面的语法表示 class<active> 的更新将取决于数据属性 isActive 是否为真值 。</active></p>
+<ul>
+<li>对象中传入更多属性用来动态切换多个 class，v-bind:class 指令可以与 class 属性共存<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static"</span></span></div><div class="line">     <span class="attr">:class</span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>当data如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  isActive: true,</div><div class="line">  hasError: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>原来标签就渲染成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;static active&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>如果hasError变成true时候，class列表也会重新渲染<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;static active text-danger&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
+<p>等效直接绑定对象<classobject>,对象里面有对象属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"classObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">...</div><div class="line"></div><div class="line">data: &#123;</div><div class="line">  classObject: &#123;</div><div class="line">    active: true,</div><div class="line">    'text-danger': false</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></classobject></p>
+<p>或者绑定返回对象的计算属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">    isActive: true,</div><div class="line">    error: null</div><div class="line">&#125;,</div><div class="line">computed:&#123;</div><div class="line">    classObject()&#123;</div><div class="line">        return &#123;</div><div class="line">        active: this.isActive &amp;&amp; !this.error,</div><div class="line">        &apos;text-danger&apos;: this.error &amp;&amp; this.error.type === &apos;fatal&apos;,</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###数组</p>
+<ul>
+<li>传给v-bind:class一个数组，以应用class列表</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[activeClass, errorClass]"</span>&gt;</span></div><div class="line">data: &#123;</div><div class="line">  activeClass: 'active',</div><div class="line">  errorClass: 'text-danger'</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>渲染成==&gt;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"active text-danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>数组中可使用三元表达式切换class列表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[isActive ? activeClass : '', errorClass]"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>始终添加 errorClass，仅仅当isActive为true是添加activeClass<br>可以在数组中使用对象语法达到同样效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div v-bind:class=&quot;[&#123; active: isActive &#125;, errorClass]&quot;&gt;</div></pre></td></tr></table></figure></p>
+<p>###组件上<br>当组件用到class属性时候，这些类会添加到根元素上，并且已经存在的类不会被覆盖<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//声明</div><div class="line">Vue.component('my-component', &#123;</div><div class="line">  template: '<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span>'</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>然后使用的时候添加一些class<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">class</span>=<span class="string">"baz boo"</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>当isActive为true时，html最终将被渲染成：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar baz boo active"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>##绑定内联样式</p>
+<blockquote>
+<p>CSS 属性名可以用驼峰式 camelCase 或短横分隔命名 kebab-case</p>
+</blockquote>
+<p>###对象<br>v-bind:style 的对象语法与css类似，本质为JavaScript对象。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">data: &#123;</div><div class="line">  activeColor: 'red',</div><div class="line">  fontSize: 30</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>直接绑定样式更清晰<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"styleObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">data: &#123;</div><div class="line">  styleObject: &#123;</div><div class="line">    color: 'red',</div><div class="line">    fontSize: '13px'</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">//同样的，对象语法常常结合返回对象的计算属性使用</div></pre></td></tr></table></figure></p>
+<p>###数组语法</p>
+<p>v-bind:style 的数组语法可以将多个样式对象应用到一个元素上：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"[baseStyles, overridingStyles]"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>自动添加前缀<br>当 v-bind:style 使用需要特定前缀的 CSS 属性时，如 transform ，Vue.js 会自动侦测并添加相应的前缀。</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/04/11/Vue中class与style绑定详解/" data-id="cj1ed1zke00019i8ygmhkeb8s" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/绑定/">绑定</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-vue中属性加冒号是什么用法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/04/11/vue中属性加冒号是什么用法/" class="article-date">
   <time datetime="2017-04-11T07:12:11.000Z" itemprop="datePublished">2017-04-11</time>
 </a>
     
@@ -75,7 +359,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/11/dad/">dad</a>
+      <a class="article-title" href="/2017/04/11/vue中属性加冒号是什么用法/">vue中属性前加冒号、vue中:class的意义</a>
     </h1>
   
 
@@ -83,58 +367,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/11/dad/" data-id="cj1d7lw8u0000v58y7irp04p2" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/04/11/hello-world/" class="article-date">
-  <time datetime="2017-04-11T06:45:04.000Z" itemprop="datePublished">2017-04-11</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/11/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <p>vue中的属性前一个冒号，类似:class 或者 :style 其实都是省略了v-bind,应该是v-bind:class和v-bind:style</p>
+<p>vue会自动给单独的一个<code>:</code>加上前缀<code>v-bind</code></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/04/11/hello-world/" data-id="cj1d7lw900001v58yi9kccdjh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/04/11/vue中属性加冒号是什么用法/" data-id="cj1ed1zkl00039i8yeqimnb7b" class="article-share-link">Share</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/">vue</a></li></ul>
+
     </footer>
   </div>
   
@@ -151,9 +394,23 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/api/">api</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/vue/">vue</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/拾·微/">拾·微</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/环境搭建/">环境搭建</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/绑定/">绑定</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/api/" style="font-size: 10px;">api</a> <a href="/tags/vue/" style="font-size: 20px;">vue</a> <a href="/tags/拾·微/" style="font-size: 10px;">拾·微</a> <a href="/tags/环境搭建/" style="font-size: 10px;">环境搭建</a> <a href="/tags/绑定/" style="font-size: 10px;">绑定</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
@@ -172,11 +429,23 @@
       <ul>
         
           <li>
-            <a href="/2017/04/11/dad/">dad</a>
+            <a href="/2017/04/11/未整理文件/">未整理文件</a>
           </li>
         
           <li>
-            <a href="/2017/04/11/hello-world/">Hello World</a>
+            <a href="/2017/04/11/Vue开发环境搭建双平台版/">Vue开发环境搭建双平台版</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/《拾·微》api接口/">《拾·微》api接口</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/Vue中class与style绑定详解/">Vue中class与style绑定详解</a>
+          </li>
+        
+          <li>
+            <a href="/2017/04/11/vue中属性加冒号是什么用法/">vue中属性前加冒号、vue中:class的意义</a>
           </li>
         
       </ul>
