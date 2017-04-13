@@ -5,7 +5,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="">
+<html class="theme-next pisces use-motion" lang="zh-Hans">
 <head>
   <meta charset="UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -88,11 +88,11 @@
 
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="捡来·放去">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="捡来·放去">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="捡来·放去">
 
 
 
@@ -100,13 +100,13 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Pisces',
     sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
     fancybox: true,
     motion: true,
     duoshuo: {
       userId: '0',
-      author: 'Author'
+      author: '博主'
     },
     algolia: {
       applicationID: '',
@@ -126,10 +126,10 @@
 
 
 
-  <title> Hexo </title>
+  <title> 捡来·放去 </title>
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
 
@@ -151,7 +151,7 @@
     
   
 
-  <div class="container sidebar-position-left 
+  <div class="container one-collumn sidebar-position-left 
    page-home 
  ">
     <div class="headband"></div>
@@ -164,7 +164,7 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">捡来·放去</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
@@ -194,7 +194,27 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pic">
+          <a href="/pic" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            相册
           </a>
         </li>
       
@@ -204,7 +224,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            归档
           </a>
         </li>
       
@@ -214,7 +234,17 @@
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
-            Tags
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            博客
           </a>
         </li>
       
@@ -247,16 +277,16 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/未整理文件/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue组件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="ChrisLanbo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="捡来·放去">
     </span>
 
     
@@ -269,8 +299,8 @@
             
               
                 
-                <a class="post-title-link" href="/2017/04/11/未整理文件/" itemprop="url">
-                  未整理文件
+                <a class="post-title-link" href="/2017/04/13/vue/Vue组件/" itemprop="url">
+                  Vue组件
                 </a>
               
             
@@ -284,10 +314,10 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T16:10:34+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T15:31:48+08:00">
+                2017-04-13
               </time>
             
 
@@ -296,6 +326,28 @@
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -323,503 +375,24 @@
 
       
         
-          
-            <h3 id="Mac命令行tab自动补全"><a href="#Mac命令行tab自动补全" class="headerlink" title="Mac命令行tab自动补全"></a>Mac命令行tab自动补全</h3><p>打开Terminal应用程序<br>输入 nano .inputrc<br>会创建一个.inputrc的文件</p>
-<p>再输入以下语句：<br>set completion-ignore-case on<br>set show-all-if-ambiguous on<br>TAB:menu-complete<br>输入完毕后<br>按下 Control ＋ o<br>然后关闭、重启</p>
-<h3 id="Mac-快捷键显示隐藏文件"><a href="#Mac-快捷键显示隐藏文件" class="headerlink" title="Mac 快捷键显示隐藏文件"></a>Mac 快捷键显示隐藏文件</h3><p>Command+Shift+. 可以显示隐藏文件、文件夹，再按一次，恢复隐藏；<br>finder下使用Command+Shift+G 可以前往任何文件夹，包括隐藏文件夹。</p>
-<h3 id="webstorm-注册"><a href="#webstorm-注册" class="headerlink" title="webstorm 注册"></a>webstorm 注册</h3><p>注册时，在打开的License Activation窗口中选择“License server”，在输入框输入下面的网址：<br><a href="http://idea.iteblog.com/key.php" target="_blank" rel="external">http://idea.iteblog.com/key.php</a><br>点击：Activate即可。</p>
-<h3 id="Vue-npm-install-报错"><a href="#Vue-npm-install-报错" class="headerlink" title="Vue npm install 报错"></a>Vue npm install 报错</h3><p>错误：<br>phantomjs-prebuilt@2.1.14 install: node install.js<br>解决方法：有些不能通过<code>npm i</code>统一安装依赖，需要单独安装<br>npm install phantomjs-prebuilt@2.1.14 –ignore-scripts</p>
-<h3 id="hexo博客"><a href="#hexo博客" class="headerlink" title="hexo博客"></a>hexo博客</h3><pre><code>git config --global user.name &quot;chrislanbo&quot;// 你的github用户名
-git config --global user.email  &quot;chrislanbo@outlook.com&quot;
-
-ssh-keygen -t rsa -C &quot;chrislanbo@163.com&quot;
-ssh -T git@github.com
-npm install hexo-deployer-git --save
-</code></pre><p>###Hexo文件配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">  ##deploy:后面必须要有空格</div><div class="line">deploy: </div><div class="line">  type: git</div><div class="line">  repo: https://github.com/chrislanbo/chrislanbo.github.io.git</div><div class="line">  branch: master</div><div class="line">  ##项目名前缀需要和用户名一致</div></pre></td></tr></table></figure></p>
-<p>###跨域<br>chrome浏览器中跨域问题，可以安装插件解决， 插件地址  <a href="https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi" target="_blank" rel="external">https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi</a></p>
-<h3 id="git提交"><a href="#git提交" class="headerlink" title="git提交"></a>git提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">git remote add origin git@github.com:chrislanbo/blog.git</div><div class="line">git push -u origin master</div></pre></td></tr></table></figure>
-<h3 id="ES2015风格的计算属性命名功能来使用一个常量作为函数名"><a href="#ES2015风格的计算属性命名功能来使用一个常量作为函数名" class="headerlink" title="ES2015风格的计算属性命名功能来使用一个常量作为函数名"></a>ES2015风格的计算属性命名功能来使用一个常量作为函数名</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">[SOME_MUTATION] (state) &#123;</div><div class="line">      // mutate state</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p>ES2016风格 常量作为函数名<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">SOME_MUTATION(state) &#123;</div><div class="line">      // mutate state</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
-<h3 id="export-default"><a href="#export-default" class="headerlink" title="export default"></a>export default</h3><p>默认输出中的一些做法<br>name 作为输出端的标签名使用<br>components 导入其他的组件需要再此处注册<br>data() 定义属性，并赋值<br>computed 实时计算，检测到数据发生变动时就会执行对相应数据有引用的函数(会有缓存，不希望有缓存，请用 method 替代)<br>计算属性默认只有 getter ，不过在需要时你也可以提供一个 setter ，通过setter更新数据get:{} set:{}</p>
-<p>watch 当你想要在数据变化响应时，调用该属性中的发<br>methods 属性内定义方法，使用this.&lt;方法名&gt; 进行调用</p>
-<p>created vue实例创建后，被调用<br>mounted<br>updated<br>destroyed<br><a href="https://cn.vuejs.org/images/lifecycle.png" target="_blank" rel="external"></a></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/Vue开发环境搭建双平台版/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/11/Vue开发环境搭建双平台版/" itemprop="url">
-                  Vue开发环境搭建双平台版
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T15:56:08+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="Homebrew-Mac系统的包管理器"><a href="#Homebrew-Mac系统的包管理器" class="headerlink" title="Homebrew, Mac系统的包管理器"></a>Homebrew, Mac系统的包管理器</h3><p>在命令行输入<br><code>cd ~ &amp; /usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot;</code></p>
-<h3 id="如果你看到EACCES-permission-denied这样的权限报错，可以使用下面的命令修复："><a href="#如果你看到EACCES-permission-denied这样的权限报错，可以使用下面的命令修复：" class="headerlink" title="如果你看到EACCES: permission denied这样的权限报错，可以使用下面的命令修复："></a>如果你看到EACCES: permission denied这样的权限报错，可以使用下面的命令修复：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo chown -R `whoami` /usr/local</div></pre></td></tr></table></figure>
-<h3 id="可能发生的错误"><a href="#可能发生的错误" class="headerlink" title="可能发生的错误"></a>可能发生的错误</h3><p>You have not agreed to the Xcode license.<br>Before running the installer again please agree to the license by opening<br>Xcode.app or running:<br>    sudo xcodebuild -license<br>查看协议：sudo xcodebuild -license<br>允许协议：在命令行输入agree </p>
-<h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p><code>brew install node</code></p>
-<h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org --global npm config set disturl https://npm.taobao.org/dist --global</div></pre></td></tr></table></figure>
-<h3 id="安装vue"><a href="#安装vue" class="headerlink" title="安装vue"></a>安装vue</h3><p><code>npm install -g vue-cli</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/《拾·微》api接口/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/11/《拾·微》api接口/" itemprop="url">
-                  《拾·微》api接口
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T15:40:48+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h1 id="api-接口—-《拾·微》"><a href="#api-接口—-《拾·微》" class="headerlink" title="api 接口—-《拾·微》"></a>api 接口—-《拾·微》</h1><ul>
-<li><p>分类数据: <a href="http://gank.io/api/data/数据类型/请求个数/第几页" target="_blank" rel="external">http://gank.io/api/data/数据类型/请求个数/第几页</a></p>
-<ul>
-<li>数据类型： 福利 | Android | iOS | 休息视频 | 拓展资源 | 前端 | all</li>
-<li>请求个数： 数字，大于0</li>
-<li><p>第几页：数字，大于0</p>
-</li>
-<li><p>例：</p>
-</li>
-<li><a href="http://gank.io/api/data/Android/10/1" target="_blank" rel="external">http://gank.io/api/data/Android/10/1</a></li>
-<li><a href="http://gank.io/api/data/福利/10/1" target="_blank" rel="external">http://gank.io/api/data/福利/10/1</a></li>
-<li><a href="http://gank.io/api/data/iOS/10/2" target="_blank" rel="external">http://gank.io/api/data/iOS/10/2</a></li>
-<li><a href="http://gank.io/api/data/all/20/2" target="_blank" rel="external">http://gank.io/api/data/all/20/2</a></li>
-</ul>
-</li>
-<li><p>每日数据： <a href="http://gank.io/api/day/年/月/日" target="_blank" rel="external">http://gank.io/api/day/年/月/日</a></p>
-<ul>
-<li>例：</li>
-<li><a href="http://gank.io/api/day/2015/08/06" target="_blank" rel="external">http://gank.io/api/day/2015/08/06</a></li>
-</ul>
-</li>
-<li><p>随机数据：<a href="http://gank.io/api/random/data/分类/个数" target="_blank" rel="external">http://gank.io/api/random/data/分类/个数</a></p>
-<ul>
-<li>数据类型：福利 | Android | iOS | 休息视频 | 拓展资源 | 前端</li>
-<li><p>个数： 数字，大于0</p>
-</li>
-<li><p>例：<a href="http://gank.io/api/random/data/Android/20" target="_blank" rel="external">http://gank.io/api/random/data/Android/20</a>    </p>
-</li>
-</ul>
-</li>
-</ul>
-<pre><code>`key = 7bb45624a1ac6a2cd42719716d8f77f6`
-</code></pre><p>   【按照时间查询笑话】 <a href="http://japi.juhe.cn/joke/content/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237" target="_blank" rel="external">http://japi.juhe.cn/joke/content/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237</a><br>   【按照时间查询趣图】<a href="http://japi.juhe.cn/joke/img/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237" target="_blank" rel="external">http://japi.juhe.cn/joke/img/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237</a></p>
-<ul>
-<li>sort    string    是    类型，desc:指定时间之前发布的，asc:指定时间之后发布的</li>
-<li>time    string    是    时间戳（10位），如：1418816972</li>
-<li>page    int    否    当前页数,默认1</li>
-<li>pagesize    int    否    每次返回条数,默认1,最大20</li>
-<li>key    string    是    您申请的key<br>【最新笑话】 <a href="http://japi.juhe.cn/joke/content/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10" target="_blank" rel="external">http://japi.juhe.cn/joke/content/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10</a><br>【最新趣图】<a href="http://japi.juhe.cn/joke/img/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10" target="_blank" rel="external">http://japi.juhe.cn/joke/img/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10</a></li>
-<li>page    int    否    当前页数,默认1</li>
-<li>pagesize    int    否    每次返回条数,默认1,最大20</li>
-<li>key    string    是    您申请的key</li>
-</ul>
-<p>【随机获取图/文】<a href="http://v.juhe.cn/joke/randJoke.php?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;type=pic" target="_blank" rel="external">http://v.juhe.cn/joke/randJoke.php?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;type=pic</a></p>
-<ul>
-<li>key    string    是    你申请的key</li>
-<li><p>type    string    否    类型(pic:趣图,不传默认为笑话)</p>
-<hr>
-<p>返回数据</p>
-<pre><code>error_code    int        状态码
- reason      string    提示信息
- result      string    返回内容
- content      string    笑话内容或题目
- hashId      string    笑话或趣图的唯一标识
- unixtime    long    笑话或趣图更新的时间戳
- url          string    趣图地址(只有是趣图的时候才返回此字段)
-</code></pre></li>
-</ul>
-<hr>
-<pre><code>`key =  12150ee73eef17e0eb4eed6d30d9498d`
-</code></pre><p>【微信精选】    <a href="http://v.juhe.cn/weixin/query?key=12150ee73eef17e0eb4eed6d30d9498d&amp;ps=10" target="_blank" rel="external">http://v.juhe.cn/weixin/query?key=12150ee73eef17e0eb4eed6d30d9498d&amp;ps=10</a></p>
-<ul>
-<li>pno    int    否    当前页数，默认1</li>
-<li>ps    int    否    每页返回条数，最大50，默认20</li>
-<li>key    string    是    应用APPKEY</li>
-<li>dtype    string    否    返回数据的格式,xml或json，默认json</li>
-</ul>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/Vue中class与style绑定详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/11/Vue中class与style绑定详解/" itemprop="url">
-                  Vue中class与style绑定详解
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Veröffentlicht am</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T15:31:00+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>vue中用v-bind处理元素的class列表和它内联样式(Style)之间的数据绑定。因为两者都是属性，所以可以表达式计算出最终字符串，或者手动拼接。针对class和style，表达式结果可以是””,[],{}。</p>
-<blockquote>
-<p>ps： <code>v-bind:</code>可以缩写成<code>:</code></p>
+          <blockquote>
+<p>组件可扩展html元素，封装重用代码</p>
 </blockquote>
-<p>##绑定HTML Class</p>
-<p>###对象</p>
-<ul>
-<li>传给v-bind:class一个对象，动态切换class，<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>上面的语法表示 class<active> 的更新将取决于数据属性 isActive 是否为真值 。</active></p>
-<ul>
-<li>对象中传入更多属性用来动态切换多个 class，v-bind:class 指令可以与 class 属性共存<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"static"</span></span></div><div class="line">     <span class="attr">:class</span>=<span class="string">"&#123; active: isActive, 'text-danger': hasError &#125;"</span>&gt;</div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>当data如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">data: &#123;</div><div class="line">  isActive: true,</div><div class="line">  hasError: false</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>原来标签就渲染成：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;static active&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>如果hasError变成true时候，class列表也会重新渲染<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div class=&quot;static active text-danger&quot;&gt;&lt;/div&gt;</div></pre></td></tr></table></figure></p>
-<p>等效直接绑定对象<classobject>,对象里面有对象属性<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"classObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">...</div><div class="line"></div><div class="line">data: &#123;</div><div class="line">  classObject: &#123;</div><div class="line">    active: true,</div><div class="line">    'text-danger': false</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></classobject></p>
-<p>或者绑定返回对象的计算属性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">data:&#123;</div><div class="line">    isActive: true,</div><div class="line">    error: null</div><div class="line">&#125;,</div><div class="line">computed:&#123;</div><div class="line">    classObject()&#123;</div><div class="line">        return &#123;</div><div class="line">        active: this.isActive &amp;&amp; !this.error,</div><div class="line">        &apos;text-danger&apos;: this.error &amp;&amp; this.error.type === &apos;fatal&apos;,</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>###数组</p>
-<ul>
-<li>传给v-bind:class一个数组，以应用class列表</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[activeClass, errorClass]"</span>&gt;</span></div><div class="line">data: &#123;</div><div class="line">  activeClass: 'active',</div><div class="line">  errorClass: 'text-danger'</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>渲染成==&gt;<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"active text-danger"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>数组中可使用三元表达式切换class列表<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:class</span>=<span class="string">"[isActive ? activeClass : '', errorClass]"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>始终添加 errorClass，仅仅当isActive为true是添加activeClass<br>可以在数组中使用对象语法达到同样效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;div v-bind:class=&quot;[&#123; active: isActive &#125;, errorClass]&quot;&gt;</div></pre></td></tr></table></figure></p>
-<p>###组件上<br>当组件用到class属性时候，这些类会添加到根元素上，并且已经存在的类不会被覆盖<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">//声明</div><div class="line">Vue.component('my-component', &#123;</div><div class="line">  template: '<span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span>'</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
-<p>然后使用的时候添加一些class<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">my-component</span> <span class="attr">class</span>=<span class="string">"baz boo"</span> <span class="attr">v-bind:class</span>=<span class="string">"&#123; active: isActive &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">my-component</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>当isActive为true时，html最终将被渲染成：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"foo bar baz boo active"</span>&gt;</span>Hi<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<p>##绑定内联样式</p>
+<h1 id="组件的使用"><a href="#组件的使用" class="headerlink" title="组件的使用"></a>组件的使用</h1><p>##注册<br>要注册一个全局组件，你可以使用 Vue.component(tagName, options)。 例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.component(&apos;my-component&apos;, &#123;</div><div class="line">  // 选项</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
 <blockquote>
-<p>CSS 属性名可以用驼峰式 camelCase 或短横分隔命名 kebab-case</p>
+<p>W3C规则：小写，并且包含一个短杠</p>
 </blockquote>
-<p>###对象<br>v-bind:style 的对象语法与css类似，本质为JavaScript对象。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"&#123; color: activeColor, fontSize: fontSize + 'px' &#125;"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">data: &#123;</div><div class="line">  activeColor: 'red',</div><div class="line">  fontSize: 30</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>直接绑定样式更清晰<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"styleObject"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">data: &#123;</div><div class="line">  styleObject: &#123;</div><div class="line">    color: 'red',</div><div class="line">    fontSize: '13px'</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">//同样的，对象语法常常结合返回对象的计算属性使用</div></pre></td></tr></table></figure></p>
-<p>###数组语法</p>
-<p>v-bind:style 的数组语法可以将多个样式对象应用到一个元素上：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">v-bind:style</span>=<span class="string">"[baseStyles, overridingStyles]"</span>&gt;</span></div></pre></td></tr></table></figure></p>
-<blockquote>
-<p>自动添加前缀<br>当 v-bind:style 使用需要特定前缀的 CSS 属性时，如 transform ，Vue.js 会自动侦测并添加相应的前缀。</p>
-</blockquote>
-
-          
+<p>组件在注册之后，便可以在父实例的模块中以自定义元素 <my-component></my-component> 的形式使用。要确保在初始化根实例 之前 注册了组件：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example&quot;&gt;</div><div class="line">  &lt;my-component&gt;&lt;/my-component&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">// 注册</div><div class="line">Vue.component(&apos;my-component&apos;, &#123;</div><div class="line">  template: &apos;&lt;div&gt;A custom component!&lt;/div&gt;&apos;</div><div class="line">&#125;)</div><div class="line">// 创建根实例</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>会渲染成===&gt;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example&quot;&gt;</div><div class="line">  &lt;div&gt;A custom component!&lt;/div&gt;</div><div class="line">&lt;/div&gt;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/vue/Vue组件/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -832,9 +405,6 @@ npm install hexo-deployer-git --save
       
     </div>
 
-    <div>
-      
-    </div>
 
     <footer class="post-footer">
       
@@ -861,16 +431,16 @@ npm install hexo-deployer-git --save
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/vue中属性加冒号是什么用法/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue表单控件数据绑定/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="John Doe">
+      <meta itemprop="name" content="ChrisLanbo">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="捡来·放去">
     </span>
 
     
@@ -883,8 +453,8 @@ npm install hexo-deployer-git --save
             
               
                 
-                <a class="post-title-link" href="/2017/04/11/vue中属性加冒号是什么用法/" itemprop="url">
-                  vue中属性前加冒号、vue中:class的意义
+                <a class="post-title-link" href="/2017/04/13/vue/Vue表单控件数据绑定/" itemprop="url">
+                  Vue表单控件数据绑定
                 </a>
               
             
@@ -898,10 +468,449 @@ npm install hexo-deployer-git --save
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">发表于</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-11T15:12:11+08:00">
-                2017-04-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T14:55:52+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <blockquote>
+<p>v-model指令在表单控件上创建双向数据绑定</p>
+</blockquote>
+<p>v-model 会根据控件类型自动选取正确的方法更新元素，其实也就是监听输入事件来更新数据。</p>
+<p>v-model 不关心控件的初始值，只关心Vue实例数据</p>
+<h1 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h1><p>单行文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;</div><div class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>多行文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;Multiline message is:&lt;/span&gt;</div><div class="line">&lt;p style=&quot;white-space: pre&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;textarea v-model=&quot;message&quot; placeholder=&quot;add multiple lines&quot;&gt;&lt;/textarea&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h1><p>一个勾选框,逻辑值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</div><div class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</div></pre></td></tr></table></figure></p>
+<p>多勾选框，绑定到同一个数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;jack&quot; value=&quot;Jack&quot; v-model=&quot;checkedNames&quot;&gt;</div><div class="line">&lt;label for=&quot;jack&quot;&gt;Jack&lt;/label&gt;</div><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;john&quot; value=&quot;John&quot; v-model=&quot;checkedNames&quot;&gt;</div><div class="line">&lt;label for=&quot;john&quot;&gt;John&lt;/label&gt;</div><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;mike&quot; value=&quot;Mike&quot; v-model=&quot;checkedNames&quot;&gt;</div><div class="line">&lt;label for=&quot;mike&quot;&gt;Mike&lt;/label&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;span&gt;Checked names: &#123;&#123; checkedNames &#125;&#125;&lt;/span&gt;</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;...&apos;,</div><div class="line">  data: &#123;</div><div class="line">    checkedNames: []</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/vue/Vue表单控件数据绑定/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue事件处理器/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/vue/Vue事件处理器/" itemprop="url">
+                  Vue事件处理器
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T14:35:28+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <h1 id="监听事件"><a href="#监听事件" class="headerlink" title="监听事件"></a>监听事件</h1><p>v-on指令监听DOM事件来触发js代码</p>
+<h2 id="v-on可以接受一个表达式"><a href="#v-on可以接受一个表达式" class="headerlink" title="v-on可以接受一个表达式"></a>v-on可以接受一个表达式</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example-1&quot;&gt;</div><div class="line">  &lt;button v-on:click=&quot;counter += 1&quot;&gt;增加 1&lt;/button&gt;</div><div class="line">  &lt;p&gt;这个按钮被点击了 &#123;&#123; counter &#125;&#125; 次。&lt;/p&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">var example1 = new Vue(&#123;</div><div class="line">  el: &apos;#example-1&apos;,</div><div class="line">  data: &#123;</div><div class="line">    counter: 0</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h2 id="v-on-可以接受一个方法"><a href="#v-on-可以接受一个方法" class="headerlink" title="v-on 可以接受一个方法"></a>v-on 可以接受一个方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example-2&quot;&gt;</div><div class="line">  &lt;!-- `greet` 是在下面定义的方法名 --&gt;</div><div class="line">  &lt;button v-on:click=&quot;greet&quot;&gt;Greet&lt;/button&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">var example2 = new Vue(&#123;</div><div class="line">  el: &apos;#example-2&apos;,</div><div class="line">  data: &#123;</div><div class="line">    name: &apos;Vue.js&apos;</div><div class="line">  &#125;,</div><div class="line">  // 在 `methods` 对象中定义方法</div><div class="line">  methods: &#123;</div><div class="line">    greet: function (event) &#123;</div><div class="line">      // `this` 在方法里指当前 Vue 实例</div><div class="line">      alert(&apos;Hello &apos; + this.name + &apos;!&apos;)</div><div class="line">      // `event` 是原生 DOM 事件</div><div class="line">      alert(event.target.tagName)</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;)</div><div class="line">// 也可以用 JavaScript 直接调用方法</div><div class="line">example2.greet() // -&gt; &apos;Hello Vue.js!&apos;</div></pre></td></tr></table></figure>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/vue/Vue事件处理器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/react-native运行缺少sdk错误/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/react-native运行缺少sdk错误/" itemprop="url">
+                  react-native运行缺少sdk错误
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T11:08:46+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/react-native/" itemprop="url" rel="index">
+                    <span itemprop="name">react-native</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>出现这个错误，如果不是真的没有下载sdk<br>或者文件路径不对<br>那么就是缺少local.properties文件了</p>
+<p>手动创建一个（在android项目下创建）<br>内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">sdk.dir=/Users/apple/Library/Android/sdk</div><div class="line">##我这个路径仅供参考，换成你自己的</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/hexo博客中显示加载更多/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/hexo博客中显示加载更多/" itemprop="url">
+                  hexo博客中显示加载更多
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:13:56+08:00">
+                2017-04-13
               </time>
             
 
@@ -938,8 +947,7 @@ npm install hexo-deployer-git --save
       
         
           
-            <p>vue中的属性前一个冒号，类似:class 或者 :style 其实都是省略了v-bind,应该是v-bind:class和v-bind:style</p>
-<p>vue会自动给单独的一个<code>:</code>加上前缀<code>v-bind</code></p>
+            <p>#收起文章，显示加载更多的按钮<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- more --&gt;</span></div></pre></td></tr></table></figure></p>
 
           
         
@@ -954,9 +962,669 @@ npm install hexo-deployer-git --save
       
     </div>
 
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/react-native学习笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/react-native学习笔记/" itemprop="url">
+                  react-native学习笔记
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:09:27+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>管理本地rn</p>
+<ol>
+<li>查看本地版本<br>react-native —version</li>
+<li>更新本地rn版本<br>npm update -g react-native-cli</li>
+<li>查询rn的npm包中的版本<br>npm info react-native </li>
+<li>升级或者降级到指定版本<br>npm install —save react-native@0.18</li>
+<li>更新项目templates文件（可选）<br>react-native upgrade<br>6.webStorm代码提示<br>将下载的ReactNative.xml 复制到webStorm/templates/目录中后重启</li>
+</ol>
+<p>摇一摇出不来设置页面直接输入<br>adb shell input keyevent 82</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/react-native学习笔记/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
     <div>
       
     </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/mac上rn的环境配置和问题解决、模拟器快捷键/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/mac上rn的环境配置和问题解决、模拟器快捷键/" itemprop="url">
+                  mac上rn的环境配置和问题解决、模拟器快捷键
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:06:17+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>export ANDROID_HOME=~/Library/Android/sdk<br>export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools</p>
+<p>~表示用户目录，即/Users/你的用户名/<br>source ~/.bash_profile<br>可以使用echo $ANDROID_HOME检查此变量是否已正确设置。<br>本机jdk：  /Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home</p>
+<p>/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home/bin/java</p>
+<p>/Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home/bin/java</p>
+<p>➜  ~ touch ~/.bash_profile<br>➜  ~ vim ~/.bash_profile<br>➜  ~ vim ~/.bash_profile<br>➜  ~ cd ~/Library/</p>
+<p>export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_40.jdk/Contents/Home<br>export PATH=$JAVA_HOME/bin:$PATH:<br>export PATH=/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH<br>export NODE_PATH=”/usr/local/lib/node_modules”<br>export NVM_DIR=”/Users/apple/.nvm”</p>
+<p>export ANDROID_HOME=~/Library/Android/sdk</p>
+<p>export PATH=$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools</p>
+<p>npm config set registry <a href="https://registry.npm.taobao.org">https://registry.npm.taobao.org</a><br>npm config set disturl <a href="https://npm.taobao.org/dist">https://npm.taobao.org/dist</a></p>
+<p>npm WARN deprecated minimatch@2.0.10: Please update to minimatch 3.0.2 or higher to avoid a RegExp DoS issue<br>npm WARN deprecated lodash.assign@4.2.0: This package is deprecated. Use Object.assign.<br>npm WARN prefer global marked@0.3.6 should be installed with -g</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/mac上rn的环境配置和问题解决、模拟器快捷键/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/android-configChanges属性使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/android-configChanges属性使用/" itemprop="url">
+                  android:configChanges属性使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:03:53+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>对android:configChanges属性，一般认为有以下几点：</p>
+<p>1、不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，切横屏时会执行一次，切竖屏时会执行两次</p>
+<p>2、设置Activity的android:configChanges=”orientation”时，切屏还是会重新调用各个生命周期，切横、竖屏时只会执行一次</p>
+<p>3、设置Activity的android:configChanges=”orientation|keyboardHidden”时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法</p>
+<p>但是，自从Android 3.2（API 13），在设置Activity的android:configChanges=”orientation|keyboardHidden”后，还是一样 会重新调用各个生命周期的。因为screen size也开始跟着设备的横竖切换而改变。所以，在AndroidManifest.xml里设置的MiniSdkVersion和 TargetSdkVersion属性大于等于13的情况下，如果你想阻止程序在运行时重新加载Activity，除了设置”orientation”， 你还必须设置”ScreenSize”。</p>
+<p>解决方法：</p>
+<p>AndroidManifest.xml中设置android:configChanges=”orientation|screenSize“</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/git命令和命令行命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/git命令和命令行命令/" itemprop="url">
+                  git命令和terminal命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:01:12+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在Linux命令行terminal上使用gedit直接就可以打开文本文件</p>
+<p>那么在mac上面如何操作呢？</p>
+<p>使用：open -a TextEdit settings.xml 参数说明：－a指定应用<br>也可以是：open -e settings.xml 参数说明：－e使用文本编辑器打开<br>也可以是：open -t settings.xml 参数说明：－t使用默认编辑器打开</p>
+<h1 id="此为注释-–-将被-Git-忽略"><a href="#此为注释-–-将被-Git-忽略" class="headerlink" title="此为注释 – 将被 Git 忽略"></a>此为注释 – 将被 Git 忽略</h1><p><em>.a       # 忽略所有 .a 结尾的文件<br>!lib.a    # 但 lib.a 除外<br>/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO<br>build/    # 忽略 build/ 目录下的所有文件<br>doc/</em>.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</p>
+<p>git rm -r –cached .<br>git add .<br>git commit -m ‘update .gitignore’</p>
+<p>目录操作<br>命令名    功能描述    使用举例<br>mkdir    创建一个目录    mkdir dirname<br>rmdir    删除一个目录    rmdir dirname<br>mvdir    移动或重命名一个目录    mvdir dir1 dir2<br>cd    改变当前目录    cd dirname<br>pwd    显示当前目录的路径名    pwd<br>ls    显示当前目录的内容    ls -la<br>dircmp    比较两个目录的内容    dircmp dir1 dir2<br>文件操作<br>命令名    功能描述    使用举例<br>cat    显示或连接文件    cat filename<br>pg    分页格式化显示文件内容    pg filename<br>more    分屏显示文件内容    more filename<br>od    显示非文本文件的内容    od -c filename<br>cp    复制文件或目录    cp file1 file2<br>rm    删除文件或目录    rm filename<br>mv    改变文件名或所在目录    mv file1 file2<br>ln    联接文件    ln -s file1 file2<br>find    使用匹配表达式查找文件    find . -name “<em>.c” -print<br>file    显示文件类型    file filename<br>open    使用默认的程序打开文件    open filename<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/git命令和命令行命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue实例和生命周期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/vue/Vue实例和生命周期/" itemprop="url">
+                  Vue实例和生命周期
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T09:57:13+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Vue-构造器"><a href="#Vue-构造器" class="headerlink" title="Vue 构造器"></a>Vue 构造器</h1><p>每个Vue应用都是通过构造函数Vue创建一个实例启动的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  //...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>而组件其实就是被扩展的Vue实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var MyComponent = Vue.extend(&#123;</div><div class="line">  // 扩展选项</div><div class="line">&#125;)</div><div class="line">// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建</div><div class="line">var myComponentInstance = new MyComponent()</div></pre></td></tr></table></figure></p>
+<h1 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h1><p>每个Vue实例都会代理 data对象里的所有属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">    data:&#123;</div><div class="line">        a:1</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">vm.a === data.a //true</div><div class="line"></div><div class="line">// 设置属性也会影响到原始数据</div><div class="line">vm.a = 2</div><div class="line">data.a // -&gt; 2</div><div class="line">// ... 反之亦然</div><div class="line">data.a = 3</div><div class="line">vm.a // -&gt; 3</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果在实例创建之后添加新的属性到实例上，它不会触发视图更新</p>
+</blockquote>
+<h3 id="除了-data-属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀-，以便与代理的-data-属性区分。"><a href="#除了-data-属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀-，以便与代理的-data-属性区分。" class="headerlink" title="除了 data 属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分。"></a>除了 data 属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var data = &#123; a: 1 &#125;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: data</div><div class="line">&#125;)</div><div class="line">vm.$data === data // -&gt; true</div><div class="line">vm.$el === document.getElementById(&apos;example&apos;) // -&gt; true</div><div class="line">// $watch 是一个实例方法</div><div class="line">vm.$watch(&apos;a&apos;, function (newVal, oldVal) &#123;</div><div class="line">  // 这个回调将在 `vm.a`  改变后调用</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，不要在实例属性或者回调函数中（如 vm.$watch(‘a’, newVal =&gt; this.myMethod())）使用箭头函数。因为箭头函数绑定父上下文，所以 this 不会像预想的一样是 Vue 实例，而是 this.myMethod 未被定义。</p>
+</blockquote>
+<h1 id="Vue-生命周期"><a href="#Vue-生命周期" class="headerlink" title="Vue 生命周期"></a>Vue 生命周期</h1><p>created<br>mounted<br>updated<br>destroyed<br><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
 
     <footer class="post-footer">
       
@@ -977,8 +1645,12 @@ npm install hexo-deployer-git --save
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 
+          
           </div>
           
 
@@ -1008,33 +1680,38 @@ npm install hexo-deployer-git --save
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
-               alt="John Doe" />
-          <p class="site-author-name" itemprop="name">John Doe</p>
+               alt="ChrisLanbo" />
+          <p class="site-author-name" itemprop="name">ChrisLanbo</p>
            
               <p class="site-description motion-element" itemprop="description"></p>
           
         </div>
         <nav class="site-state motion-element">
-
+        
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">5</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
               </a>
             </div>
           
 
           
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
 
           
-            
-            
             <div class="site-state-item site-state-tags">
-              
-                <span class="site-state-item-count">6</span>
-                <span class="site-state-item-name">Tags</span>
-              
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
             </div>
           
 
@@ -1078,18 +1755,18 @@ npm install hexo-deployer-git --save
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">John Doe</span>
+  <span class="author" itemprop="copyrightHolder">ChrisLanbo</span>
 </div>
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
 </div>
 
 <div class="theme-info">
-  Theme -
+  主题 -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT.Muse
+    NexT.Pisces
   </a>
 </div>
 
@@ -1106,7 +1783,7 @@ npm install hexo-deployer-git --save
         
       </div>
     
-
+    
   </div>
 
   
@@ -1126,10 +1803,6 @@ npm install hexo-deployer-git --save
 
 
   
-
-
-
-
 
 
 
@@ -1165,6 +1838,13 @@ npm install hexo-deployer-git --save
   
   
 
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
   
 
   
@@ -1175,6 +1855,7 @@ npm install hexo-deployer-git --save
 
 
   
+
 
 
   
@@ -1204,14 +1885,8 @@ npm install hexo-deployer-git --save
 
 
 
-
-
-
   
-
-
-
-
+  
 
   
 
@@ -1220,6 +1895,7 @@ npm install hexo-deployer-git --save
   
 
   
+
 
   
 

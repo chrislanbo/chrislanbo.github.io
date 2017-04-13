@@ -1,0 +1,756 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="vue,v-model," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="v-model指令在表单控件上创建双向数据绑定  v-model 会根据控件类型自动选取正确的方法更新元素，其实也就是监听输入事件来更新数据。 v-model 不关心控件的初始值，只关心Vue实例数据 文本单行文本12&amp;lt;input v-model=&amp;quot;message&amp;quot; placeholder=&amp;quot;edit me&amp;quot;&amp;gt;&amp;lt;p&amp;gt;Message">
+<meta name="keywords" content="vue,v-model">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue表单控件数据绑定">
+<meta property="og:url" content="http://yoursite.com/2017/04/13/vue/Vue表单控件数据绑定/index.html">
+<meta property="og:site_name" content="捡来·放去">
+<meta property="og:description" content="v-model指令在表单控件上创建双向数据绑定  v-model 会根据控件类型自动选取正确的方法更新元素，其实也就是监听输入事件来更新数据。 v-model 不关心控件的初始值，只关心Vue实例数据 文本单行文本12&amp;lt;input v-model=&amp;quot;message&amp;quot; placeholder=&amp;quot;edit me&amp;quot;&amp;gt;&amp;lt;p&amp;gt;Message">
+<meta property="og:updated_time" content="2017-04-13T09:04:59.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue表单控件数据绑定">
+<meta name="twitter:description" content="v-model指令在表单控件上创建双向数据绑定  v-model 会根据控件类型自动选取正确的方法更新元素，其实也就是监听输入事件来更新数据。 v-model 不关心控件的初始值，只关心Vue实例数据 文本单行文本12&amp;lt;input v-model=&amp;quot;message&amp;quot; placeholder=&amp;quot;edit me&amp;quot;&amp;gt;&amp;lt;p&amp;gt;Message">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/13/vue/Vue表单控件数据绑定/"/>
+
+
+
+
+
+  <title> Vue表单控件数据绑定 | 捡来·放去 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">捡来·放去</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pic">
+          <a href="/pic" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/blog" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue表单控件数据绑定/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Vue表单控件数据绑定
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T14:55:52+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>v-model指令在表单控件上创建双向数据绑定</p>
+</blockquote>
+<p>v-model 会根据控件类型自动选取正确的方法更新元素，其实也就是监听输入事件来更新数据。</p>
+<p>v-model 不关心控件的初始值，只关心Vue实例数据</p>
+<h1 id="文本"><a href="#文本" class="headerlink" title="文本"></a>文本</h1><p>单行文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input v-model=&quot;message&quot; placeholder=&quot;edit me&quot;&gt;</div><div class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;/p&gt;</div></pre></td></tr></table></figure></p>
+<p>多行文本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;span&gt;Multiline message is:&lt;/span&gt;</div><div class="line">&lt;p style=&quot;white-space: pre&quot;&gt;&#123;&#123; message &#125;&#125;&lt;/p&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;textarea v-model=&quot;message&quot; placeholder=&quot;add multiple lines&quot;&gt;&lt;/textarea&gt;</div></pre></td></tr></table></figure></p>
+<h1 id="复选框"><a href="#复选框" class="headerlink" title="复选框"></a>复选框</h1><p>一个勾选框,逻辑值：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;checkbox&quot; v-model=&quot;checked&quot;&gt;</div><div class="line">&lt;label for=&quot;checkbox&quot;&gt;&#123;&#123; checked &#125;&#125;&lt;/label&gt;</div></pre></td></tr></table></figure></p>
+<p>多勾选框，绑定到同一个数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;jack&quot; value=&quot;Jack&quot; v-model=&quot;checkedNames&quot;&gt;</div><div class="line">&lt;label for=&quot;jack&quot;&gt;Jack&lt;/label&gt;</div><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;john&quot; value=&quot;John&quot; v-model=&quot;checkedNames&quot;&gt;</div><div class="line">&lt;label for=&quot;john&quot;&gt;John&lt;/label&gt;</div><div class="line">&lt;input type=&quot;checkbox&quot; id=&quot;mike&quot; value=&quot;Mike&quot; v-model=&quot;checkedNames&quot;&gt;</div><div class="line">&lt;label for=&quot;mike&quot;&gt;Mike&lt;/label&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;span&gt;Checked names: &#123;&#123; checkedNames &#125;&#125;&lt;/span&gt;</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;...&apos;,</div><div class="line">  data: &#123;</div><div class="line">    checkedNames: []</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h1 id="单选按钮"><a href="#单选按钮" class="headerlink" title="单选按钮"></a>单选按钮</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example-4&quot; class=&quot;demo&quot;&gt;</div><div class="line">  &lt;input type=&quot;radio&quot; id=&quot;one&quot; value=&quot;One&quot; v-model=&quot;picked&quot;&gt;</div><div class="line">  &lt;label for=&quot;one&quot;&gt;One&lt;/label&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;input type=&quot;radio&quot; id=&quot;two&quot; value=&quot;Two&quot; v-model=&quot;picked&quot;&gt;</div><div class="line">  &lt;label for=&quot;two&quot;&gt;Two&lt;/label&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;span&gt;Picked: &#123;&#123; picked &#125;&#125;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;#example-4&apos;,</div><div class="line">  data: &#123;</div><div class="line">    picked: &apos;&apos;</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<h1 id="选择列表"><a href="#选择列表" class="headerlink" title="选择列表"></a>选择列表</h1><p>单选列表:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example-5&quot; class=&quot;demo&quot;&gt;</div><div class="line">  &lt;select v-model=&quot;selected&quot;&gt;</div><div class="line">    &lt;option&gt;A&lt;/option&gt;</div><div class="line">    &lt;option&gt;B&lt;/option&gt;</div><div class="line">    &lt;option&gt;C&lt;/option&gt;</div><div class="line">  &lt;/select&gt;</div><div class="line">  &lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;#example-5&apos;,</div><div class="line">  data: &#123;</div><div class="line">    selected: null</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>多选列表（绑定到一个数组）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;div id=&quot;example-6&quot; class=&quot;demo&quot;&gt;</div><div class="line">  &lt;select v-model=&quot;selected&quot; multiple style=&quot;width: 50px&quot;&gt;</div><div class="line">    &lt;option&gt;A&lt;/option&gt;</div><div class="line">    &lt;option&gt;B&lt;/option&gt;</div><div class="line">    &lt;option&gt;C&lt;/option&gt;</div><div class="line">  &lt;/select&gt;</div><div class="line">  &lt;br&gt;</div><div class="line">  &lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</div><div class="line">&lt;/div&gt;</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;#example-6&apos;,</div><div class="line">  data: &#123;</div><div class="line">    selected: []</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>动态选项，用 v-for 渲染：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">&lt;select v-model=&quot;selected&quot;&gt;</div><div class="line">  &lt;option v-for=&quot;option in options&quot; v-bind:value=&quot;option.value&quot;&gt;</div><div class="line">    &#123;&#123; option.text &#125;&#125;</div><div class="line">  &lt;/option&gt;</div><div class="line">&lt;/select&gt;</div><div class="line">&lt;span&gt;Selected: &#123;&#123; selected &#125;&#125;&lt;/span&gt;</div><div class="line">new Vue(&#123;</div><div class="line">  el: &apos;...&apos;,</div><div class="line">  data: &#123;</div><div class="line">    selected: &apos;A&apos;,</div><div class="line">    options: [</div><div class="line">      &#123; text: &apos;One&apos;, value: &apos;A&apos; &#125;,</div><div class="line">      &#123; text: &apos;Two&apos;, value: &apos;B&apos; &#125;,</div><div class="line">      &#123; text: &apos;Three&apos;, value: &apos;C&apos; &#125;</div><div class="line">    ]</div><div class="line">  &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<h1 id="绑定value"><a href="#绑定value" class="headerlink" title="绑定value"></a>绑定value</h1><p>对于单选按钮，勾选框及选择列表选项， v-model 绑定的 value 通常是静态字符串（对于勾选框是逻辑值）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;!-- 当选中时，`picked` 为字符串 &quot;a&quot; --&gt;</div><div class="line">&lt;input type=&quot;radio&quot; v-model=&quot;picked&quot; value=&quot;a&quot;&gt;</div><div class="line">&lt;!-- `toggle` 为 true 或 false --&gt;</div><div class="line">&lt;input type=&quot;checkbox&quot; v-model=&quot;toggle&quot;&gt;</div><div class="line">&lt;!-- 当选中时，`selected` 为字符串 &quot;abc&quot; --&gt;</div><div class="line">&lt;select v-model=&quot;selected&quot;&gt;</div><div class="line">  &lt;option value=&quot;abc&quot;&gt;ABC&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如需绑定 value 到 Vue 实例的一个动态属性上，这时可以用 v-bind 实现，并且这个属性的值可以不是字符串。</p>
+</blockquote>
+<h2 id="复选框-1"><a href="#复选框-1" class="headerlink" title="复选框"></a>复选框</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&lt;input</div><div class="line">  type=&quot;checkbox&quot;</div><div class="line">  v-model=&quot;toggle&quot;</div><div class="line">  v-bind:true-value=&quot;a&quot;</div><div class="line">  v-bind:false-value=&quot;b&quot;</div><div class="line">&gt;</div><div class="line">// 当选中时</div><div class="line">vm.toggle === vm.a</div><div class="line">// 当没有选中时</div><div class="line">vm.toggle === vm.b</div></pre></td></tr></table></figure>
+<h2 id="单选按钮-1"><a href="#单选按钮-1" class="headerlink" title="单选按钮"></a>单选按钮</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;input type=&quot;radio&quot; v-model=&quot;pick&quot; v-bind:value=&quot;a&quot;&gt;</div><div class="line">// 当选中时</div><div class="line">vm.pick === vm.a</div></pre></td></tr></table></figure>
+<h2 id="选择列表设置"><a href="#选择列表设置" class="headerlink" title="选择列表设置"></a>选择列表设置</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;select v-model=&quot;selected&quot;&gt;</div><div class="line">    &lt;!-- 内联对象字面量 --&gt;</div><div class="line">  &lt;option v-bind:value=&quot;&#123; number: 123 &#125;&quot;&gt;123&lt;/option&gt;</div><div class="line">&lt;/select&gt;</div><div class="line">// 当选中时</div><div class="line">typeof vm.selected // -&gt; &apos;object&apos;</div><div class="line">vm.selected.number // -&gt; 123</div></pre></td></tr></table></figure>
+<h1 id="v-model的修饰符"><a href="#v-model的修饰符" class="headerlink" title="v-model的修饰符"></a>v-model的修饰符</h1><h2 id="lazy"><a href="#lazy" class="headerlink" title=".lazy"></a>.lazy</h2><p>在默认情况下， v-model 在 input 事件中同步输入框的值与数据 (除了 上述 IME 部分)，但你可以添加一个修饰符 lazy ，从而转变为在 change 事件中同步：<br><!-- 在 "change" 而不是 "input" 事件中更新 --></p>
+<pre><code>&lt;input v-model.lazy=&quot;msg&quot; &gt;
+</code></pre><h2 id="number"><a href="#number" class="headerlink" title=".number"></a>.number</h2><p>如果想自动将用户的输入值转为 Number 类型（如果原值的转换结果为 NaN 则返回原值），可以添加一个修饰符 number 给 v-model 来处理输入值：</p>
+<pre><code>&lt;input v-model.number=&quot;age&quot; type=&quot;number&quot;&gt;
+</code></pre><p>这通常很有用，因为在 type=”number” 时 HTML 中输入的值也总是会返回字符串类型。</p>
+<h2 id="trim"><a href="#trim" class="headerlink" title=".trim"></a>.trim</h2><p>如果要自动过滤用户输入的首尾空格，可以添加 trim 修饰符到 v-model 上过滤输入：</p>
+<pre><code>&lt;input v-model.trim=&quot;msg&quot;&gt;
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
+          
+            <a href="/tags/v-model/" rel="tag"># v-model</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/13/vue/Vue组件/" rel="next" title="Vue组件">
+                <i class="fa fa-chevron-left"></i> Vue组件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/13/vue/Vue事件处理器/" rel="prev" title="Vue事件处理器">
+                Vue事件处理器 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="ChrisLanbo" />
+          <p class="site-author-name" itemprop="name">ChrisLanbo</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#文本"><span class="nav-number">1.</span> <span class="nav-text">文本</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#复选框"><span class="nav-number">2.</span> <span class="nav-text">复选框</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单选按钮"><span class="nav-number">3.</span> <span class="nav-text">单选按钮</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#选择列表"><span class="nav-number">4.</span> <span class="nav-text">选择列表</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定value"><span class="nav-number">5.</span> <span class="nav-text">绑定value</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#复选框-1"><span class="nav-number">5.1.</span> <span class="nav-text">复选框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单选按钮-1"><span class="nav-number">5.2.</span> <span class="nav-text">单选按钮</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择列表设置"><span class="nav-number">5.3.</span> <span class="nav-text">选择列表设置</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#v-model的修饰符"><span class="nav-number">6.</span> <span class="nav-text">v-model的修饰符</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lazy"><span class="nav-number">6.1.</span> <span class="nav-text">.lazy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#number"><span class="nav-number">6.2.</span> <span class="nav-text">.number</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#trim"><span class="nav-number">6.3.</span> <span class="nav-text">.trim</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChrisLanbo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
