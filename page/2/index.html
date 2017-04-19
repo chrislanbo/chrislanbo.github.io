@@ -277,6 +277,408 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/android-configChanges属性使用/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/android-configChanges属性使用/" itemprop="url">
+                  android:configChanges属性使用
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:03:53+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>对android:configChanges属性，一般认为有以下几点：</p>
+<p>1、不设置Activity的android:configChanges时，切屏会重新调用各个生命周期，切横屏时会执行一次，切竖屏时会执行两次</p>
+<p>2、设置Activity的android:configChanges=”orientation”时，切屏还是会重新调用各个生命周期，切横、竖屏时只会执行一次</p>
+<p>3、设置Activity的android:configChanges=”orientation|keyboardHidden”时，切屏不会重新调用各个生命周期，只会执行onConfigurationChanged方法</p>
+<p>但是，自从Android 3.2（API 13），在设置Activity的android:configChanges=”orientation|keyboardHidden”后，还是一样 会重新调用各个生命周期的。因为screen size也开始跟着设备的横竖切换而改变。所以，在AndroidManifest.xml里设置的MiniSdkVersion和 TargetSdkVersion属性大于等于13的情况下，如果你想阻止程序在运行时重新加载Activity，除了设置”orientation”， 你还必须设置”ScreenSize”。</p>
+<p>解决方法：</p>
+<p>AndroidManifest.xml中设置android:configChanges=”orientation|screenSize“</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/git命令和命令行命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/git命令和命令行命令/" itemprop="url">
+                  git命令和terminal命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:01:12+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在Linux命令行terminal上使用gedit直接就可以打开文本文件</p>
+<p>那么在mac上面如何操作呢？</p>
+<p>使用：open -a TextEdit settings.xml 参数说明：－a指定应用<br>也可以是：open -e settings.xml 参数说明：－e使用文本编辑器打开<br>也可以是：open -t settings.xml 参数说明：－t使用默认编辑器打开</p>
+<h1 id="此为注释-–-将被-Git-忽略"><a href="#此为注释-–-将被-Git-忽略" class="headerlink" title="此为注释 – 将被 Git 忽略"></a>此为注释 – 将被 Git 忽略</h1><p><em>.a       # 忽略所有 .a 结尾的文件<br>!lib.a    # 但 lib.a 除外<br>/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO<br>build/    # 忽略 build/ 目录下的所有文件<br>doc/</em>.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</p>
+<p>git rm -r –cached .<br>git add .<br>git commit -m ‘update .gitignore’</p>
+<p>目录操作<br>命令名    功能描述    使用举例<br>mkdir    创建一个目录    mkdir dirname<br>rmdir    删除一个目录    rmdir dirname<br>mvdir    移动或重命名一个目录    mvdir dir1 dir2<br>cd    改变当前目录    cd dirname<br>pwd    显示当前目录的路径名    pwd<br>ls    显示当前目录的内容    ls -la<br>dircmp    比较两个目录的内容    dircmp dir1 dir2<br>文件操作<br>命令名    功能描述    使用举例<br>cat    显示或连接文件    cat filename<br>pg    分页格式化显示文件内容    pg filename<br>more    分屏显示文件内容    more filename<br>od    显示非文本文件的内容    od -c filename<br>cp    复制文件或目录    cp file1 file2<br>rm    删除文件或目录    rm filename<br>mv    改变文件名或所在目录    mv file1 file2<br>ln    联接文件    ln -s file1 file2<br>find    使用匹配表达式查找文件    find . -name “<em>.c” -print<br>file    显示文件类型    file filename<br>open    使用默认的程序打开文件    open filename<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/git命令和命令行命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue实例和生命周期/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/vue/Vue实例和生命周期/" itemprop="url">
+                  Vue实例和生命周期
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T09:57:13+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Vue-构造器"><a href="#Vue-构造器" class="headerlink" title="Vue 构造器"></a>Vue 构造器</h1><p>每个Vue应用都是通过构造函数Vue创建一个实例启动的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">  //...</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>而组件其实就是被扩展的Vue实例<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var MyComponent = Vue.extend(&#123;</div><div class="line">  // 扩展选项</div><div class="line">&#125;)</div><div class="line">// 所有的 `MyComponent` 实例都将以预定义的扩展选项被创建</div><div class="line">var myComponentInstance = new MyComponent()</div></pre></td></tr></table></figure></p>
+<h1 id="属性和方法"><a href="#属性和方法" class="headerlink" title="属性和方法"></a>属性和方法</h1><p>每个Vue实例都会代理 data对象里的所有属性</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">var vm = new Vue(&#123;</div><div class="line">    data:&#123;</div><div class="line">        a:1</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">vm.a === data.a //true</div><div class="line"></div><div class="line">// 设置属性也会影响到原始数据</div><div class="line">vm.a = 2</div><div class="line">data.a // -&gt; 2</div><div class="line">// ... 反之亦然</div><div class="line">data.a = 3</div><div class="line">vm.a // -&gt; 3</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果在实例创建之后添加新的属性到实例上，它不会触发视图更新</p>
+</blockquote>
+<h3 id="除了-data-属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀-，以便与代理的-data-属性区分。"><a href="#除了-data-属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀-，以便与代理的-data-属性区分。" class="headerlink" title="除了 data 属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分。"></a>除了 data 属性，也暴露了很多实例属性与方法。这些属性与方法都有前缀 $，以便与代理的 data 属性区分。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var data = &#123; a: 1 &#125;</div><div class="line">var vm = new Vue(&#123;</div><div class="line">  el: &apos;#example&apos;,</div><div class="line">  data: data</div><div class="line">&#125;)</div><div class="line">vm.$data === data // -&gt; true</div><div class="line">vm.$el === document.getElementById(&apos;example&apos;) // -&gt; true</div><div class="line">// $watch 是一个实例方法</div><div class="line">vm.$watch(&apos;a&apos;, function (newVal, oldVal) &#123;</div><div class="line">  // 这个回调将在 `vm.a`  改变后调用</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<blockquote>
+<p>注意，不要在实例属性或者回调函数中（如 vm.$watch(‘a’, newVal =&gt; this.myMethod())）使用箭头函数。因为箭头函数绑定父上下文，所以 this 不会像预想的一样是 Vue 实例，而是 this.myMethod 未被定义。</p>
+</blockquote>
+<h1 id="Vue-生命周期"><a href="#Vue-生命周期" class="headerlink" title="Vue 生命周期"></a>Vue 生命周期</h1><p>created<br>mounted<br>updated<br>destroyed<br><img src="https://cn.vuejs.org/images/lifecycle.png" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/12/vue/Vue模板语法/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -915,6 +1317,7 @@ npm install hexo-deployer-git --save
 <h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p><code>brew install node</code></p>
 <h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org --global npm config set disturl https://npm.taobao.org/dist --global</div></pre></td></tr></table></figure>
 <h3 id="安装vue"><a href="#安装vue" class="headerlink" title="安装vue"></a>安装vue</h3><p><code>npm install -g vue-cli</code></p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>有的项目需要安装sass，但是这个安装总是有问题<br>npm install –save node-sass –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> –disturl=<a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a> –sass-binary-site=<a href="http://npm.taobao.org/mirrors/node-sass" target="_blank" rel="external">http://npm.taobao.org/mirrors/node-sass</a></p>
 
           
         
@@ -1291,130 +1694,11 @@ npm install hexo-deployer-git --save
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/vue/vue中属性加冒号是什么用法/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/11/vue/vue中属性加冒号是什么用法/" itemprop="url">
-                  vue中属性前加冒号、vue中:class的意义
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T15:12:11+08:00">
-                2017-04-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>vue中的属性前一个冒号，类似:class 或者 :style 其实都是省略了v-bind,应该是v-bind:class和v-bind:style</p>
-<p>vue会自动给单独的一个<code>:</code>加上前缀<code>v-bind</code></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1459,7 +1743,7 @@ npm install hexo-deployer-git --save
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-count">21</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1468,7 +1752,7 @@ npm install hexo-deployer-git --save
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1477,7 +1761,7 @@ npm install hexo-deployer-git --save
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">21</span>
+                <span class="site-state-item-count">22</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
