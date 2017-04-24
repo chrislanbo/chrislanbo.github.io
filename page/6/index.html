@@ -277,6 +277,880 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/14/listView嵌套viewPager需求/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/listView嵌套viewPager需求/" itemprop="url">
+                  listView嵌套viewPager需求
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-14T16:05:19+08:00">
+                2016-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>现在有了一个新的需求，要求listView上方加一个viewPager</p>
+<p>考虑在listView内嵌套一个头布局<br>考虑在listView内设置多条目类型<br>考虑在Scrollview中的listview上方添加一布局</p>
+<p>上述三种思路感觉第一个比较好做，先试试这个<br>listview中addHeaderView(…)方法可以在listview组件上方添加其他view，并且可以多次添加。<br>假设添加了两次其他类型的view，那么listview中position = 0 时对应的view就是第一次添加的，listview中position = 2 时对应的才是listview原先的第一条数据。（有空给张图）</p>
+<blockquote>
+<p>填坑第一步：addHeaderView和setAdapter的顺序问题</p>
+<blockquote>
+<p>setAdapter需要放在addHeaderView之后，否则报错，因为绑定adapter的时候，回去判断是否有头布局，add之后的布局已经是listview的一部分，所以不能再数据准备好了之后再添加头布局</p>
+</blockquote>
+</blockquote>
+<p>#难点<br>多view的嵌套会有事件的冲突，焦点在哪儿就成了一个大问题。</p>
+<ol>
+<li>listview中若存在button等抢夺焦点的控件时，listview的onItemClick事件就不会被触发。解决办法，咋初始化item的时候屏蔽内部焦点的获取，在自定义item的根布局调用<code>setDescendantFoucsability(ViewGroup.FOUCS_BLOCK_DESCENDANTS)</code>这样就能阻止子控件获取焦点，并且button等控件的仍然可正常使用</li>
+<li>当listview需要添加【头布局】的时候有两个方法<code>addHeaderView(headview,null,false)</code>、<code>addHeaderView(headview)</code> 第三个参数为view是否可以被选中，默认是true</li>
+<li>由于添加的view 属于listview，所以可以相应onItemClick的事件，不想要的话，可以给添加的view设置点击事件来覆盖onItemClick的事件</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/14/AndroidStudio用法十八式/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/14/AndroidStudio用法十八式/" itemprop="url">
+                  AndroidStudio用法十八式
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-14T09:25:54+08:00">
+                2016-10-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>##设置</p>
+<p>直接在设置搜索中搜索</p>
+<p>添加行数 Appearance Show line numbers</p>
+<p>大小写不敏感 Case sensitive completion<br>    设置为none</p>
+<p>自动导包 Optimize import on the fly</p>
+<p>##快捷键<br>ctrl+j 调出快捷代码（for循环…）</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/11/React-Native开发-2-HelloWorld/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/11/React-Native开发-2-HelloWorld/" itemprop="url">
+                  React Native开发--2.HelloWorld
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-11T10:38:34+08:00">
+                2016-10-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>开一个命令窗口，找到指定目录，键入<br><code>react-native start</code></p>
+<p>需要编译一会儿   <a href="http://localhost:8081/index.android.bundle?platform=android" target="_blank" rel="external">点击测试是否成功</a></p>
+<p>重新开一个窗口<br><code>react-native run-android</code><br><a href="http://blog.csdn.net/p106786860/article/details/51052299" title="error" target="_blank" rel="external">填坑</a></p>
+<p>下载webstorm 加载项目</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/29/年轻程序员最需要学什么？自律！【转】/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/29/年轻程序员最需要学什么？自律！【转】/" itemprop="url">
+                  年轻程序员最需要什么？
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-29T09:22:36+08:00">
+                2016-09-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><a href="http://blog.jobbole.com/83160/" target="_blank" rel="external">年轻程序员最需要学什么？自律！</a></p>
+<p>编写尽可能清晰的代码；重构代码以消除因后续开发中的变化所造成的混乱；移除从未用过的代码并且添加注释。</p>
+<p>###名不副实的函数/变量/类</p>
+<p>这些函数、变量、类所做的事情并不是他们名字所暗示的那样，这些名字具有欺骗性。显然名字应该反映真实的内容，但让我吃惊的是，名不副实这种情况常常出现。</p>
+<p>命名不准确这种情况我见到很多。之所以频繁发生，是由于代码在不断地演变。最初选择那个命名时可能是正确的，但一到代码完成之后，命名可能就变得不准确甚至错误的了。这个陷阱提醒我们应该始终把命名记在心上，在你添加一段代码的时候就要弄清楚，这与函数或类的名称是否相称。</p>
+<p>推荐阅读：<a href="http://blog.jobbole.com/50708/" target="_blank" rel="external">《程序员最头疼的事：命名》</a></p>
+<p>###混淆不清的类</p>
+<p>另一个问题是混淆不清的类，即一个类做了很多不相关的事情。当你长时间专注于同一块代码时，就可能这个问题。新功能用最简单的方法实现，到了某种程度，类就会变得臃肿，做了很多不相关的事情。有时候类变得臃肿不在于代码规模的大小：一个类可能只有几百行，但它却包含了不属于本类功能的代码。</p>
+<p>举个例子，如果一个GUI类需要“分析哪些纹理可供使用”（设想有个按钮用于选择纹理），如果GUI类是唯一一个需要这种分析结果的类，那么在GUI类里实现它是很合理的。但是，这时一个完全不相关的gameplay类也需要这种分析结果的信息，因此你将GUI类传递给gameplay类来查询纹理信息。这个时候GUI类就多出一种东西了：它是GUI类，同时也是TextureAnalyser类。这个案例的解决方案很简单：从TextureAnalyser类分割出一个独立的类，这个类可同时被GUI类和gameplay类使用。</p>
+<p>避免这种问题的最好方法是在每次写代码前三思：我在这里添加的功能跟类的名称符合吗？如果不符合，那么就要对类重命名，或者将其分割成独立的类，或者把这段代码放到其他的类中。</p>
+<p>如果想不出来一个跟类非常匹配的名字，这通常是代码异味（Bad Smell）。如果找不到合适的名字描述这个类，可能因为它所做的事情太混杂了。这时可以将它分割成几个部分，并且每个部分用一个恰当的名字来描述。</p>
+<p>###体积庞大的类</p>
+<p>这问题跟上面所说混淆不清的类很相似：随着时间的推移，越来越多的代码被添加到一个类里，使得其变得臃肿。在这种情况下尽管放在一个类是很合理的，但是类的体积变得很大。超大的类处理起来是很麻烦的，当很多代码对同一个私有成员变量进行操作时，bug就很容易出现，并且人也很容易忽略很多细节。</p>
+<p>分割一个超大的类是件相当无聊的工作。当代码高度交错时，这也具有很大的挑战性。分隔代码需要高度的自律，因为这只是对已有的代码进行增加或修改而保持原有的功能不变。</p>
+<p>Ronimo公司有一个规定，保持类的代码在500行以下，函数的代码在50行以下。有时候这是不可行也不合理的，但是通常来说，不管哪一个类或函数超出了这个规定，我们都会寻找办法将其重构或者分割成更小的，更易于管理的片段。（这让我很好奇：你觉得这个限制应该是多少行？可以在评论中留言。）</p>
+<p>###代码注释</p>
+<p>实习申请人给我们发过来的样本代码几乎都有一些被注释的代码块，但并没有说明为什么会做这个注释。是代码存在错误需要修改吗？还是代码过旧需要更新？注释掉的代码为什么会在这里？当我们问起申请人时，他们对这些被注释的代码也显得很疑惑，但是奇怪的是，总会有一些原因不明的被注释的代码。</p>
+<p>###代码重复</p>
+<p>这个代码很短，如果需要用到它，直接粘贴到那儿就可以了。这就是代码重复，并且人人都知道代码重复是应该避免的，如果重复的代码很短，那么最吸引人的做法是直接复制粘贴。</p>
+<p>通常比较好的做法是，如果代码功能特殊，不要去复制，而是把它放到一个函数里。尽管代码很短很短，并且调用一个函数比粘贴需要写更多的代码，但是你要学会这么做，这也需要高度的自律。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/28/透明度16进制对比表/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/28/透明度16进制对比表/" itemprop="url">
+                  透明度16进制对比表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-28T13:59:32+08:00">
+                2016-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <table>
+<thead>
+<tr>
+<th style="text-align:left">不透明度</th>
+<th>16进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">100%</td>
+<td>FF</td>
+</tr>
+<tr>
+<td style="text-align:left">95    %</td>
+<td>F2</td>
+</tr>
+<tr>
+<td style="text-align:left">90 %</td>
+<td>E6</td>
+</tr>
+<tr>
+<td style="text-align:left">85 %</td>
+<td>D9</td>
+</tr>
+<tr>
+<td style="text-align:left">80 %</td>
+<td>CC</td>
+</tr>
+<tr>
+<td style="text-align:left">75 %</td>
+<td>BF</td>
+</tr>
+<tr>
+<td style="text-align:left">70 %</td>
+<td>B3</td>
+</tr>
+<tr>
+<td style="text-align:left">65 %</td>
+<td>A6</td>
+</tr>
+<tr>
+<td style="text-align:left">60 %</td>
+<td>99</td>
+</tr>
+<tr>
+<td style="text-align:left">55 %</td>
+<td>8C</td>
+</tr>
+<tr>
+<td style="text-align:left">50 %</td>
+<td>80</td>
+</tr>
+<tr>
+<td style="text-align:left">45 %</td>
+<td>73</td>
+</tr>
+<tr>
+<td style="text-align:left">40 %</td>
+<td>66</td>
+</tr>
+<tr>
+<td style="text-align:left">35 %</td>
+<td>59</td>
+</tr>
+<tr>
+<td style="text-align:left">30 %</td>
+<td>4D</td>
+</tr>
+<tr>
+<td style="text-align:left">25 %</td>
+<td>40</td>
+</tr>
+<tr>
+<td style="text-align:left">20 %</td>
+<td>33</td>
+</tr>
+<tr>
+<td style="text-align:left">15 %</td>
+<td>26</td>
+</tr>
+<tr>
+<td style="text-align:left">10 %</td>
+<td>1A</td>
+</tr>
+<tr>
+<td style="text-align:left">5 %</td>
+<td>0D</td>
+</tr>
+<tr>
+<td style="text-align:left">0 %</td>
+<td>00</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</div><div class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</div><div class="line">	<span class="keyword">for</span>(<span class="keyword">double</span> i = <span class="number">1</span>;i&gt;=<span class="number">0</span>;i-=<span class="number">0.01</span>)&#123;</div><div class="line">	i=Math.round(i*<span class="number">100</span>)/<span class="number">100.0</span>d;</div><div class="line">	<span class="keyword">int</span> alpha = (<span class="keyword">int</span>)Math.round(i*<span class="number">255</span>);</div><div class="line">	String hex =Integer.toHexString(alpha).toUpperCase();</div><div class="line">	<span class="keyword">if</span>(hex.length()==<span class="number">1</span>)hex=<span class="string">"0"</span>+hex;</div><div class="line">	<span class="keyword">int</span> per = (<span class="keyword">int</span>)(i*<span class="number">100</span>);</div><div class="line">	System.out.println(String.format(<span class="string">"|%d%% | %s|"</span>,per,hex));</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/28/md语法、工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/28/md语法、工具/" itemprop="url">
+                  md语法、工具
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-28T11:32:38+08:00">
+                2016-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>强调</p>
+<pre><code>*斜体* 
+**粗体**
+</code></pre><p>链接</p>
+<pre><code>[描述](http://localhost:4000/)
+</code></pre><p>代码</p>
+<pre><code>`int i =0;`
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">...</div><div class="line"><span class="keyword">int</span> i =<span class="number">0</span>;</div><div class="line">...</div></pre></td></tr></table></figure>
+</code></pre><p>引用</p>
+<pre><code>&gt; 这是引用文字
+</code></pre><p>表格</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">name</th>
+<th style="text-align:right">item</th>
+<th style="text-align:center">value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">左对齐</td>
+<td style="text-align:right">右对齐</td>
+<td style="text-align:center">居中</td>
+</tr>
+</tbody>
+</table>
+<p>列表</p>
+<pre><code>1. 
+2. 
+</code></pre><p>公式</p>
+<p>$ y = x_1 $<br>$$a^2+b^2=c^2$$</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/26/工作软件的系统path配置/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -774,951 +1648,11 @@ react-native start
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/21/MAcount业务需求/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/21/MAcount业务需求/" itemprop="url">
-                  MAcount业务需求
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-21T16:00:57+08:00">
-                2016-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <table>
-<thead>
-<tr>
-<th style="text-align:left">收入</th>
-<th>支出</th>
-<th>支出类型</th>
-<th>支出方式</th>
-<th>个人月消费</th>
-<th>月消费账单</th>
-<th>当月收入</th>
-<th>其他</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">工资 计入个人</td>
-<td>借出</td>
-<td>不计入个人</td>
-<td>信用卡</td>
-<td>日常消费    借出、房贷、代购、日常消费    工资收入+借入+支援+代购收款    行用卡账单日单独列出</td>
-</tr>
-<tr>
-<td style="text-align:left">借入     计入个人</td>
-<td>房贷</td>
-<td>不计入个人</td>
-<td>现金                                </td>
-</tr>
-<tr>
-<td style="text-align:left">家人支援 计入个人</td>
-<td>代购</td>
-<td>不计入个人</td>
-<td>支付宝                                </td>
-</tr>
-<tr>
-<td style="text-align:left">代购收款 不计入个人</td>
-<td>内部转账</td>
-<td>不计入个人及月账单</td>
-<td>银行卡                                </td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td>信用卡还款</td>
-<td>不计入个人及月账单                                        </td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td>日常消费</td>
-<td>计入个人                                        </td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th>数据名称</th>
-<th>内容</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>时间（time）</td>
-<td>年月日+星期</td>
-</tr>
-<tr>
-<td>收入（income）</td>
-<td><code>工资</code>，<code>其他</code></td>
-</tr>
-<tr>
-<td>金额（money）</td>
-<td>精确到小数点后两位</td>
-</tr>
-<tr>
-<td>支付方式（pay_method）</td>
-<td><code>现金</code> <code>支付宝</code> <code>微信</code> <code>银行卡</code> <code>信用卡（计入本月账单，但不计入本月消费）</code></td>
-</tr>
-<tr>
-<td>支出种类（pay_type）</td>
-<td><code>饮食</code> <code>交通</code> <code>居家</code> <code>其他</code> <code>代购</code> <code>借钱</code></td>
-</tr>
-<tr>
-<td>备注（flag）</td>
-<td><code>其他情况</code></td>
-</tr>
-<tr>
-<td>收入/支出（in_out）</td>
-</tr>
-</tbody>
-</table>
-<p>ps:<br>示例：<code>8月份账单</code></p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">时间</th>
-<th style="text-align:left">支出种类</th>
-<th style="text-align:left">收入/支出</th>
-<th style="text-align:left">金额</th>
-<th style="text-align:left">支付方式</th>
-<th style="text-align:left">账单计算方式</th>
-<th style="text-align:left">备注</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">20160801周一</td>
-<td style="text-align:left">日常</td>
-<td style="text-align:left">支出</td>
-<td style="text-align:left">3.50</td>
-<td style="text-align:left">支付宝</td>
-<td style="text-align:left">消费</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">20160802周二</td>
-<td style="text-align:left">代购</td>
-<td style="text-align:left">支出</td>
-<td style="text-align:left">999.00</td>
-<td style="text-align:left">信用卡</td>
-<td style="text-align:left">特殊支出</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">20160804周四</td>
-<td style="text-align:left">工资</td>
-<td style="text-align:left">收入</td>
-<td style="text-align:left">2000</td>
-<td style="text-align:left">银行卡</td>
-<td style="text-align:left">收入</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">20160805周五</td>
-<td style="text-align:left">借钱</td>
-<td style="text-align:left">支出</td>
-<td style="text-align:left">1000</td>
-<td style="text-align:left">银行卡</td>
-<td style="text-align:left">特殊支出</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">20160807周日</td>
-<td style="text-align:left">还钱</td>
-<td style="text-align:left">收入</td>
-<td style="text-align:left">1000</td>
-<td style="text-align:left">现金</td>
-<td style="text-align:left">特殊收入</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">20160808周一</td>
-<td style="text-align:left">还钱</td>
-<td style="text-align:left">收入</td>
-<td style="text-align:left">999.00</td>
-<td style="text-align:left">现金</td>
-<td style="text-align:left">特殊收入</td>
-<td style="text-align:left">…</td>
-</tr>
-<tr>
-<td style="text-align:left">20160808周一</td>
-<td style="text-align:left">提现</td>
-<td style="text-align:left">收入</td>
-<td style="text-align:left">999.00</td>
-<td style="text-align:left">现金</td>
-<td style="text-align:left">内部转账</td>
-<td style="text-align:left">…</td>
-</tr>
-</tbody>
-</table>
-<p>分析支付宝记账本</p>
-<h1 id="本月时间-本月支出-本月收入"><a href="#本月时间-本月支出-本月收入" class="headerlink" title="本月时间  本月支出  本月收入"></a><code>本月时间</code>  <code>本月支出</code>  <code>本月收入</code></h1><p>##明细<br>    时间 地点 消费类型 备注（默认显示） 金额  当天支出 当天收入   可修改</p>
-<p>##类别报表<br>    当月收入比例、</p>
-<p>##账户<br>    银行卡账户、支付宝账户、微信账户、现金</p>
-<p>#记一笔</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/21/DateUtils/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/21/DateUtils/" itemprop="url">
-                  DateUtils
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-21T15:30:49+08:00">
-                2016-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>处理时间的工具类<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/21/DateUtils/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/21/json解析技巧/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/21/json解析技巧/" itemprop="url">
-                  json解析技巧
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-21T15:23:27+08:00">
-                2016-09-21
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>List<Car> cars   返回填充对象的集合<br>Car[] cars 返回对象的数组</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/21/json解析技巧/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/14/在Linux系统上配置android开发环境/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/14/在Linux系统上配置android开发环境/" itemprop="url">
-                  在Linux系统上配置android开发环境
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-14T22:17:30+08:00">
-                2016-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>android studio 安装配置<br>    sudo apt-add-repository ppa:paolorotolo/android-studio<br>    sudo apt-get update<br>    sudo apt-get install android-studio</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/14/Android的BaseActivity如何编写/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/14/Android的BaseActivity如何编写/" itemprop="url">
-                  Android的BaseActivity如何编写
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-14T14:25:19+08:00">
-                2016-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>BaseActivity如何编写<br>主要用于重写一些共有的逻辑</p>
-<p>##在BaseActivity的生命周期中复写友盟数据统计方法</p>
-<p>##保存Context对象，保存activity栈<br>BaseActivity.java</p>
-<pre><code>mContext=this;
-Config.setActivityState(this);
-</code></pre><p>Config.java</p>
-<pre><code>public static void setActivityState(Activity activity){
-currentContext = activity;
-activity.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-//自定义栈
-UUApp.getInstance().addActivity(activity);
-}
-</code></pre><p>BaseActivity.java</p>
-<pre><code>@Override
-protected void onDestroy() {
-    super.onDestroy();
-    // 在BaseActivity中的Activity栈中移除Activity
-    UUApp.getInstance().removeActivity(this);
-}
-</code></pre><p>##在生命周期方法中对事件总线框架EventBus进行注册和反注册<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/14/Android的BaseActivity如何编写/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/14/app启动页面优化/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/14/app启动页面优化/" itemprop="url">
-                  app启动页面优化
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-14T14:24:21+08:00">
-                2016-09-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>##启动页面优化<br>启动页面主要用于页面展示，加载网络配置信息，跳转到首页</p>
-<ul>
-<li>加载H5页面</li>
-<li>加载请求用户信息</li>
-<li>定时跳转，无网络也会跳转首页</li>
-</ul>
-<p>网络跳转优化</p>
-<pre><code>timer = new Timer();
-timerTask = new TimerTask() {
-@Override
-public void run() {
-if (isComplete) {
-L.i(&quot;等待2s完成，取消timer任务...&quot;);
-cancelTimer();
-return;
-}
-if (isLoadStartQueryComplete &amp;&amp; isLoadUserInfoComplete) {
-// 已经显示过引导图
-L.i(&quot;StartActivity中网络请求完成，执行跳转逻辑.....&quot;);
-handler.sendEmptyMessage(eventWhat);
-L.i(&quot;StartActivity中网络请求完成，取消timer任务...&quot;);
-cancelTimer();
-}
-}
-};
-timer.schedule(timerTask, 0, 100);
-</code></pre><p>创建一个timer任务，每隔100ms执行一次，判断这两个拉取网络配置信息的异步消息是否已经完成，若已经完成的话则发送handler消息跳转主界面，若2秒钟之内都没有完成拉取任务，则直接跳转同时取消timer任务。<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/09/14/app启动页面优化/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1763,7 +1697,7 @@ timer.schedule(timerTask, 0, 100);
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-count">82</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1772,7 +1706,7 @@ timer.schedule(timerTask, 0, 100);
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -1781,7 +1715,7 @@ timer.schedule(timerTask, 0, 100);
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-count">71</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
