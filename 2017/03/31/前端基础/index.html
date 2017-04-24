@@ -1,0 +1,738 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="js,html,css," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="HTML 中的脚本必须位于  与  标签之间脚本可被放置在 HTML 页面的 &amp;lt;body&amp;gt; 和 &amp;lt;head&amp;gt; 部分中。  写入 HTML 输出123&amp;lt;script&amp;gt;document.write(&quot;&amp;lt;h1&amp;gt;This is a heading&amp;lt;/h1&amp;gt;&quot;);&amp;lt;/script&amp;gt;  只能在 HTML 输出中使用 document.w">
+<meta name="keywords" content="js,html,css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端基础">
+<meta property="og:url" content="http://yoursite.com/2017/03/31/前端基础/index.html">
+<meta property="og:site_name" content="捡来·放去">
+<meta property="og:description" content="HTML 中的脚本必须位于  与  标签之间脚本可被放置在 HTML 页面的 &amp;lt;body&amp;gt; 和 &amp;lt;head&amp;gt; 部分中。  写入 HTML 输出123&amp;lt;script&amp;gt;document.write(&quot;&amp;lt;h1&amp;gt;This is a heading&amp;lt;/h1&amp;gt;&quot;);&amp;lt;/script&amp;gt;  只能在 HTML 输出中使用 document.w">
+<meta property="og:updated_time" content="2017-04-21T01:25:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端基础">
+<meta name="twitter:description" content="HTML 中的脚本必须位于  与  标签之间脚本可被放置在 HTML 页面的 &amp;lt;body&amp;gt; 和 &amp;lt;head&amp;gt; 部分中。  写入 HTML 输出123&amp;lt;script&amp;gt;document.write(&quot;&amp;lt;h1&amp;gt;This is a heading&amp;lt;/h1&amp;gt;&quot;);&amp;lt;/script&amp;gt;  只能在 HTML 输出中使用 document.w">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/31/前端基础/"/>
+
+
+
+
+
+  <title> 前端基础 | 捡来·放去 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">捡来·放去</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pic">
+          <a href="/pic" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/blog/vue" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/前端基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                前端基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T14:39:51+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>HTML 中的脚本必须位于 <script> 与 </script> 标签之间<br>脚本可被放置在 HTML 页面的 <code>&lt;body&gt;</code> 和 <code>&lt;head&gt;</code> 部分中。</p>
+</blockquote>
+<p>写入 HTML 输出<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h1&gt;This is a heading&lt;/h1&gt;"</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>只能在 HTML 输出中使用 document.write。如果您在文档加载后使用该方法，会覆盖整个文档。</p>
+</blockquote>
+<hr>
+<p>点击事件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	...</div><div class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"alert('Welcome!')"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">	...</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>方法调用,改变文字和样式<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">JavaScript 00000000000000000</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeDoc</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	x = <span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>);<span class="comment">//找到元素</span></div><div class="line">	x.innerHTML = <span class="string">"CHANGE DOC"</span>;<span class="comment">//改变内同</span></div><div class="line">	x.style.color=<span class="string">"#ff0000"</span>;<span class="comment">// 改变样式</span></div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"changeDoc()"</span>&gt;</span>changeDoc<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>点击图片切换图片<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function changeImage()&#123;</div><div class="line">element=document.getElementById('myimage')</div><div class="line">if (element.src.match("bulbon"))&#123;</div><div class="line">  element.src="/i/eg_bulboff.gif";</div><div class="line">  &#125;else&#123;</div><div class="line">  element.src="/i/eg_bulbon.gif";</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"myimage"</span> <span class="attr">onclick</span>=<span class="string">"changeImage()"</span> <span class="attr">src</span>=<span class="string">"/i/eg_bulboff.gif"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>输入和验证</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"checkNum()"</span>&gt;</span>checkNum<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">...</div><div class="line"></div><div class="line">function checkNum()&#123;</div><div class="line">	var demo2 = document.getElementById("demo2").value;</div><div class="line">	if(demo2==""||isNaN(demo2))&#123;</div><div class="line">			alert("not numeric"+demo2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果重新声明 JavaScript 变量，该变量的值不会丢失</p>
+</blockquote>
+<hr>
+<p>数据类型:<br>字符串、数字、布尔、数组、对象、Null、Undefined</p>
+<p>数组的声明<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var cars=new Array();</div><div class="line">cars[0]="Audi";</div><div class="line">cars[1]="BMW";</div><div class="line">cars[2]="Volvo";</div><div class="line"></div><div class="line">或者</div><div class="line">var cars=new Array("Audi","BMW","Volvo");</div><div class="line"></div><div class="line">或者</div><div class="line">var cars=["Audi","BMW","Volvo"];</div></pre></td></tr></table></figure></p>
+<p>对象的寻址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">	person=new Object();</div><div class="line">	person.firstname=&quot;Bill&quot;;</div><div class="line">	person.lastname=&quot;Gates&quot;;</div><div class="line">	person.age=56;</div><div class="line">	person.eyecolor=&quot;blue&quot;;</div><div class="line"></div><div class="line">	var person=&#123;firstname:&quot;Bill&quot;, lastname:&quot;Gates&quot;, id:5566&#125;;</div><div class="line">	···</div><div class="line">	</div><div class="line">	name=person.lastname;</div><div class="line">或者</div><div class="line">	name=person[&quot;lastname&quot;];</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Undefined 和 Null<br>Undefined 这个值表示变量不含有值。<br>可以通过将变量的值设置为 null 来清空变量。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>JavaScript 变量的生存期<br>JavaScript 变量的生命期从它们被声明的时间开始。<br>局部变量会在函数运行以后被删除。<br>全局变量会在页面关闭后被删除。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>===    全等（值和类型）<br>值和类型一致才返回true</p>
+</blockquote>
+<hr>
+<p>for/in循环遍历对象的属性：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var person=&#123;fname:"John",lname:"Doe",age:25&#125;;</div><div class="line"></div><div class="line">for (x in person)</div><div class="line">  &#123;</div><div class="line">  txt=txt + person[x];</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>label标签<br>continue 语句（带有或不带标签引用）只能用在循环中。<br>break 语句（不带标签引用），只能用在循环或 switch 中。<br>通过标签引用，break 语句可用于跳出任何 JavaScript 代码块</p>
+</blockquote>
+<p>通过标签名查找 HTML 元素</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var x=document.getElementById("main");</div><div class="line">var y=x.getElementsByTagName("p");//<span class="tag">&lt;<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>onload 和 onunload 事件<br>onload 和 onunload 事件会在用户进入或离开页面时被触发。<br>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。<br>onload 和 onunload 事件可用于处理 cookie。</p>
+<p>onchange 事件<br>onchange 事件常结合对输入字段的验证来使用。</p>
+<p>onmouseover 和 onmouseout 事件<br>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
+<p>onmousedown、onmouseup 以及 onclick 事件<br>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
+<blockquote>
+<p>从父元素中删除子元素：<br>parent.removeChild(child);<br>parent.appendChild(node);</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Window 对象<br>所有浏览器都支持 window 对象。它表示浏览器窗口。</p>
+</blockquote>
+<p>##css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">aa 元素选择器</div><div class="line">#aa id选择器</div><div class="line">.aa 类选择器 </div><div class="line">[]aa 属性选择器</div></pre></td></tr></table></figure></p>
+<p>类名用空格分开属于两个类名<br>class=”important urgent”</p>
+<p>.important.urgent {background:silver;}</p>
+<p>把两个类选择器链接在一起，仅可以选择同时包含这些类名的元素（类名的顺序不限）。<br>如果一个多类选择器包含类名列表中没有的一个类名，匹配就会失败。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">console.log(`[Card---beforeUpdate], tabName: $&#123;this.tabName&#125;`+",调用fetchData");//此处的变量会有值</div><div class="line">如果换成'' ,则直接打印字符串</div><div class="line">''</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/html/" rel="tag"># html</a>
+          
+            <a href="/tags/css/" rel="tag"># css</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/31/出现Template-render-error-unknown-path/" rel="next" title="hexo博客出现Template render error: (unknown path)?">
+                <i class="fa fa-chevron-left"></i> hexo博客出现Template render error: (unknown path)?
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/15/vue开发入门/" rel="prev" title="vue开发入门">
+                vue开发入门 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg"
+               alt="ChrisLanbo" />
+          <p class="site-author-name" itemprop="name">ChrisLanbo</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChrisLanbo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

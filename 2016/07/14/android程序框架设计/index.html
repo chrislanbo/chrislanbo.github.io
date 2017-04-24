@@ -1,0 +1,824 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="android,框架设计," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="#Android 程序框架设计 ###1、主要说明    框架说明：    1 基于HTTP协议进行通信    2 利用json格式传输数据。    客户端以POST方式用UTF-8编码提交网络请求，主要模块有通用framework,view视图，业务逻辑(系统调度)模块，本地数据处理模块，http模块，工具类。http请求解析，传输到业务处理模块，然后本地处理数据模块进行文件保存,若展示则 通过">
+<meta name="keywords" content="android,框架设计">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 程序框架设计">
+<meta property="og:url" content="http://yoursite.com/2016/07/14/android程序框架设计/index.html">
+<meta property="og:site_name" content="捡来·放去">
+<meta property="og:description" content="#Android 程序框架设计 ###1、主要说明    框架说明：    1 基于HTTP协议进行通信    2 利用json格式传输数据。    客户端以POST方式用UTF-8编码提交网络请求，主要模块有通用framework,view视图，业务逻辑(系统调度)模块，本地数据处理模块，http模块，工具类。http请求解析，传输到业务处理模块，然后本地处理数据模块进行文件保存,若展示则 通过">
+<meta property="og:updated_time" content="2017-04-21T01:25:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 程序框架设计">
+<meta name="twitter:description" content="#Android 程序框架设计 ###1、主要说明    框架说明：    1 基于HTTP协议进行通信    2 利用json格式传输数据。    客户端以POST方式用UTF-8编码提交网络请求，主要模块有通用framework,view视图，业务逻辑(系统调度)模块，本地数据处理模块，http模块，工具类。http请求解析，传输到业务处理模块，然后本地处理数据模块进行文件保存,若展示则 通过">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/07/14/android程序框架设计/"/>
+
+
+
+
+
+  <title> Android 程序框架设计 | 捡来·放去 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">捡来·放去</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pic">
+          <a href="/pic" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/blog/vue" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/07/14/android程序框架设计/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Android 程序框架设计
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-07-14T11:25:11+08:00">
+                2016-07-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Android 程序框架设计</p>
+<p>###1、主要说明<br>    框架说明：<br>    1 基于HTTP协议进行通信<br>    2 利用json格式传输数据。<br>    客户端以POST方式用UTF-8编码提交网络请求，主要模块有通用framework,view视图，业务逻辑(系统调度)模块，本地数据处理模块，http模块，工具类。http请求解析，传输到业务处理模块，然后本地处理数据模块进行文件保存,若展示则 通过业务处理模块，最终在view视图上显示。</p>
+<p>###2、设计细项<br>2.1 共通类的设计</p>
+<pre><code>概念完整性：
+- 开发过程中，需求、设计、编码的一致性
+- 整个程序具有统一的风格，比如对话框样式，按钮风格，色调等UI元素
+- 整个程序具体统一的结构，比如不同模块访问网络，它们的调用方式一致，例如异步访问都用回调方式通知结果，相同的功能应该提取成共通模块。
+- 开发人员能很好的执行需求人员和设计人员的意图。
+- 有完整的文档，需求文档，设计文档，测试文档，处理流程的文档等。
+</code></pre><p>2.1.1 Widget设计</p>
+<pre><code>尽量在style文件中定义样式。
+TextView
+EditText
+Button
+Title bar
+Tool bar
+</code></pre><h3 id="为什么要提供这些共通控件？"><a href="#为什么要提供这些共通控件？" class="headerlink" title="为什么要提供这些共通控件？"></a>为什么要提供这些共通控件？</h3><p>统一字体大小，如App字体不随系统字体变化而变化<br>统一UI式样，如Button， EditText具有相同的背景等<br>复用代码</p>
+<p>2.1.2 Adapter Items</p>
+<pre><code>- 根据式样，提取需要在AdapterView中显示的Item
+- 简单的复合布局
+- 自绘制，从而提高滑动性能
+- ListView中放Gallery时，提高上下滑动性能
+- 尽量优化绘制
+</code></pre><h3 id="数据驱动"><a href="#数据驱动" class="headerlink" title="数据驱动"></a>数据驱动</h3><pre><code>Adapter Items提供核心的方法
+- setData(Object data)
+- getData();
+- Adapter#getView实现更加简单
+- 实现简单
+- 不会因为UI变化而变化
+</code></pre><p>下面代码示例了Adapter#getView()方法的实现，它返回BookView，BookView提供方法来接收数据，至于BookView的显示，则根据设置的数据来显示，这就是数据驱动UI。</p>
+<pre><code>@Override
+public View getView(int position, View convertView, ViewGroup parent) {
+if (null == convertView) {
+    convertView = new BookView(getContext());
+    convertView.setLayoutParameter(new AbsListView.LayoutParameter(150, 150));
+}
+
+Book book = m_bookList.get(position);
+BookView bookView = (BookView)convertView;
+bookView.setBook(book);
+
+return convertView;
+}
+</code></pre><p>2.1.3 Dialog</p>
+<pre><code>扩展于Dialog类
+提供Dialog关闭的事件
+Dialog的高度随内容的变化而变化
+可以设置按钮的文字，可见性，字体等方法
+设置按钮点击事件的listener
+要考虑对话框的三个属性：Title, Content area, Action buttons
+</code></pre><p>2.1.4 Utility</p>
+<pre><code>工具类统一放于一个包下面。
+Log
+DateFormat
+Bitmap
+Notification
+Shared Preference
+Environment
+Device
+</code></pre><p>…<br>2.2 Task管理<br>线程只是一种机制，保证我们要完成的任务不运行在UI线程（也就是说不阻塞UI），完成的任务才是我们关注的核心，因此，我们可以通过设计，把线程封装，让使用者根本感觉不到是线程，他只用关心他要做的事情就行了。<br>这里，我们可以设计一种”异步链式调用”的框架，把线程进行了封装。使用都只需要这样用：</p>
+<pre><code>new TaskManager()
+.next(task1)
+.next(task2)
+.next(task3).
+.execute();
+</code></pre><p>这里，task1, task2, task3是顺序执行的，举个例子：我们要访问网络，取得一个图片，使用这个TaskManager我们需要3个task，<br>task1:显示一个ProgressDialog。<br>task2:访问网络，创建bitmap。<br>task3:关闭对话框，显示bitmap。<br>这一点，可以参考CoreLib工程中的task.TaskManager类。<br>关于TaskManager，有以下几点需要注意：<br>-封装了线程<br>让调用者只关注自己的业务处理<br>保证顺序链式地执行某一个任务<br>上一个任务的输出，作为下一个任务的输入<br>能暂停、恢复任何一个任务</p>
+<p>2.3 缓存设计</p>
+<pre><code>把内存占用量大的对象存放在缓存中，如bitmap
+利用了Cache类来实现
+利用了AsyncTask类来加载bitmap
+不用再手动释放bitmap内存，该操作有风险
+不用再关心AbsListView的scroll状态
+关于缓存的更多详细细节，请参考[ 请参考CoreLib工程中的cache包 ]。
+这样做，有什么好处， 不用再手动释放bitmap内存，该操作有风险，因为该bitmap是否有View引用，如果当一个View在试图绘制一个已经回收的bitmap，这里会抛出异常。
+</code></pre><p>2.4 线程管理<br>无消息循环的线程：</p>
+<pre><code>new Thread(null, new Runnable() {
+public void run() {
+    // Do you works.
+}    
+}, &quot;Thread_name_xxx&quot;).start();
+</code></pre><p>什么情况下使用这种线程：</p>
+<pre><code>做完一件事情就结束，这件事发生频率不高，比如从SD card中读取图片数据
+不需要复用线程
+在使用线程，最好给线程加上名字，这样利用高度与跟踪。
+有消息循环的线程：
+这样的线程拥有消息循环，当消息队列中没有消息时，这个线程会被挂起。我们要做一件事情时，只需要给它发送一个消息就行了。
+这种情况通常是为了复用线程，不用频繁创建线程，比如音乐播放器程序，专门启动一个有消息循环的线程来获得音乐的专辑图片。
+我们通常还要创建一个与这个线程的消息循环（Looper）相关联的Handler，由它来处理消息，注意，这做的事情是运行在后台线程的。
+</code></pre><p>3，程序框架如何设计</p>
+<pre><code>Android程序的结构
+UI层
+数据展示与管理
+用户交互
+绘制
+Adapter
+业务逻辑层
+持久化数据（内存中，相当于全局数据）
+数据加式（数据层的数据有时候需要进行加工成UI层需要的数据）
+数据变化的通知机制
+数据层
+数据访问（DB，文件，网络等）
+缓存（图片，文件等）
+配置文件（sharedpreferences）
+</code></pre><p>下面，我试着画了一下Android程序的结构，如果有不好的地方，欢迎指正。</p>
+<p>##4、一些基本原则<br>下面列出一些通常的原则，我们应当在开发过程中遵循，欢迎补充与指正。</p>
+<p>4.1 提供initialize()方法<br>在Activity.onCreate()或者View的构造方法中调用，在以后看代码时，人们通常首先会去找initialize()这样的方法。<br>Initview();initListener().</p>
+<p>4.2 封装点击事件<br>把View的点击事件，提成方法，这样在listener处只是一个方法调用者，一般的事件封装为：onXXXClick(View v)。</p>
+<p>4.3 设计一个BaseActivity类<br>让所有的Activity都继承自BaseActivity类，这样，我们可以做很多有用的事情<br>-定义共通属性<br>显示共通对话框（Progress dialog)<br>取得top activity<br>可以手动管理启动的activity</p>
+<p>4.4 设计Application类<br>存全局数据，比top activity, application context。</p>
+<p>4.5 异常处理</p>
+<pre><code>- 报告功能是处理异常的精髓
+- 在finally块中执行清理操作
+- 不要用try-catch-finally来判断业务逻辑
+- 考虑设计自定义的异常类
+</code></pre><p>4.6 标注的使用<br>-重写的方法一定要加@Override<br>不使用的方法，不要删除，可以标记为@Deprecated，这个做法在维护型的项目中特别有用。</p>
+<p>4.7 注册与反注册<br>-局部广播<br>各种listener<br>Service等</p>
+<p>4.8 封装Bitmap操作<br>我们应当把Bitmap操作封装起来，比如从文件加载，保存，网络下载，动态计算sample size等。有了封装后，我们可以对其集中优化。</p>
+<p>4.9 绘制处理<br>一定要注意绘制方面的东西，不要在onDraw()/onTouchEvent()中创建新对象。</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/android/" rel="tag"># android</a>
+          
+            <a href="/tags/框架设计/" rel="tag"># 框架设计</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/07/14/自定义view/" rel="next" title="自定义view">
+                <i class="fa fa-chevron-left"></i> 自定义view
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/14/基于Retrofit+Okio+RxBus实现文件下载（带进度）/" rel="prev" title="基于Retrofit+Okio+RxBus实现文件下载（带进度）">
+                基于Retrofit+Okio+RxBus实现文件下载（带进度） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg"
+               alt="ChrisLanbo" />
+          <p class="site-author-name" itemprop="name">ChrisLanbo</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么要提供这些共通控件？"><span class="nav-number">1.</span> <span class="nav-text">为什么要提供这些共通控件？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据驱动"><span class="nav-number">2.</span> <span class="nav-text">数据驱动</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChrisLanbo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

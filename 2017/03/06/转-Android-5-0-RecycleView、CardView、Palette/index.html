@@ -1,0 +1,816 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="[转] Android 5.0+(RecycleView、CardView、Palette) ﻿Android L 开发者预览支持库提供两个新的Widgets，RecyclerView和CardView。使用这两个Widgets可以显示复杂的Listview和卡片布局，这两个Widgets默认使用Material design。 RecyclerView RecyclerView是一个更高级柔性版">
+<meta name="keywords">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[转] Android 5.0+(RecycleView、CardView、Palette)">
+<meta property="og:url" content="http://yoursite.com/2017/03/06/转-Android-5-0-RecycleView、CardView、Palette/index.html">
+<meta property="og:site_name" content="捡来·放去">
+<meta property="og:description" content="[转] Android 5.0+(RecycleView、CardView、Palette) ﻿Android L 开发者预览支持库提供两个新的Widgets，RecyclerView和CardView。使用这两个Widgets可以显示复杂的Listview和卡片布局，这两个Widgets默认使用Material design。 RecyclerView RecyclerView是一个更高级柔性版">
+<meta property="og:updated_time" content="2017-04-21T01:25:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[转] Android 5.0+(RecycleView、CardView、Palette)">
+<meta name="twitter:description" content="[转] Android 5.0+(RecycleView、CardView、Palette) ﻿Android L 开发者预览支持库提供两个新的Widgets，RecyclerView和CardView。使用这两个Widgets可以显示复杂的Listview和卡片布局，这两个Widgets默认使用Material design。 RecyclerView RecyclerView是一个更高级柔性版">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/03/06/转-Android-5-0-RecycleView、CardView、Palette/"/>
+
+
+
+
+
+  <title> [转] Android 5.0+(RecycleView、CardView、Palette) | 捡来·放去 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">捡来·放去</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pic">
+          <a href="/pic" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/blog/vue" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/06/转-Android-5-0-RecycleView、CardView、Palette/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                [转] Android 5.0+(RecycleView、CardView、Palette)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-06T10:01:42+08:00">
+                2017-03-06
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[转] Android 5.0+(RecycleView、CardView、Palette)</p>
+<p>﻿Android L 开发者预览支持库提供两个新的Widgets，RecyclerView和CardView。使用这两个Widgets可以显示复杂的Listview和卡片布局，这两个Widgets默认使用Material design。</p>
+<p>RecyclerView</p>
+<pre><code>RecyclerView是一个更高级柔性版本的Listview，RecyclerView是一个能包含很多视图的容器，它能完美的处理循环和滚动。在item动态变化的Listview使用RecyclerView。
+</code></pre><p>RecyclerView使用很简单，因为它提供了：</p>
+<p>1、定位item的布局管理器</p>
+<p>2、常见的item操作默认动画</p>
+<p>你能够灵活的为RecyclerView自定义布局管理器和动画。</p>
+<p>使用RecyclerView，必须使用指定一个adapter、定义一个布局管理器。创建adapter必须继承自RecyclerView.Adapter。实施的细节需要看数据类型和需要的视图。</p>
+<p>   RecyclerView widget</p>
+<p>RecyclerView 提供了 LayoutManager，RecylerView 不负责子 View 的布局</p>
+<p>目前提供了</p>
+<p>LinearLayoutManager(显示垂直或水平滚动列表中的条目。)</p>
+<p>GridLayoutManager(在一个网格显示项)</p>
+<p>StaggeredGridLayoutManager（在交错网格显示项。）</p>
+<p>以上如果不满足要求，那么你可以继承RecyclerView.LayoutManager</p>
+<p>Animations</p>
+<p>动画添加和删除项目在RecyclerView默认启用。自定义动画只需要继承RecyclerView.ItemAnimator类并使用RecyclerView.setItemAnimator()方法。</p>
+<p>使用：</p>
+<p>studio build.gradle  添加</p>
+<pre><code>dependencies {
+compile &apos;com.android.support:recyclerview-v7:22.2.0’
+}
+</code></pre><p>RecyclerView Demo：</p>
+<p>1、布局文件</p>
+<pre><code>&lt;!-- A RecyclerView with some commonly used attributes --&gt;
+&lt;android.support.v7.widget.RecyclerView
+android:id=&quot;@+id/my_recycler_view&quot;
+android:scrollbars=&quot;vertical&quot;
+android:layout_width=&quot;match_parent&quot;
+android:layout_height=&quot;match_parent&quot;/&gt;
+</code></pre><p>2、Activity文件</p>
+<pre><code>public class MyActivity extends Activity {
+private RecyclerView mRecyclerView;
+private RecyclerView.Adapter mAdapter;
+private RecyclerView.LayoutManager mLayoutManager;
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+super.onCreate(savedInstanceState);
+setContentView(R.layout.my_activity);
+mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
+// improve performance if you know that changes in content
+// do not change the size of the RecyclerView
+mRecyclerView.setHasFixedSize(true);
+// use a linear layout manager
+mLayoutManager = new LinearLayoutManager(this);
+mRecyclerView.setLayoutManager(mLayoutManager);
+// specify an adapter (see also next example)
+mAdapter = new MyAdapter(myDataset);
+mRecyclerView.setAdapter(mAdapter);
+}
+...
+}
+</code></pre><p>To create a simple adapter:</p>
+<pre><code>public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; {
+private String[] mDataset;
+// Provide a reference to the type of views that you are using
+// (custom viewholder)
+public static class ViewHolder extends RecyclerView.ViewHolder {
+public TextView mTextView;
+public ViewHolder(TextView v) {
+super(v);
+mTextView = v;
+}
+}
+// Provide a suitable constructor (depends on the kind of dataset)
+public MyAdapter(String[] myDataset) {
+mDataset = myDataset;
+}
+// Create new views (invoked by the layout manager)
+@Override
+public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
+// create a new view
+View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_text_view, null);
+// set the view&apos;s size, margins, paddings and layout parameters
+...
+ViewHolder vh = new ViewHolder(v);
+return vh;
+}
+// Replace the contents of a view (invoked by the layout manager)
+@Override
+public void onBindViewHolder(ViewHolder holder, int position) {
+// - get element from your dataset at this position
+// - replace the contents of the view with that element
+holder.mTextView.setText(mDataset[position]);
+}
+// Return the size of your dataset (invoked by the layout manager)
+@Override
+public int getItemCount() {
+return mDataset.length;
+}
+}
+</code></pre><p>3、Recycler adapter</p>
+<pre><code>public class MyAdapter extends RecyclerView.Adapter&lt;MyAdapter.ViewHolder&gt; {
+private String[] mDataset;
+// Provide a reference to the type of views that you are using
+// (custom viewholder)
+public static class ViewHolder extends RecyclerView.ViewHolder {
+public TextView mTextView;
+public ViewHolder(TextView v) {
+super(v);
+mTextView = v;
+}
+}
+// Provide a suitable constructor (depends on the kind of dataset)
+public MyAdapter(String[] myDataset) {
+mDataset = myDataset;
+}
+// Create new views (invoked by the layout manager)
+@Override
+public MyAdapter.ViewHolder onCreateViewHolder(ViewGroup parent,int viewType) {
+// create a new view
+View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.my_text_view, null);
+// set the view&apos;s size, margins, paddings and layout parameters
+...
+ViewHolder vh = new ViewHolder(v);
+return vh;
+}
+// Replace the contents of a view (invoked by the layout manager)
+@Override
+public void onBindViewHolder(ViewHolder holder, int position) {
+// - get element from your dataset at this position
+// - replace the contents of the view with that element
+holder.mTextView.setText(mDataset[position]);
+}
+// Return the size of your dataset (invoked by the layout manager)
+@Override
+public int getItemCount() {
+return mDataset.length;
+}
+}
+</code></pre><p>RecyclerView 的标准化了 ViewHolder， 编写 Adapter 面向的是 ViewHoder 而不在是View 了， 复用的逻辑被封装了， 写起来更加简单。</p>
+<p>CardView</p>
+<p>CardView继承自FrameLayout类，可以在一个卡片布局中一致性的显示内容，卡片可以包含圆角和阴影。</p>
+<p>可以使用android:cardElevation属性，创建一个阴影的卡片。</p>
+<p>怎样指定CardView的属性：</p>
+<p>1、使用android:cardCornerRadius属性指定圆角半径</p>
+<p>2、使用CardView.setRadius 设置圆角半径。</p>
+<p>3、使用 android:cardBackgroundColor属性设置卡片颜色<br>compile ‘com.android.support:cardview-v7:22.2.0’</p>
+<p>Palette<br>根据图片来决定标题的颜色和标题栏的背景色，这样视觉上更具有冲击力和新鲜感，而不像统一色调那样呆板。<br>compile ‘com.android.support:palette-v7:22.2.0’</p>
+<p>//获取一张位图<br>Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.img_test);</p>
+<p>//获取一个Builder<br>Palette.Builder from = Palette.from(bitmap);</p>
+<p>//生成颜色 Builder.generate().getter方法 这里简单演示<br>int color =from.generate().getDarkVibrantColor(getResources().getColor(android.R.color.transparent));<br>mHead.setBackgroundColor(color);</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/03/06/windows小技巧/" rel="next" title="windows小技巧">
+                <i class="fa fa-chevron-left"></i> windows小技巧
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/03/06/聚合数据-笑话接口/" rel="prev" title="聚合数据-笑话接口">
+                聚合数据-笑话接口 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg"
+               alt="ChrisLanbo" />
+          <p class="site-author-name" itemprop="name">ChrisLanbo</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChrisLanbo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>

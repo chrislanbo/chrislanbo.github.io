@@ -277,6 +277,205 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/《拾·微》api接口/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/11/《拾·微》api接口/" itemprop="url">
+                  《拾·微》api接口
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-11T15:40:48+08:00">
+                2017-04-11
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="api-接口—《拾·微》"><a href="#api-接口—《拾·微》" class="headerlink" title="api 接口—《拾·微》"></a>api 接口—《拾·微》</h1><ol>
+<li><p>分类数据: <a href="http://gank.io/api/data/数据类型/请求个数/第几页" target="_blank" rel="external">http://gank.io/api/data/数据类型/请求个数/第几页</a></p>
+<ul>
+<li>数据类型： 福利 | Android | iOS | 休息视频 | 拓展资源 | 前端 | all</li>
+<li>请求个数： 数字，大于0</li>
+<li>第几页：数字，大于0</li>
+<li>例：<ul>
+<li><a href="http://gank.io/api/data/Android/10/1" target="_blank" rel="external">http://gank.io/api/data/Android/10/1</a></li>
+<li><a href="http://gank.io/api/data/福利/10/1" target="_blank" rel="external">http://gank.io/api/data/福利/10/1</a></li>
+<li><a href="http://gank.io/api/data/iOS/10/2" target="_blank" rel="external">http://gank.io/api/data/iOS/10/2</a></li>
+<li><a href="http://gank.io/api/data/all/20/2" target="_blank" rel="external">http://gank.io/api/data/all/20/2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>每日数据： <a href="http://gank.io/api/day/年/月/日" target="_blank" rel="external">http://gank.io/api/day/年/月/日</a></p>
+<ul>
+<li>[例]： <a href="http://gank.io/api/day/2015/08/06" target="_blank" rel="external">http://gank.io/api/day/2015/08/06</a></li>
+</ul>
+</li>
+<li><p>随机数据：<a href="http://gank.io/api/random/data/分类/个数" target="_blank" rel="external">http://gank.io/api/random/data/分类/个数</a></p>
+<ul>
+<li>数据类型：福利 | Android | iOS | 休息视频 | 拓展资源 | 前端</li>
+<li>个数： 数字，大于0<ul>
+<li>[例]：<a href="http://gank.io/api/random/data/Android/20" target="_blank" rel="external">http://gank.io/api/random/data/Android/20</a>    </li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h1 id="api-接口—《微·笑》"><a href="#api-接口—《微·笑》" class="headerlink" title="api 接口—《微·笑》"></a>api 接口—《微·笑》</h1><blockquote>
+<p>key = 7bb45624a1ac6a2cd42719716d8f77f6</p>
+</blockquote>
+<ol>
+<li>按照时间查询笑话: <ul>
+<li><a href="http://japi.juhe.cn/joke/content/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237" target="_blank" rel="external">http://japi.juhe.cn/joke/content/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237</a></li>
+</ul>
+</li>
+<li>按照时间查询趣图: <ul>
+<li><a href="http://japi.juhe.cn/joke/img/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237" target="_blank" rel="external">http://japi.juhe.cn/joke/img/list.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=2&amp;pagesize=10&amp;sort=asc&amp;time=1418745237</a></li>
+<li>sort    string    是    类型，desc:指定时间之前发布的，asc:指定时间之后发布的</li>
+<li>time    string    是    时间戳（10位），如：1418816972</li>
+<li>page    int    否    当前页数,默认1</li>
+<li>pagesize    int    否    每次返回条数,默认1,最大20</li>
+<li>key    string    是    您申请的key</li>
+</ul>
+</li>
+<li>最新笑话: <ul>
+<li><a href="http://japi.juhe.cn/joke/content/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10" target="_blank" rel="external">http://japi.juhe.cn/joke/content/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10</a></li>
+</ul>
+</li>
+<li>最新趣图: <ul>
+<li><a href="http://japi.juhe.cn/joke/img/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10" target="_blank" rel="external">http://japi.juhe.cn/joke/img/text.from?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;page=1&amp;pagesize=10</a></li>
+<li>page    int    否    当前页数,默认1</li>
+<li>pagesize    int    否    每次返回条数,默认1,最大20</li>
+<li>key    string    是    您申请的key</li>
+</ul>
+</li>
+<li><p>随机获取图/文: </p>
+<ul>
+<li><a href="http://v.juhe.cn/joke/randJoke.php?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;type=pic" target="_blank" rel="external">http://v.juhe.cn/joke/randJoke.php?key=7bb45624a1ac6a2cd42719716d8f77f6&amp;type=pic</a></li>
+<li>key    string    是    你申请的key</li>
+<li>type    string    否    类型(pic:趣图,不传默认为笑话)</li>
+</ul>
+<hr>
+<p>返回数据含义</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">error_code	int	    状态码</div><div class="line">reason	  string	提示信息</div><div class="line">result	  string	返回内容</div><div class="line">content	  string	笑话内容或题目</div><div class="line">hashId	  string	笑话或趣图的唯一标识</div><div class="line">unixtime	long	笑话或趣图更新的时间戳</div><div class="line">url	      string	趣图地址(只有是趣图的时候才返回此字段)</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<hr>
+<h1 id="api-接口—《微·知》"><a href="#api-接口—《微·知》" class="headerlink" title="api 接口—《微·知》"></a>api 接口—《微·知》</h1><blockquote>
+<p>key =  12150ee73eef17e0eb4eed6d30d9498d</p>
+</blockquote>
+<ol>
+<li>微信精选: <a href="http://v.juhe.cn/weixin/query?key=12150ee73eef17e0eb4eed6d30d9498d&amp;ps=10" target="_blank" rel="external">http://v.juhe.cn/weixin/query?key=12150ee73eef17e0eb4eed6d30d9498d&amp;ps=10</a><ul>
+<li>pno    int    否    当前页数，默认1</li>
+<li>ps    int    否    每页返回条数，最大50，默认20</li>
+<li>key    string    是    应用APPKEY</li>
+<li>dtype    string    否    返回数据的格式,xml或json，默认json</li>
+</ul>
+</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/11/vue/Vue中class与style绑定详解/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -533,11 +732,974 @@
 
 
     
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/出现Template-render-error-unknown-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/31/出现Template-render-error-unknown-path/" itemprop="url">
+                  hexo博客出现Template render error: (unknown path)?
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T15:25:02+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用<code>hexo d</code>等命令都提示<code>Template render error: (unknown path)?</code><br>可能是刚创建的文章中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#125;&#125;，&#123;% %&#125;...</div></pre></td></tr></table></figure>
+<p>等转义失败的符号，需要用```注释</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/前端基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/31/前端基础/" itemprop="url">
+                  前端基础
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T14:39:51+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>HTML 中的脚本必须位于 <script> 与 </script> 标签之间<br>脚本可被放置在 HTML 页面的 <code>&lt;body&gt;</code> 和 <code>&lt;head&gt;</code> 部分中。</p>
+</blockquote>
+<p>写入 HTML 输出<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line"><span class="built_in">document</span>.write(<span class="string">"&lt;h1&gt;This is a heading&lt;/h1&gt;"</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>只能在 HTML 输出中使用 document.write。如果您在文档加载后使用该方法，会覆盖整个文档。</p>
+</blockquote>
+<hr>
+<p>点击事件<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	...</div><div class="line">	<span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"alert('Welcome!')"</span>&gt;</span>点击这里<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">	...</div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>方法调用,改变文字和样式<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">id</span>=<span class="string">"demo"</span>&gt;</span></div><div class="line">JavaScript 00000000000000000</div><div class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line">...</div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeDoc</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	x = <span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>);<span class="comment">//找到元素</span></div><div class="line">	x.innerHTML = <span class="string">"CHANGE DOC"</span>;<span class="comment">//改变内同</span></div><div class="line">	x.style.color=<span class="string">"#ff0000"</span>;<span class="comment">// 改变样式</span></div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"changeDoc()"</span>&gt;</span>changeDoc<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>点击图片切换图片<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function changeImage()&#123;</div><div class="line">element=document.getElementById('myimage')</div><div class="line">if (element.src.match("bulbon"))&#123;</div><div class="line">  element.src="/i/eg_bulboff.gif";</div><div class="line">  &#125;else&#123;</div><div class="line">  element.src="/i/eg_bulbon.gif";</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"myimage"</span> <span class="attr">onclick</span>=<span class="string">"changeImage()"</span> <span class="attr">src</span>=<span class="string">"/i/eg_bulboff.gif"</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<hr>
+<p>输入和验证</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"demo2"</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">onclick</span>=<span class="string">"checkNum()"</span>&gt;</span>checkNum<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">...</div><div class="line"></div><div class="line">function checkNum()&#123;</div><div class="line">	var demo2 = document.getElementById("demo2").value;</div><div class="line">	if(demo2==""||isNaN(demo2))&#123;</div><div class="line">			alert("not numeric"+demo2);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>如果重新声明 JavaScript 变量，该变量的值不会丢失</p>
+</blockquote>
+<hr>
+<p>数据类型:<br>字符串、数字、布尔、数组、对象、Null、Undefined</p>
+<p>数组的声明<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">var cars=new Array();</div><div class="line">cars[0]="Audi";</div><div class="line">cars[1]="BMW";</div><div class="line">cars[2]="Volvo";</div><div class="line"></div><div class="line">或者</div><div class="line">var cars=new Array("Audi","BMW","Volvo");</div><div class="line"></div><div class="line">或者</div><div class="line">var cars=["Audi","BMW","Volvo"];</div></pre></td></tr></table></figure></p>
+<p>对象的寻址<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">	person=new Object();</div><div class="line">	person.firstname=&quot;Bill&quot;;</div><div class="line">	person.lastname=&quot;Gates&quot;;</div><div class="line">	person.age=56;</div><div class="line">	person.eyecolor=&quot;blue&quot;;</div><div class="line"></div><div class="line">	var person=&#123;firstname:&quot;Bill&quot;, lastname:&quot;Gates&quot;, id:5566&#125;;</div><div class="line">	···</div><div class="line">	</div><div class="line">	name=person.lastname;</div><div class="line">或者</div><div class="line">	name=person[&quot;lastname&quot;];</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>Undefined 和 Null<br>Undefined 这个值表示变量不含有值。<br>可以通过将变量的值设置为 null 来清空变量。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>JavaScript 变量的生存期<br>JavaScript 变量的生命期从它们被声明的时间开始。<br>局部变量会在函数运行以后被删除。<br>全局变量会在页面关闭后被删除。</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>===    全等（值和类型）<br>值和类型一致才返回true</p>
+</blockquote>
+<hr>
+<p>for/in循环遍历对象的属性：<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var person=&#123;fname:"John",lname:"Doe",age:25&#125;;</div><div class="line"></div><div class="line">for (x in person)</div><div class="line">  &#123;</div><div class="line">  txt=txt + person[x];</div><div class="line">  &#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>label标签<br>continue 语句（带有或不带标签引用）只能用在循环中。<br>break 语句（不带标签引用），只能用在循环或 switch 中。<br>通过标签引用，break 语句可用于跳出任何 JavaScript 代码块</p>
+</blockquote>
+<p>通过标签名查找 HTML 元素</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var x=document.getElementById("main");</div><div class="line">var y=x.getElementsByTagName("p");//<span class="tag">&lt;<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>onload 和 onunload 事件<br>onload 和 onunload 事件会在用户进入或离开页面时被触发。<br>onload 事件可用于检测访问者的浏览器类型和浏览器版本，并基于这些信息来加载网页的正确版本。<br>onload 和 onunload 事件可用于处理 cookie。</p>
+<p>onchange 事件<br>onchange 事件常结合对输入字段的验证来使用。</p>
+<p>onmouseover 和 onmouseout 事件<br>onmouseover 和 onmouseout 事件可用于在用户的鼠标移至 HTML 元素上方或移出元素时触发函数。</p>
+<p>onmousedown、onmouseup 以及 onclick 事件<br>onmousedown, onmouseup 以及 onclick 构成了鼠标点击事件的所有部分。首先当点击鼠标按钮时，会触发 onmousedown 事件，当释放鼠标按钮时，会触发 onmouseup 事件，最后，当完成鼠标点击时，会触发 onclick 事件。</p>
+<blockquote>
+<p>从父元素中删除子元素：<br>parent.removeChild(child);<br>parent.appendChild(node);</p>
+</blockquote>
+<hr>
+<blockquote>
+<p>Window 对象<br>所有浏览器都支持 window 对象。它表示浏览器窗口。</p>
+</blockquote>
+<p>##css<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">aa 元素选择器</div><div class="line">#aa id选择器</div><div class="line">.aa 类选择器 </div><div class="line">[]aa 属性选择器</div></pre></td></tr></table></figure></p>
+<p>类名用空格分开属于两个类名<br>class=”important urgent”</p>
+<p>.important.urgent {background:silver;}</p>
+<p>把两个类选择器链接在一起，仅可以选择同时包含这些类名的元素（类名的顺序不限）。<br>如果一个多类选择器包含类名列表中没有的一个类名，匹配就会失败。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">console.log(`[Card---beforeUpdate], tabName: $&#123;this.tabName&#125;`+",调用fetchData");//此处的变量会有值</div><div class="line">如果换成'' ,则直接打印字符串</div><div class="line">''</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/vue开发入门/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/15/vue开发入门/" itemprop="url">
+                  vue开发入门
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T16:16:13+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p>前戏：</p>
+<ol>
+<li>node.js安装</li>
+<li>vue-cli 构建工具</li>
+<li>使用淘宝镜像（包管理器代替npm）<a href="https://npm.taobao.org/" title="淘宝镜像" target="_blank" rel="external">淘宝镜像</a>、</li>
+</ol>
+</blockquote>
+<ol>
+<li>node.js安装，官网下载安装包一路确定</li>
+<li><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code><br><code>npm config set registry http://registry.npm.taobao.org/</code><br>发布自己的包的时候却需要将源修改回官方的<br><code>npm config set registry https://registry.npmjs.org/</code></li>
+<li><code>npm install -g vue-cli</code> 实在不行试试<code>cnpm install -g vue-cli</code>  </li>
+</ol>
+<p>下载的一些东西会在这里纠缠<code>C:\Users\Administrator\AppData\Roaming\npm\node_modules\vue-cli\</code></p>
+<ol>
+<li>进入自己制定的目录执行<code>vue init webpack vueDemo</code>创建第一个vue项目，然后要依次确认几个问题</li>
+<li>cd 到 vueDemo 执行<code>npm install</code> 下载项目需要的依赖包到<code>node_modules</code>,之前用<code>cnpm install</code>下载总是不全（其实是在windows上默认有很多前缀，导致无法识别）</li>
+<li><code>npm run dev</code>运行项目，对应package.json中的js文件</li>
+<li>在浏览器中输入<code>localhost:8080</code>,查看网页</li>
+<li></li>
+</ol>
+<p>To use this template, you must update following to modules:</p>
+<p>  npm: 2.15.9 should be &gt;= 3.0.0<br>单独升级 npm<br>npm -g install npm@3.10.8</p>
+<pre><code>src/
+    assets/                         ---&gt; 静态资源文件
+    components/                     ---&gt; 组件文件
+    config/                         ---&gt; 项目配置文件
+    filters/                        ---&gt; 过滤器
+    router/                         ---&gt; vue-router配置文件
+    store/                          
+        actions/                    ---&gt; vuex actions
+        getters/                    ---&gt; vuex getters
+        modules/                    ---&gt; vuex modules
+        index.js                    ---&gt; vuex store
+        plugins.js                  ---&gt; vuex plugins
+    utils/                          ---&gt; 共用函数
+    vendor/                         ---&gt; ThirdParty lib
+    views/                          ---&gt; 展示视图库
+    main.js                         ---&gt; 入口文件
+.babelrc                            ---&gt; babel 配置文件
+.eslintrc                           ---&gt; eslint 配置文件
+.gitignore                          ---&gt; gitignore
+index.html                          ---&gt; index
+package.json                        ---&gt; package
+README.md                           ---&gt; 本文件
+webpack.config.common.js            ---&gt; webpack通用配置
+webpack.config.dev.js               ---&gt; webpack开发配置
+</code></pre><p>打开 工程目录下的 App.vue</p>
+<p>template 写 html，script写 js，style写样式</p>
+<p>一个组件下只能有一个并列的 div</p>
+<p>数据要return 出去 像 react 一样</p>
+<pre><code>所有组件.vue名 都统一 《短横线》 命名 we-compnent
+css内下划线( _ )开始的为通用类
+js中内下划线( _ )开头的为私有属性
+所有events均使用短横线 命名
+所有组件(.vue)里template标签包含的元素必须是component-xx 开头
+所有state统一下划线 命名
+所有action统一下划线命名
+</code></pre><p>vue中两个参数用|隔开是什么意思<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;a|b&#125;&#125;</div></pre></td></tr></table></figure></p>
+<p>其实这是vueJs中的过滤器,一个为定义的id,去根据逻辑操作另外一个数据<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Vue.filter(id,[definition])</div><div class="line">- &#123;string&#125; id</div><div class="line">- &#123;Function&#125; [definition]</div></pre></td></tr></table></figure></p>
+<p>usage:<br>注册或获取全局过滤器。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 注册</div><div class="line">Vue.filter('my-filter', function (value) &#123;</div><div class="line">  // 返回处理后的值</div><div class="line">&#125;)</div><div class="line">// getter，返回已注册的过滤器</div><div class="line">var myFilter = Vue.filter('my-filter')</div></pre></td></tr></table></figure></p>
+<hr>
+<p><code>=&gt;</code>是es6语法中的<code>arrow function</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">(x) =&gt; x + 6</div><div class="line"></div><div class="line">相当于</div><div class="line"></div><div class="line">function(x)&#123;</div><div class="line">    return x + 6;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">发现了<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">标签中有rel="stylesheet/scss"和type="text/css"时能正确识别sass语言。如：</span></div><div class="line"></div><div class="line">`<span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span> <span class="attr">lang</span>=<span class="string">"sass"</span> <span class="attr">rel</span>=<span class="string">"stylesheet/scss"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined">`</span></div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install --save node-sass --registry=https://registry.npm.taobao.org  --sass-binary-site=http://npm.taobao.org/mirrors/node-sass</div><div class="line"></div><div class="line"></div><div class="line">--disturl=https://npm.taobao.org/dist</div></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/AndroidStudio解除svn绑定关系/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/15/AndroidStudio解除svn绑定关系/" itemprop="url">
+                  AndroidStudio解除svn绑定关系
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T15:56:34+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>取消svn绑定<br>删除idea目录下vcs.xml文件中的svn<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">mapping</span> <span class="attr">directory</span>=<span class="string">""</span> <span class="attr">vcs</span>=<span class="string">"svn"</span> /&gt;</span></div></pre></td></tr></table></figure></p>
+<p>手动删除项目目录下的隐藏文件夹./svn</p>
+<p>ko</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/AndroidStudio-版本控制忽略的文件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/15/AndroidStudio-版本控制忽略的文件/" itemprop="url">
+                  AndroidStudio 版本控制忽略的文件以及操作
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T15:55:40+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p><em>.iws<br>.idea/workspace.xml
+</em>.iml<br>local.properties<br>.gradle/<br>.idea/<br>build/<br>app/build/</p>
+<p>只需要在 .gitignore文件中注释就可以<br>或者在Settings&gt;VersionControl&gt;IgnoredFiles中添加</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/Tomcat配置https证书/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/15/Tomcat配置https证书/" itemprop="url">
+                  Tomcat配置https证书
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-15T11:19:16+08:00">
+                2017-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>第一步：为服务器生成证书<br>使用keytool 为 Tomcat 生成证书，假定目标机器的域名是“ localhost ”， keystore 文件存放在“ <code>d:\tomcat.keystore</code> ”，口令为“ <code>password</code> ”，使用如下命令生成：</p>
+<blockquote>
+<p><code>keytool -genkey -v -alias tomcat -keyalg RSA   -validity 36500  -keystore d:\tomcat.keystore -dname &quot;CN=localhost,OU=cn,O=cn,L=cn,ST=cn,c=cn&quot; -storepass password -keypass password</code></p>
+</blockquote>
+<p>这个tomcat.cer是为了解决不信任时要导入的 ：</p>
+<blockquote>
+<p><code>keytool -export -alias tomcat -keystore d:\tomcat.keystore -file d:\tomcat.cer -storepass password</code></p>
+</blockquote>
+<p>第二步：配置Tomcat 服务器 server.xml<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">Connector</span> <span class="attr">port</span>=<span class="string">"8443"</span> <span class="attr">protocol</span>=<span class="string">"org.apache.coyote.http11.Http11Protocol"</span> <span class="attr">SSLEnabled</span>=<span class="string">"true"</span>  </span></div><div class="line">    <span class="attr">maxThreads</span>=<span class="string">"150"</span> <span class="attr">scheme</span>=<span class="string">"https"</span> <span class="attr">secure</span>=<span class="string">"true"</span>    </div><div class="line">    <span class="attr">clientAuth</span>=<span class="string">"false"</span> <span class="attr">sslProtocol</span>=<span class="string">"TLS"</span>    </div><div class="line">    <span class="attr">keystoreFile</span>=<span class="string">"D:/tomcat.keystore"</span> <span class="attr">keystorePass</span>=<span class="string">"password"</span> &gt;</div><div class="line">```  </div><div class="line"></div><div class="line">第三步：访问</div></pre></td></tr></table></figure></p>
+<p><a href="https://localhost:8443" target="_blank" rel="external">https://localhost:8443</a><br>```</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/14/解决-无法添加来自此网站的应用扩展程序和用户脚本/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/14/解决-无法添加来自此网站的应用扩展程序和用户脚本/" itemprop="url">
+                  解决-无法添加来自此网站的应用扩展程序和用户脚本
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-14T10:21:11+08:00">
+                2017-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>在新版的chrome浏览器中直接添加自己的插件，会提示<code>无法添加来自此网站的应用、扩展程序和用户脚本</code><br>导致插件安装失败<br>解决方法很简单</p>
+<ol>
+<li>在地址栏输入<code>chrome://extensions/</code></li>
+<li>直接把你的插件拖到浏览器中，此时会提示安装信息</li>
+<li>一路确定吧</li>
+</ol>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -582,7 +1744,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -600,7 +1762,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">63</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>

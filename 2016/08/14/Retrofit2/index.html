@@ -1,0 +1,740 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Retrofit2," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="#Retrofit2使用Http请求与服务器通信，上传或下载数据等Volley、AsyncHttp、OkHttp基于OkHttp的RESTFUL Api请求工具相对于Volley来说，Volley更符合正常的逻辑思维  创建retrofit对象，并指定域名public static final String API_URL = “”;Retrofit retrofit = new Retrofit">
+<meta name="keywords" content="Retrofit2">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Retrofit2">
+<meta property="og:url" content="http://yoursite.com/2016/08/14/Retrofit2/index.html">
+<meta property="og:site_name" content="捡来·放去">
+<meta property="og:description" content="#Retrofit2使用Http请求与服务器通信，上传或下载数据等Volley、AsyncHttp、OkHttp基于OkHttp的RESTFUL Api请求工具相对于Volley来说，Volley更符合正常的逻辑思维  创建retrofit对象，并指定域名public static final String API_URL = “”;Retrofit retrofit = new Retrofit">
+<meta property="og:updated_time" content="2017-04-21T01:25:51.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Retrofit2">
+<meta name="twitter:description" content="#Retrofit2使用Http请求与服务器通信，上传或下载数据等Volley、AsyncHttp、OkHttp基于OkHttp的RESTFUL Api请求工具相对于Volley来说，Volley更符合正常的逻辑思维  创建retrofit对象，并指定域名public static final String API_URL = “”;Retrofit retrofit = new Retrofit">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/14/Retrofit2/"/>
+
+
+
+
+
+  <title> Retrofit2 | 捡来·放去 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">捡来·放去</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-pic">
+          <a href="/pic" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            相册
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-blog">
+          <a href="/blog/vue" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
+            
+            博客
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/14/Retrofit2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Retrofit2
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-14T14:25:19+08:00">
+                2016-08-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>#Retrofit2<br>使用Http请求与服务器通信，上传或下载数据等<br>Volley、AsyncHttp、OkHttp<br>基于OkHttp的RESTFUL Api请求工具<br>相对于Volley来说，Volley更符合正常的逻辑思维</p>
+<ol>
+<li>创建retrofit对象，并指定域名<br>public static final String API_URL = “”;<br>Retrofit retrofit = new Retrofit.Builder().baseUrl(API_URL).addConverterFactory(GsonConverFactory.create()).build();</li>
+</ol>
+<p>2.新建一个api接口，使用注解描述这个api<br>public interface ZhuanLanApi {<br>    @GET(“/api/columns/{user} “)<br>    Call<zhuanlanauthor> getAuthor(@Path(“user”) String user)<br>}<br><a id="more"></a><br>3.用这个retrofit对象创建一个Api对象，直接调用方法，就能表示出请求的api<br>ZhuanLanApi api = retrofit.create(ZhuanLanApi.class);<br>Call<zhuanlanauthor> call = api.getAuthor(“qinchao”);<br>样就表示你要请求的api是<a href="https://zhuanlan.zhihu.com/api/columns/qinchao" target="_blank" rel="external">https://zhuanlan.zhihu.com/api/columns/qinchao</a></zhuanlanauthor></zhuanlanauthor></p>
+<p>4.使用该对象获取数据，调用enqueue方法异步发送http请求，或者调用execute方法发送同步请求。<br>// 请求数据，并且处理response<br>call.enqueue(new Callback<zhuanlanauthor>() {<br>    @Override<br>    public void onResponse(Response<zhuanlanauthor> author) {<br>    }<br>    @Override<br>    public void onFailure(Throwable t) {<br>    }<br>});</zhuanlanauthor></zhuanlanauthor></p>
+<p>====创建一个接口来描述Http请求=====</p>
+<p>=====基于 Retrofit + RxJava 做的一些巧妙的封装======</p>
+<p>===实体类基类<br>public class BaseModel<t> implements Serializable {<br>    public String code;<br>    public String msg;<br>    public T data;<br>    /**</t></p>
+<pre><code> * 默认1 为请求成功的有效数据
+ * @return 请求成功
+ */
+public boolean success(){
+    return code.equals(&quot;1&quot;);
+
+@Override
+public String toString() {
+    return &quot;BaseModel={&quot;+&quot;code=[&quot;+code+&quot;] msg=[&quot;+msg+&quot; data=[&quot;+data+&quot;}&quot;;
+}
+</code></pre><p>}</p>
+<p>=====Retrofit请求接口的ApiService<br>public interface ApiService{<br>    @FormUrlEncodeed<br>    @POST(“/v1/login?c=login&amp;i=emlogin”)<br>    Observable<basemodel<logindata>&gt; login(<br>        @Field(“phone”) String phone,<br>        @Field(“password”) String password<br>    );<br>}</basemodel<logindata></p>
+<p>====正确就做对应更新UI或者其他后续操作(该操作待封装)<br>Api.getDefault().login(phone,password)<br>    .subscribeOn(Scheduler.io())<br>    .obserceOn(AndroidSchedulers.mainThread())<br>    .subscribe(new XXX<basemodel<logindata>&gt;(){<br>        @Override<br>        public void call(BaseModel<logindata> data){<br>            if(data.code.equals(“1”)){<br>                //TODO success<br>            }else{<br>                //TODO false<br>            }<br>        }<br>    });</logindata></basemodel<logindata></p>
+<p>==== 对结果预处理,使用了一个Transformer对象对Observable进行转换，<br>//使用flatMap操作符把Obserable<basemodel<t>&gt;,转换成为Observable<t><br>// 如果成功了，就返回一个Observable<t>，把具体的数据发射给订阅者。<br>// 如果失败了我们就使用Observable.error()发送一个异常的可观察者。<br>// 做了线程的切换,方便外部的调用<br>public static <t> Observable.Transformer<basemodel<t>,T&gt; handleResult(){<br>    return new Observable.Transformer<basemodel<t>,T&gt;(){<br>        @Override<br>        public Observable<t> call(Observable<basemodel<t>&gt; tObservable){<br>            return tObservable.flatMap(new Func1<basemodel<t>,Observable<t>&gt;(){<br>                @Override<br>                public Observable<t> call (BaseModel<t> result){<br>                    Track.i(“result from network:”+result);<br>                    if(result.success()){<br>                        return createData(result.data);<br>                    }else{<br>                        return Observable.error(new ServerException(result.msg));<br>                    }<br>                }<br>            }).subscribeOn(Schedulers.io()).obserceOn(AndroidSchedulers.mainThread());<br>        }<br>    };//end return<br>}</t></t></t></basemodel<t></basemodel<t></t></basemodel<t></basemodel<t></t></t></t></basemodel<t></p>
+<p>//成功数据<br>private static <t> Observable<t> createData(T data){<br>    return Observable.create(new Observable.OnSubscribe<t>(){<br>        @Override<br>        public void call(Subscriber&lt;? super T&gt; subscriber){<br>            try{<br>                subscriber.onNext(data);<br>                subscriber.onCompelted();<br>            }catch(Exception e){<br>                subscriber.onError(e);<br>            }<br>        }<br>    });<br>}</t></t></t></p>
+<p>===第一次根据封装<br>Api.getDefault().login(phone,password)<br>    .compost(RxHelper.handleResult())<br>    .subscribe(new Action1<logindata>(){<br>        @Override<br>        public void call(LoginData data){</logindata></p>
+<pre><code>    }
+});
+
+//封装了线程处理，该订阅只需要关心成功的数据，并和baseModel无关，只和泛型有关
+</code></pre><p>//封装错误返回数据的Subscriber<br>public abstract class RxSubscribe<t> extends Subscriber<t>{<br>    @Override<br>    public void onNext(T t){<br>        _onNext(t);<br>    }<br>    @Override<br>    public void onError(Throwable e){<br>        e.printStackTrace();<br>        if(TDevice.getNetworkType()==0){<br>            _onError(“网络不可用”);<br>        }else if(e instanceof ServerException){<br>            _onError(e.getMessage());<br>        }else {<br>            _onError(“请求失败，请稍后再试”);<br>        }<br>    }</t></t></p>
+<pre><code>protected abstract void _onNext(T t);
+protected abstract void _onError(String message);
+</code></pre><p>}</p>
+<p>== 最终封装效果</p>
+<p>Api.getDefault().login(phone,password)<br>    .compost(RxHelper.handleResult())<br>    .subscribe(new RxSubscribe<logindata>(){<br>        @Override<br>        protected void _onNext(LoginData data){<br>            //TODO success<br>        }<br>        @Override<br>        protected void _onError(String message){<br>            //TODO failed<br>        }<br>    });</logindata></p>
+<p>==Subscriber扩展封装，需要显示一个Dialog<br>public abstract class RxSubscribe<t> extends Subscriber<t>{<br>    private Context mContext;<br>    private SweetAlertDialog dialog;<br>    private String msg;<br>    public RxSubscribe(Context context){<br>        this(context,”请稍后”);<br>    }<br>    public RxSubscribe(Context context,String msg){<br>        this,mContext = context;<br>        this.msg=msg;<br>    }<br>    protected boolean showDialog(){<br>        return true;<br>    }<br>    @Override<br>    public void onCompelted(){<br>        if (showDialog()) {<br>            dialog.dismiss();<br>        }<br>    }<br>    @Override<br>    public void onStart(){<br>        super.onStart();<br>        if(showDialog()){<br>            dialog = new SweetAlertDialog(mContext,SweetAlertDialog.PROGERSS_TYPE)<br>            .setTitleText(msg);<br>            dialog.setCancelable(true);<br>            dialog.setCacelOnTouchOutside(true);<br>            dialog.setOnCancelListener(new DialogInterface.setOnCancelListener(){<br>                @Override<br>                public void onCancel(DialogInterface dialog){<br>                    if(!isUnsubscribed()){<br>                        unsubscribe();<br>                    }<br>                }<br>            });<br>            dialog.show();<br>        }<br>    }<br>    @Override<br>    public void onNext(T t){<br>        _onNext(t);<br>    }<br>    @Override<br>    public void onError(Throwable e){<br>        e.printStackTrace();<br>        if(TDevice.getNetworkType()==0){<br>            _onError(“网络不可用”);<br>        }else if(e instanceof ServerException){<br>            _onError(e.getMessage());<br>        }else {<br>            _onError(“请求失败，请稍后再试”);<br>        }<br>        if(showDialog()){<br>            dialog.dismiss();<br>        }<br>    }</t></t></p>
+<pre><code>protected abstract void _onNext(T t);
+protected abstract void _onError(String message);
+</code></pre><p>}</p>
+<p>//处理服务器数据的缓存，封装Observable<br>//从缓存中获取一个Observable<t>对象fromCache，如果获取不到的话就不发射数据<br>// 在fromNetwork那里用了一个map函数，里面只是做了把网络取回来的数据保存到缓存中。<br>public static <t> Observable<t> load(Context context,final String cacheKey,final long expireTime,Observable<t> fromNetwork, boolean froceRefresh){<br>    Observable<t> fromCache = Observable.create(new Observable.OnSubscribe<t>(){<br>        @Override<br>        public void call(Subscriber&lt;? super T&gt; subscriber){<br>            T cache = (T) CacheManager.readObject(context,cacheKey,expireTime);<br>            if(cache!=null){<br>                subscriber.onNext(cache);<br>            }else{<br>                subscriber.onCompelted();<br>            }<br>        }</t></t></t></t></t></t></p>
+<pre><code>}).subscribeOn(Schedulers.io()).obserceOn(AndroidSchedulers.mainThread());
+fromNetwork = fromNetwork,map(new Func1&lt;T,T&gt;(){
+    @Override
+    public T call(T result){
+        CacheManager.saveObject(context,(Serializable)result,cacheKey);
+        return result;
+    }
+});
+if(froceRefresh){
+    return fromNetwork;
+}else{
+    return Observable.concat(fromCache,fromNetwork).frist();
+}
+</code></pre><p>}</p>
+<p>===最终封装<br>Observable<logindata> fromNetwork = Api.getDefault().login(phone,password)<br>    .compost(RxHelper.handleResult());<br>    RetrofitCache.load(context,cacheKey,100000L,fromNetwork,false)<br>    .subscribe(new RxSubscribe<logindata>(context,”登录中”){<br>        @Override<br>        protected abstract void _onNext(T t){</logindata></logindata></p>
+<pre><code>    }
+    @Override
+    protected abstract void _onError(String message){
+
+    }
+});
+</code></pre>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Retrofit2/" rel="tag"># Retrofit2</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/14/linux系统下安装hexo博客/" rel="next" title="linux系统下安装hexo博客">
+                <i class="fa fa-chevron-left"></i> linux系统下安装hexo博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/14/探索handler（一）/" rel="prev" title="探索Handler（一）">
+                探索Handler（一） <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg"
+               alt="ChrisLanbo" />
+          <p class="site-author-name" itemprop="name">ChrisLanbo</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">76</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">63</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">ChrisLanbo</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  
+
+</body>
+</html>
