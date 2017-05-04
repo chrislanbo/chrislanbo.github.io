@@ -277,6 +277,126 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/出现Template-render-error-unknown-path/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/31/出现Template-render-error-unknown-path/" itemprop="url">
+                  hexo博客出现Template render error: (unknown path)?
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T15:25:02+08:00">
+                2017-03-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>使用<code>hexo d</code>等命令都提示<code>Template render error: (unknown path)?</code><br>可能是刚创建的文章中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#125;&#125;，&#123;% %&#125;...</div></pre></td></tr></table></figure>
+<p>等转义失败的符号，需要用```注释</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/前端基础/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -449,7 +569,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/vue开发入门/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/vue/vue开发入门/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChrisLanbo">
@@ -471,7 +591,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/15/vue开发入门/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/15/vue/vue开发入门/" itemprop="url">
                   vue开发入门
                 </a>
               
@@ -537,11 +657,20 @@
 <ol>
 <li>node.js安装，官网下载安装包一路确定</li>
 <li><code>npm install -g cnpm --registry=http://registry.npm.taobao.org</code><br><code>npm config set registry http://registry.npm.taobao.org/</code><br>发布自己的包的时候却需要将源修改回官方的<br><code>npm config set registry https://registry.npmjs.org/</code></li>
-<li><code>npm install -g vue-cli</code> 实在不行试试<code>cnpm install -g vue-cli</code>  </li>
+<li><code>npm install -g vue-cli</code>  </li>
 </ol>
 <p>下载的一些东西会在这里纠缠<code>C:\Users\Administrator\AppData\Roaming\npm\node_modules\vue-cli\</code></p>
 <ol>
-<li>进入自己制定的目录执行<code>vue init webpack vueDemo</code>创建第一个vue项目，然后要依次确认几个问题</li>
+<li><p>进入自己制定的目录执行<code>vue init webpack vueDemo</code>创建第一个vue项目，然后要依次确认几个问题</p>
+<pre><code>project name (***) //直接回车
+project description // 项目详情，不写就直接回车
+Author //回车
+install vue-router yes //安装路由
+use an eslint preset standard //js代码标准检查
+剩下两个都no
+</code></pre></li>
+</ol>
+<ol>
 <li>cd 到 vueDemo 执行<code>npm install</code> 下载项目需要的依赖包到<code>node_modules</code>,之前用<code>cnpm install</code>下载总是不全（其实是在windows上默认有很多前缀，导致无法识别）</li>
 <li><code>npm run dev</code>运行项目，对应package.json中的js文件</li>
 <li>在浏览器中输入<code>localhost:8080</code>,查看网页</li>
@@ -565,7 +694,7 @@
     vendor/                         ---&gt; ThirdParty lib
     views/                          ---&gt; 展示视图库
     main.js                         ---&gt; 入口文件
-.babelrc                            ---&gt; babel 配置文件
+.babelrc                            ---&gt; babel 配置文件es6 -&gt;es5
 .eslintrc                           ---&gt; eslint 配置文件
 .gitignore                          ---&gt; gitignore
 index.html                          ---&gt; index
@@ -591,6 +720,10 @@ js中内下划线( _ )开头的为私有属性
 <p><code>=&gt;</code>是es6语法中的<code>arrow function</code><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">举例：</div><div class="line">(x) =&gt; x + 6</div><div class="line"></div><div class="line">相当于</div><div class="line"></div><div class="line">function(x)&#123;</div><div class="line">    return x + 6;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">发现了<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml">标签中有rel="stylesheet/scss"和type="text/css"时能正确识别sass语言。如：</span></div><div class="line"></div><div class="line">`<span class="tag">&lt;<span class="name">style</span> <span class="attr">scoped</span> <span class="attr">lang</span>=<span class="string">"sass"</span> <span class="attr">rel</span>=<span class="string">"stylesheet/scss"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined">`</span></div></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">npm install --save node-sass --registry=https://registry.npm.taobao.org  --sass-binary-site=http://npm.taobao.org/mirrors/node-sass</div><div class="line"></div><div class="line"></div><div class="line">--disturl=https://npm.taobao.org/dist</div></pre></td></tr></table></figure>
+<p>vue-resource 和后端做ajax通信<br>webpack 构建工具，将代码编译成浏览器可识别的语句</p>
+<p>vue 特点 数据驱动dom改变</p>
+<p>vue-cli vue基础代码</p>
+
           
         
       
@@ -1120,7 +1253,7 @@ js中内下划线( _ )开头的为私有属性
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/10/React-Native生命周期/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/10/react-native/React-Native生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChrisLanbo">
@@ -1142,7 +1275,7 @@ js中内下划线( _ )开头的为私有属性
             
               
                 
-                <a class="post-title-link" href="/2017/03/10/React-Native生命周期/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/10/react-native/React-Native生命周期/" itemprop="url">
                   React-Native生命周期
                 </a>
               
@@ -1514,124 +1647,6 @@ js中内下划线( _ )开头的为私有属性
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/07/程序猿英语/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/07/程序猿英语/" itemprop="url">
-                  程序猿英语
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-07T10:18:28+08:00">
-                2017-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>create associations 关联扩展名</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1681,7 +1696,7 @@ js中内下划线( _ )开头的为私有属性
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

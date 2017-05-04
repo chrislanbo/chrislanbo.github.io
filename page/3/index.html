@@ -277,6 +277,133 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/git命令和命令行命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/04/13/git命令和命令行命令/" itemprop="url">
+                  git命令和terminal命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-13T10:01:12+08:00">
+                2017-04-13
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>在Linux命令行terminal上使用gedit直接就可以打开文本文件</p>
+<p>那么在mac上面如何操作呢？</p>
+<p>使用：open -a TextEdit settings.xml 参数说明：－a指定应用<br>也可以是：open -e settings.xml 参数说明：－e使用文本编辑器打开<br>也可以是：open -t settings.xml 参数说明：－t使用默认编辑器打开</p>
+<h1 id="此为注释-–-将被-Git-忽略"><a href="#此为注释-–-将被-Git-忽略" class="headerlink" title="此为注释 – 将被 Git 忽略"></a>此为注释 – 将被 Git 忽略</h1><p><em>.a       # 忽略所有 .a 结尾的文件<br>!lib.a    # 但 lib.a 除外<br>/TODO     # 仅仅忽略项目根目录下的 TODO 文件，不包括 subdir/TODO<br>build/    # 忽略 build/ 目录下的所有文件<br>doc/</em>.txt # 会忽略 doc/notes.txt 但不包括 doc/server/arch.txt</p>
+<p>git rm -r –cached .<br>git add .<br>git commit -m ‘update .gitignore’</p>
+<p>目录操作<br>命令名    功能描述    使用举例<br>mkdir    创建一个目录    mkdir dirname<br>rmdir    删除一个目录    rmdir dirname<br>mvdir    移动或重命名一个目录    mvdir dir1 dir2<br>cd    改变当前目录    cd dirname<br>pwd    显示当前目录的路径名    pwd<br>ls    显示当前目录的内容    ls -la<br>dircmp    比较两个目录的内容    dircmp dir1 dir2<br>文件操作<br>命令名    功能描述    使用举例<br>cat    显示或连接文件    cat filename<br>pg    分页格式化显示文件内容    pg filename<br>more    分屏显示文件内容    more filename<br>od    显示非文本文件的内容    od -c filename<br>cp    复制文件或目录    cp file1 file2<br>rm    删除文件或目录    rm filename<br>mv    改变文件名或所在目录    mv file1 file2<br>ln    联接文件    ln -s file1 file2<br>find    使用匹配表达式查找文件    find . -name “<em>.c” -print<br>file    显示文件类型    file filename<br>open    使用默认的程序打开文件    open filename<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/13/git命令和命令行命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/13/vue/Vue实例和生命周期/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1066,8 +1193,9 @@ npm install hexo-deployer-git --save
 <h3 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h3><p><code>brew install node</code></p>
 <h3 id="使用淘宝镜像"><a href="#使用淘宝镜像" class="headerlink" title="使用淘宝镜像"></a>使用淘宝镜像</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm config set registry https://registry.npm.taobao.org --global npm config set disturl https://npm.taobao.org/dist --global</div></pre></td></tr></table></figure>
 <h3 id="安装vue"><a href="#安装vue" class="headerlink" title="安装vue"></a>安装vue</h3><p><code>npm install -g vue-cli</code></p>
-<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>有的项目需要安装sass，但是这个安装总是有问题<br>npm install –save node-sass –registry=<a href="https://registry.npm.taobao.org" target="_blank" rel="external">https://registry.npm.taobao.org</a> –disturl=<a href="https://npm.taobao.org/dist" target="_blank" rel="external">https://npm.taobao.org/dist</a> –sass-binary-site=<a href="http://npm.taobao.org/mirrors/node-sass" target="_blank" rel="external">http://npm.taobao.org/mirrors/node-sass</a></p>
-
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>有的项目需要安装sass，但是这个安装总是有问题,提示不能运行c还有什么版本过低，只要输入如下</p>
+<pre><code>npm install --save node-sass --registry=https://registry.npm.taobao.org --disturl=https://npm.taobao.org/dist --sass-binary-site=http://npm.taobao.org/mirrors/node-sass
+</code></pre>
           
         
       
@@ -1573,126 +1701,6 @@ npm install hexo-deployer-git --save
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/31/出现Template-render-error-unknown-path/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/03/31/出现Template-render-error-unknown-path/" itemprop="url">
-                  hexo博客出现Template render error: (unknown path)?
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-31T15:25:02+08:00">
-                2017-03-31
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>使用<code>hexo d</code>等命令都提示<code>Template render error: (unknown path)?</code><br>可能是刚创建的文章中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&#123;&#123;&#125;&#125;，&#123;% %&#125;...</div></pre></td></tr></table></figure>
-<p>等转义失败的符号，需要用```注释</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1742,7 +1750,7 @@ npm install hexo-deployer-git --save
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

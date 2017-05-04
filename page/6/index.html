@@ -277,6 +277,127 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/19/viewpager左右无限轮播-手自一体/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/10/19/viewpager左右无限轮播-手自一体/" itemprop="url">
+                  viewpager左右无限轮播(手自一体)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-10-19T21:40:27+08:00">
+                2016-10-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>首先创建一个简单的viewpager</p>
+<p>instantiateItem(ViewGroup container, int position)<br>第一个参数为当前加载的item的父控件(viewPager对象)<br>第二个参数为当前初始化的item的下标<br>    首次加载 viewpager初始加载.jpg<br>由于初始加载集合中的第一个view，会缓存第二个view<br>左滑会缓存第三个，显示第二个<br>…依次类推</p>
+<p>destroyItem(ViewGroup container, int position, Object object)<br>第一个参数为当前加载的item的父控件(viewPager对象)<br>第二个参数为当前初始化的item的下标</p>
+<p>当当前显示的item为pos[1]对应的item时，左侧和右侧都缓存了一个item，只不过不可见<br>紧接着左滑会先从container中移除第一个item[pos0],然后加载第四个item[pos3]<br>    左滑右边缓存一个左边消除一个.jpg<br>setOffscreenPageLimit(int limit)<br>设置保留的item页面个数<br>当该参数设置为3的时候，上述首次加载就会变成<br>    setOffscreenPageLimit设置3保留了三个item并仍然缓存一个.jpg<br>并且右滑三次只会缓存item，不会移除item,直到滑到第四个才会移除第一个item<br>    setOffscreenPageLimit设置3会左右各缓存3个.jpg<br>也就是setOffscreenPageLimit设置3 会左右各缓存三个</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/14/listView嵌套viewPager需求/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -532,7 +653,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/11/React-Native开发-2-HelloWorld/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/10/11/react-native/React-Native开发-2-HelloWorld/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChrisLanbo">
@@ -554,7 +675,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/10/11/React-Native开发-2-HelloWorld/" itemprop="url">
+                <a class="post-title-link" href="/2016/10/11/react-native/React-Native开发-2-HelloWorld/" itemprop="url">
                   React Native开发--2.HelloWorld
                 </a>
               
@@ -1386,7 +1507,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/25/React-Nattive开发环境搭建/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/25/react-native/React-Nattive开发环境搭建/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChrisLanbo">
@@ -1408,7 +1529,7 @@
             
               
                 
-                <a class="post-title-link" href="/2016/09/25/React-Nattive开发环境搭建/" itemprop="url">
+                <a class="post-title-link" href="/2016/09/25/react-native/React-Nattive开发环境搭建/" itemprop="url">
                   React Native开发--1.环境搭建
                 </a>
               
@@ -1524,130 +1645,6 @@ react-native start
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/09/22/获取手机sd卡路径/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/22/获取手机sd卡路径/" itemprop="url">
-                  获取手机外置sd卡路径-小米魅族三星等疑难杂机
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-09-22T14:58:03+08:00">
-                2016-09-22
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>如今的android手机各种定制，有内置SD卡和外置SD卡（TF卡），导致使用Api已经不能正确的获取SD卡路径,接下来就是福利了</p>
-<blockquote>
-<p>。。。放心我不开车</p>
-</blockquote>
-</blockquote>
-<p>思路：</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1697,7 +1694,7 @@ react-native start
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

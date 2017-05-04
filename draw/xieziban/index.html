@@ -1,0 +1,478 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="reset.css">
+<style type="text/css">
+
+ *{ margin:0; padding:0;}
+ body{ font-size:14px;}  
+ .writeboard{width:300px;position:relative;}
+ .writeboard-box{position:relative; width:300px;}
+ .writeboard-box .canvas{ position:absolute; left:0px; top:0px; z-index:999;}
+ .writeboard-box .backcanvas{position:absolute; left:0px; top:0px; z-index:9;}
+ .writeboard-box .realcanvas{position:absolute; left:0px; top:0px; z-index:-5; visibility:hidden;}
+ .writeboar-btn{position:absolute; left:315px; top:0px; background:#fff; width:80px;}
+ .writeboar-btn span{ display:block; height:28px; line-height:28px; text-align:center; width:78px; background:#54a87c; border:1px #009900 solid; font-size:16px; color:#fff; border-radius:4px; cursor:pointer;}  
+ .writeboar-btn .mar-1{ margin-bottom:10px;}
+ .writeboar-btn .mar-2{ position:absolute;height:28px; line-height:28px; text-align:center; width:78px; background:#54a87c; border:1px #009900 solid; font-size:16px; color:#fff; border-radius:4px; cursor:pointer; left:0px; bottom:0px; text-decoration:none;}
+  .writeboar-btn span:hover,.writeboar-btn .mar-2:hover{ background:#ffcc00; border:1px #ff9900 solid;}  
+  .writeboar-btn span.pianpang{ background:none; border:none; color:#000; margin-top:50px; font-size:60px; text-align:left;}
+  /*#aa div{ background:#CCC;}
+  background:url(../../images/paper/tzg.gif) no-repeat left top;
+  */
+</style>
+<title>canvas</title>
+</head>
+<body> 
+<h3>类型1</h3>
+<div class="writeboard ww1">
+    <div class="writeboard-box">
+        <canvas width=300 class="canvas"></canvas>
+        <canvas width=300 class="backcanvas"></canvas> 
+        <canvas width=300 class="realcanvas"></canvas>        
+    </div> 
+    <div class="writeboar-btn">
+    	<span class="mar-1 movPlayBtn">回 放</span>
+        <span class="mar-1 resetCanvasBtn">重 置</span>
+        <span class="mar-1 goBackBtn">回 退</span>  
+        <span class="pianpang" style="display:none;">彳</span>                         
+        <a href="#2" class="mar-2">确 定</a>     
+    </div>  
+</div>  
+
+<div style="height: 100px;width: 100px;text-align: center;display: inline-block;position: relative;margin: 5px;">
+    <img src="" id="showimg" style="position:absolute; left:0px; top:0px; height:100px; width:100px; z-index:9;" width="100" height="100"/>
+</div>
+<h3>类型2</h3>
+<div class="writeboard ww2">
+    <div class="writeboard-box">
+        <canvas width=300 class="canvas"></canvas> 
+        <canvas width=300 class="backcanvas"></canvas>
+        <canvas width=300 class="realcanvas"></canvas>               
+    </div> 
+    <div class="writeboar-btn">
+    	<span class="mar-1 movPlayBtn">回 放</span>
+        <span class="mar-1 resetCanvasBtn">重 置</span>
+        <span class="mar-1 goBackBtn">回 退</span>  
+        <span class="pianpang">彳</span>                         
+        <a href="#2" class="mar-2">确 定</a>     
+    </div>   
+</div> 
+<h3>类型3</h3>
+<div class="writeboard ww3">
+    <div class="writeboard-box">
+        <canvas width=300 class="canvas"></canvas> 
+        <canvas width=300 class="backcanvas"></canvas>  
+        <canvas width=300 class="realcanvas"></canvas>             
+    </div> 
+    <div class="writeboar-btn">
+    	<span class="mar-1 movPlayBtn">回 放</span>
+        <span class="mar-1 resetCanvasBtn">重 置</span>
+        <span class="mar-1 goBackBtn">回 退</span>  
+        <span class="pianpang" style="display:none;">彳</span>                         
+        <a href="#2" class="mar-2">确 定</a>     
+    </div>   
+</div> 
+<h3>类型4</h3>
+<div class="writeboard ww4">
+    <div class="writeboard-box">
+        <canvas width=300 class="canvas"></canvas> 
+        <canvas width=300 class="backcanvas"></canvas>  
+        <canvas width=300 class="realcanvas"></canvas>             
+    </div> 
+    <div class="writeboar-btn">
+    	<span class="mar-1 movPlayBtn">回 放</span>
+        <span class="mar-1 resetCanvasBtn">重 置</span>
+        <span class="mar-1 goBackBtn">回 退</span>  
+        <span class="pianpang" style="display:none;">彳</span>                         
+        <a href="#2" class="mar-2">确 定</a>     
+    </div>   
+</div> 
+<h3>类型5</h3>
+<div class="writeboard ww5">
+    <div class="writeboard-box">
+        <canvas width=300 class="canvas"></canvas> 
+        <canvas width=300 class="backcanvas"></canvas> 
+        <canvas width=300 class="realcanvas"></canvas>              
+    </div> 
+    <div class="writeboar-btn">
+    	<span class="mar-1 movPlayBtn">回 放</span>
+        <span class="mar-1 resetCanvasBtn">重 置</span>
+        <span class="mar-1 goBackBtn">回 退</span>  
+        <span class="pianpang" style="display:none;">彳</span>                         
+        <a href="#2" class="mar-2">确 定</a>     
+    </div>   
+</div> 
+</body>
+<script src="jquery-1.10.2.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	//实例1 初始调用
+	writeboard($(".ww1"),null,null,null,null,function(x,y,n,t,imgurl){//callback 数据
+		//alert(imgurl);//base64 图片，用于存放至服务器
+		//alert(x,y,n,t)//绘制数据，
+			$("#showimg").attr('src',imgurl);
+	},1,{"font":"狗"});
+	//实例2 有数据处理
+	var xx=[108, 110, 114, 120, 125, 130, 136, 142, 147, 156, 162, 168, 174, 182, 189, 194, 198, 203, 204, 205, 206, 207, 207, 212, 212, 212, 212, 207, 203, 200, 195, 190, 183, 177, 171, 165, 161, 159, 157, 155, 155, 154, 154];
+	var yy=[99, 102, 111, 117, 124, 131, 137, 145, 150, 157, 164, 170, 178, 185, 192, 195, 199, 200, 202, 203, 203, 203, 203, 110, 111, 114, 118, 125, 134, 141, 151, 163, 173, 182, 192, 198, 206, 209, 211, 215, 216, 217, 217];
+	var nn=[0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0];
+	var tt=[1437011861608, 1437011861664, 1437011861672, 1437011861679, 1437011861688, 1437011861695, 1437011861703, 1437011861711, 1437011861719, 1437011861729, 1437011861735, 1437011861743, 1437011861751, 1437011861760, 1437011861767, 1437011861776, 1437011861783, 1437011861793, 1437011861800, 1437011861809, 1437011861824, 1437011861887, 1437011861888, 1437011862271, 1437011862295, 1437011862303, 1437011862311, 1437011862319, 1437011862327, 1437011862335, 1437011862343, 1437011862351, 1437011862359, 1437011862367, 1437011862375, 1437011862383, 1437011862391, 1437011862399, 1437011862407, 1437011862415, 1437011862439, 1437011862447, 1437011862543];
+	writeboard($(".ww2"),xx,yy,nn,tt,function(x,y,n,t,imgurl){},2,{"font":""});	
+	//实例3 初始调用
+	writeboard($(".ww3"),null,null,null,null,function(x,y,n,t,imgurl){},3,{"font":"","word":"li"});
+	//实例4 初始调用
+	writeboard($(".ww4"),null,null,null,null,function(x,y,n,t,imgurl){},4,{"font":"唐","word":""});
+	//实例4 初始调用
+	writeboard($(".ww5"),null,null,null,null,function(x,y,n,t,imgurl){},5,{"font":"风","word":"feng"});
+});
+/*
+ * writeboard
+ * @Author toubidu
+ * @param {arg}      obj       顶层对象，
+ * @param {arg}      x         横坐标数组
+ * @param {arg}      y		   纵坐标数组
+ * @param {arg}      n		   笔画状态
+ * @param {arg}      t		   时间间隔
+ * @param {arg}      callback  回调，返回x，y，n，t，图片路径
+ * @param {arg}      type	   题型
+ * @param {arg}      content   容器内容，临摹文字，拼音等
+ */
+function writeboard(obj,x,y,n,t,callback,type,content){//init fun  参数：顶级对象 x坐标 y坐标 笔画标识 时间差 回调定义 临摹文字
+	//init data
+	var backcanvas = obj.find(".backcanvas")[0];  //获取canvas   
+	var backcontext = backcanvas.getContext('2d');  //canvas追加2d画图
+	var canvas = obj.find(".canvas")[0];  //获取canvas   
+	var context = canvas.getContext('2d');  //canvas追加2d画图
+	var realcanvas = obj.find(".realcanvas")[0];  //获取canvas   
+	var realcontext = realcanvas.getContext('2d');  //canvas追加2d画图
+	var canvasimg=new Image();
+	switch (type)
+	{
+	case 1:
+		backcanvas.height="300";
+		canvas.height="300";
+		realcanvas.height="300";
+		obj.css('height',300);
+		obj.find(".writeboard-box").css('height',300);
+		obj.find(".writeboar-btn").css('height',300);
+		canvasimg.src="tzg.gif";			
+	    canvasimg.onload=function(){
+			backcontext.drawImage(canvasimg,0,0,300,300);
+			backcontext.fillStyle="#eeeeee";
+			backcontext.textAlign = 'center';
+	   		backcontext.font = "240px 宋体";
+	    	backcontext.fillText(content.font,150,240);
+			backcontext.strokeStyle="#add59e";
+			backcontext.strokeText(content.font,150,240);										  				  			  
+	  	};
+	    break;
+	case 2:
+		backcanvas.height="300";
+		canvas.height="300";
+		realcanvas.height="300";
+		obj.css('height',300);
+		obj.find(".writeboard-box").css('height',300);
+		obj.find(".writeboar-btn").css('height',300);
+		canvasimg.src="tzg.gif";	
+		backcontext.drawImage(canvasimg,0,0,300,300);
+		canvasimg.src="tzg.gif";			
+	    canvasimg.onload=function(){	
+			backcontext.drawImage(canvasimg,0,0,300,300);	  			  
+	  	};	   
+	    break;
+	case 3:
+		backcanvas.height="405";
+		canvas.height="405";
+		realcanvas.height="405";
+		obj.css('height',405);
+		obj.find(".writeboard-box").css('height',405);
+		obj.find(".writeboar-btn").css('height',405);
+		canvasimg.src="tzg2.gif";			
+	    canvasimg.onload=function(){
+			backcontext.drawImage(canvasimg,0,0,300,405);
+  			backcontext.fillStyle="#999999";
+			backcontext.font = "60px Arial";
+			backcontext.textAlign = 'center';
+			backcontext.fillText(content.word,150,75);			  			  
+	  	};	   
+	    break;
+	case 4:
+		backcanvas.height="405";
+		canvas.height="405";
+		realcanvas.height="405";
+		obj.css('height',405);
+		obj.find(".writeboard-box").css('height',405);
+		obj.find(".writeboar-btn").css('height',405);
+		canvasimg.src="tzg2.gif";			
+	    canvasimg.onload=function(){
+			backcontext.drawImage(canvasimg,0,0,300,405);
+  			backcontext.fillStyle="#999999";
+			backcontext.font = "240px 宋体";
+			backcontext.textAlign = 'center';
+			backcontext.fillText(content.font,150,345);			  			  
+	  	};	   
+	    break;
+	case 5:
+		backcanvas.height="405";
+		canvas.height="405";
+		realcanvas.height="405";
+		obj.css('height',405);
+		obj.find(".writeboard-box").css('height',405);
+		obj.find(".writeboar-btn").css('height',405);
+		canvasimg.src="tzg2.gif";			
+	    canvasimg.onload=function(){
+			backcontext.drawImage(canvasimg,0,0,300,405);
+  			backcontext.fillStyle="#999999";
+			backcontext.font = "240px 宋体";
+			backcontext.textAlign = 'center';
+			backcontext.fillText(content.font,150,345);	
+			backcontext.font = "60px Arial";
+			backcontext.fillText(content.word,150,75);			  			  
+	  	};	   
+	    break;	
+	};
+	context.lineCap="round";
+	//end	
+	var lastX = -1;  //路径坐标，从起始到下一个的坐标 
+	var lastY = -1;  //路径坐标
+	var flag = 0;  //标志，判断是按下后移动还是未按下移动 重要
+	var penwidth=10; //画笔宽度
+	var pencolor="#000";//画笔颜色
+	var timecha=80;//笔画间隔时间差
+	var imageurl;//存放canvas 图片base64 路径
+	var linex = new Array();  //横坐标
+	var liney = new Array();  //纵坐标
+	var linen = new Array();  //移动坐标
+	var linetime = new Array();  //记录时间
+	if(x&&y&&n&&t){ //数据外加载
+		linex = x;  //横坐标
+		liney = y;  //纵坐标
+		linen = n;  //移动坐标
+		linetime = t;  //记录时间
+		strokel();
+	}else{
+		linex = [];  //横坐标
+		liney = [];  //纵坐标
+		linen = [];  //移动坐标
+		linetime = [];  //记录时间
+	};		
+		
+	//handle
+	canvas.addEventListener('mousemove', onMouseMove, false); //鼠标移动事件 
+	canvas.addEventListener('mousedown', onMouseDown, false);  //鼠标按下事件 
+	canvas.addEventListener('mouseup', onMouseUp, false);  //鼠标抬起事件 
+	document.documentElement.addEventListener('mouseup', ondocMouseMove, false);//防止冒泡	
+	function ondocMouseMove(evt) {
+		if(evt.target.tagName=="CANVAS"){		
+		}else{
+			if(flag == 1) {
+			  flag = 0;  
+			  linex.push(evt.layerX);  
+			  liney.push(evt.layerY);  
+			  linen.push(0);  
+			  linetime.push(new Date().getTime());	
+			}else{
+				
+			};	
+		};	
+	};	
+	function onMouseMove(evt) {	
+	  if (flag == 1) { 
+			 linex.push(evt.layerX);  //坐标存入数组
+			 liney.push(evt.layerY);  
+			 linen.push(1);  //移动1位
+			 linetime.push(new Date().getTime());//步骤和记录的时间戳
+			 //console.log(linen)
+			 strokel();		
+	  }		    
+	}; 		 
+	function onMouseDown(evt) {  
+	  flag = 1;  //标志按下
+	  linex.push(evt.layerX);  //坐标存入数组   layer获取相对于当前元素的坐标，不同于pagex获取相对页面
+	  liney.push(evt.layerY);  
+	  linen.push(0);  //按下0位
+	  linetime.push(new Date().getTime());
+	}  
+	function onMouseUp(evt) {  
+	  flag = 0;  
+	  linex.push(evt.layerX);  
+	  liney.push(evt.layerY);  
+	  linen.push(0);  
+	  linetime.push(new Date().getTime());	    
+	} 
+	function strokel(){ //路径绘制
+		context.clearRect(0,0,canvas.width,canvas.height);	
+		context.save();  //存储当前画布状态，破坏以前
+		context.translate(context.canvas.width/2, context.canvas.height/2);  //原点从0,0移动到中心150,150
+		context.translate(-context.canvas.width/2, -context.canvas.height/2);  //原点从150,150移动到0,0
+		context.beginPath();  //开始绘制路径				
+		for (var i=0;i<linex.length;i++) {  //移动鼠标，这个数组会不断push插入1，计算移动次数
+			 lastX = linex[i];  //移动坐标
+			 lastY = liney[i];  
+			 context.lineWidth = penwidth;  //线宽度
+			 context.strokeStyle = pencolor;  
+			 if (linen[i] == 0) {  //刚按下那个坐标位置，移动开始前			
+				context.moveTo(lastX,lastY);  //绘制路径的起始点坐标
+				//context.stroke();  //绘制
+			 } else {  //发生移动
+				context.lineTo(lastX,lastY);  //绘制以后的左边点
+				//context.stroke();  //绘制
+			 };  
+		};    
+		context.stroke();  //绘制		
+		context.restore();  //释放画布以前状态	
+	};
+	//回放 处理
+	var movPlayBtn = obj.find(".movPlayBtn");
+	movPlayBtn.click(movPlay);	
+	var settimea=[];
+	function movPlay () {		
+		//console.log(linen)
+		for(var i=0;i<settimea.length;i++){
+			clearTimeout(settimea[i]);
+		};
+		context.clearRect(0,0,canvas.width,canvas.height);		
+		context.save(); 
+		context.translate(context.canvas.width/2, context.canvas.height/2);  
+		context.translate(-context.canvas.width/2, -context.canvas.height/2); 
+		context.beginPath();  		
+		var datestart=0;
+		var funa=[];
+		for (var i=0;i<linen.length;i++) {				
+			if(i==0){		
+				context.lineWidth = penwidth;  //线宽度	
+				context.strokeStyle = pencolor;  
+				context.moveTo(linex[0],liney[0]);				
+				context.stroke();  //绘制	
+				
+			}else{
+				if(linen[i]==0 && linen[i-1]==0){				
+					datestart=parseInt(datestart)+parseInt(linetime[i]-linetime[i-1])<timecha ? parseInt(datestart)+parseInt(linetime[i]-linetime[i-1]):parseInt(datestart)+parseInt(timecha);			
+					if (linen[i] == 0) { 			
+						(funa[i]=function(datestart,xx,yy){
+							settimea[i]=setTimeout(function(){
+							context.clearRect(0,0,canvas.width,canvas.height);	
+							context.lineWidth = penwidth;  //线宽度	
+							context.strokeStyle = pencolor;  
+							context.moveTo(xx,yy);							
+							context.stroke();  //绘制
+							},datestart)
+						})(datestart,linex[i],liney[i]);		
+					} else { 
+						(funa[i]=function(datestart,xx,yy){
+							settimea[i]=setTimeout(function(){
+							context.clearRect(0,0,canvas.width,canvas.height);	
+							context.lineWidth = penwidth;  //线宽度
+							context.strokeStyle = pencolor;  	
+							context.lineTo(xx,yy);							
+							context.stroke();  //绘制
+							},datestart)
+						})(datestart,linex[i],liney[i]);					
+					}; 			
+					
+				}else{
+					datestart=parseInt(datestart)+parseInt(linetime[i]-linetime[i-1]);			
+					if (linen[i] == 0) { 			
+						(funa[i]=function(datestart,xx,yy){
+							settimea[i]=setTimeout(function(){
+							context.clearRect(0,0,canvas.width,canvas.height);	
+							context.lineWidth = penwidth;  //线宽度	
+							context.strokeStyle = pencolor;  
+							context.moveTo(xx,yy);							
+							context.stroke();  //绘制
+							},datestart)							
+						})(datestart,linex[i],liney[i]);		
+					} else { 
+						(funa[i]=function(datestart,xx,yy){
+							settimea[i]=setTimeout(function(){
+							context.clearRect(0,0,canvas.width,canvas.height);	
+							context.lineWidth = penwidth;  //线宽度	
+							context.strokeStyle = pencolor;  
+							context.lineTo(xx,yy);							
+							context.stroke();  //绘制
+							},datestart)
+						})(datestart,linex[i],liney[i]);					
+					}; 			
+	
+				};
+				context.stroke();  //绘制
+			}
+									
+		}	
+		context.restore();  //释放画布以前状态，不能写字就破坏了		       
+	};		
+	//重置 处理
+	var resetCanvasBtn = obj.find(".resetCanvasBtn");	 
+	resetCanvasBtn.click(resetCanvas);	
+	function resetCanvas () {
+		context.clearRect(0,0,canvas.width,canvas.height);
+		linex = [];  //横坐标
+		liney = [];  //纵坐标
+		linen =[];  //移动坐标 
+		linetime =[];  //时间戳 
+		lastX = -1;  //路径坐标，从起始到下一个的坐标 
+		lastY = -1;  //路径坐标
+		flag = 0;  //标志，判断是按下后移动还是未按下移动 重要	
+	};
+	//回退 处理
+	var goBackBtn = obj.find(".goBackBtn");	 
+	goBackBtn.click(goBack);	
+	function goBack () {			
+		var linenlastIndex=linen.join("").substr(0,linen.length-1).lastIndexOf("0");
+		if(linenlastIndex==0){
+			resetCanvas();
+		}else{
+			linex = linex.slice(0,linenlastIndex);  //记录值-1
+			liney = liney.slice(0,linenlastIndex);  //纵坐标
+			linen =linen.slice(0,linenlastIndex);  //移动坐标 
+			linetime=linetime.slice(0,linenlastIndex);
+			//console.log(linen)
+			strokel();
+		}	    		 	     		       
+	};
+	//事件绑定
+	function bindButtonEvent(element, type, handler) 
+	{ 
+		if(element.addEventListener) { 
+		element.addEventListener(type, handler, false); 
+		} else { 
+		element.attachEvent('on'+type, handler); 
+		} 
+	};	
+	//确定事件 保存处理
+	function strokelreal(){ //路径绘制	
+		realcontext.save();  //存储当前画布状态，破坏以前
+		realcontext.translate(context.canvas.width/2, context.canvas.height/2);  //原点从0,0移动到中心150,150
+		realcontext.translate(-context.canvas.width/2, -context.canvas.height/2);  //原点从150,150移动到0,0
+		realcontext.beginPath();  //开始绘制路径				
+		for (var i=0;i<linex.length;i++) {  //移动鼠标，这个数组会不断push插入1，计算移动次数
+			 lastX = linex[i];  //移动坐标
+			 lastY = liney[i];  
+			 realcontext.lineWidth = penwidth;  //线宽度
+			 realcontext.strokeStyle = pencolor;  
+			 if (linen[i] == 0) {  //刚按下那个坐标位置，移动开始前			
+				realcontext.moveTo(lastX,lastY);  //绘制路径的起始点坐标
+				//context.stroke();  //绘制
+			 } else {  //发生移动
+				realcontext.lineTo(lastX,lastY);  //绘制以后的左边点
+				//context.stroke();  //绘制
+			 };  
+		};    
+		realcontext.stroke();  //绘制		
+		realcontext.restore();  //释放画布以前状态	
+	};
+	var oksave = obj.find(".mar-2");	 
+	oksave.click(gosave);	
+	function gosave() {	
+		var backimgdata=backcontext.getImageData(0,0,canvas.width,canvas.height);
+		realcontext.putImageData(backimgdata,0,0);
+		strokelreal();
+		imageurl = realcanvas.toDataURL("image/png"); //获取canvas转为指定格式图片的路径 	   					
+		callback(linex,liney,linen,linetime,imageurl);//call 		 
+		  		       
+	};	
+};//end
+</script>
+</html>

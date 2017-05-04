@@ -277,6 +277,195 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/02/js画板/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="ChrisLanbo">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="捡来·放去">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/05/02/js画板/" itemprop="url">
+                  js触摸事件
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-02T15:32:53+08:00">
+                2017-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <blockquote>
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/API/Touch_events" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/API/Touch_events</a></p>
+</blockquote>
+<p>web端Touch事件<br>    为了基于用户界面完美支持触摸事件，提供了在触摸屏或触控板上解释手指（触控笔）活动的能力。<br>触摸事件接口是相对等级较低额API,可用于支持特定应用程序的多点触控交互，如两指手势。当手指（指针）接触触面时交互开始，其他手指随后在接触面移动，离开接触面时，交互结束。在交互过程中，应用程序分别在开始、移动、结束触摸的时候返回触摸事件。<br>    触摸事件类似于鼠标事件，除了它们支持多点触摸和在触摸表面的不同位置。触摸事件接口封装了当前激活的所有触摸点，触摸接口代表单一的触摸点，包括信息，如触摸点相对于浏览器视口的位置。</p>
+<h1 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h1><p>表面<br>接触敏感表面。这可能是一个屏幕或触控板。<br>接触点<br>与表面接触的点。可能是指（或手肘，耳朵，鼻子，任何，但通常是手指）或手写笔。</p>
+<h2 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h2><h3 id="TouchEvent"><a href="#TouchEvent" class="headerlink" title="TouchEvent"></a>TouchEvent</h3><p>接触表面触摸状态发生改变时的事件</p>
+<h3 id="Touch"><a href="#Touch" class="headerlink" title="Touch"></a>Touch</h3><p>在用户和接触表面间唯一的接触点</p>
+<h3 id="TouchList"><a href="#TouchList" class="headerlink" title="TouchList"></a>TouchList</h3><p>代表一组触摸，比如用户在同一时间多个手指在接触面使用</p>
+<p>##栗子<br>该实例同时追踪多个触摸点，允许用户在同一时间多个手指在画布上操作，它只在支持触摸事件的浏览器上工作。</p>
+<h3 id="创建画布对象"><a href="#创建画布对象" class="headerlink" title="创建画布对象"></a>创建画布对象</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">&lt;canvas id=&quot;canvas&quot; width=&quot;600&quot; height=&quot;600&quot; style=&quot;border:solid black 1px;&quot;&gt;</div><div class="line">  Your browser does not support canvas element.</div><div class="line">&lt;/canvas&gt;</div><div class="line">&lt;br&gt;</div><div class="line">&lt;button onclick=&quot;startup()&quot;&gt;Initialize&lt;/button&gt;</div><div class="line">&lt;br&gt;</div><div class="line">Log: &lt;pre id=&quot;log&quot; style=&quot;border: 1px solid #ccc;&quot;&gt;&lt;/pre&gt;</div></pre></td></tr></table></figure>
+<h3 id="处理事件"><a href="#处理事件" class="headerlink" title="处理事件"></a>处理事件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function startup() &#123;</div><div class="line">  var el = document.getElementsByTagName(&quot;canvas&quot;)[0];</div><div class="line">  el.addEventListener(&quot;touchstart&quot;, handleStart, false);</div><div class="line">  el.addEventListener(&quot;touchend&quot;, handleEnd, false);</div><div class="line">  el.addEventListener(&quot;touchcancel&quot;, handleCancel, false);</div><div class="line">  el.addEventListener(&quot;touchmove&quot;, handleMove, false);</div><div class="line">  log(&quot;initialized.&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="追踪新触摸"><a href="#追踪新触摸" class="headerlink" title="追踪新触摸"></a>追踪新触摸</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var ongoingTouches = [];</div></pre></td></tr></table></figure>
+<p>当【touchstart】事件触发时，代表一个新的触摸发生，就去调用handleStart()方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">function handleStart(evt) &#123;</div><div class="line">  evt.preventDefault();</div><div class="line">  log(&quot;touchstart.&quot;);</div><div class="line">  var el = document.getElementsByTagName(&quot;canvas&quot;)[0];</div><div class="line">  var ctx = el.getContext(&quot;2d&quot;);</div><div class="line">  var touches = evt.changedTouches;</div><div class="line">        </div><div class="line">  for (var i = 0; i &lt; touches.length; i++) &#123;</div><div class="line">    log(&quot;touchstart:&quot; + i + &quot;...&quot;);</div><div class="line">    ongoingTouches.push(copyTouch(touches[i]));</div><div class="line">    var color = colorForTouch(touches[i]);</div><div class="line">    ctx.beginPath();</div><div class="line">    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start</div><div class="line">    ctx.fillStyle = color;</div><div class="line">    ctx.fill();</div><div class="line">    log(&quot;touchstart:&quot; + i + &quot;.&quot;);</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>调用 event.preventDefault() 让浏览器保持继续处理触摸事件，防止鼠标事件的触发。然后获取上下文并从事件TouchEvent.changedTouches属性中获取更改的触摸点列表</p>
+<h2 id="画出触摸移动"><a href="#画出触摸移动" class="headerlink" title="画出触摸移动"></a>画出触摸移动</h2><p>每次一个或多个手指移动时，touchmove事件就会交付，就会调用handleMove() 方法，该方法职责是更新缓存的触摸信息，并画出从上一个位置到当前位置间所有触摸点连成的线。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">function handleMove(evt) &#123;</div><div class="line">  evt.preventDefault();</div><div class="line">  var el = document.getElementsByTagName(&quot;canvas&quot;)[0];</div><div class="line">  var ctx = el.getContext(&quot;2d&quot;);</div><div class="line">  var touches = evt.changedTouches;</div><div class="line"></div><div class="line">  for (var i = 0; i &lt; touches.length; i++) &#123;</div><div class="line">    var color = colorForTouch(touches[i]);</div><div class="line">    var idx = ongoingTouchIndexById(touches[i].identifier);</div><div class="line"></div><div class="line">    if (idx &gt;= 0) &#123;</div><div class="line">      log(&quot;continuing touch &quot;+idx);</div><div class="line">      ctx.beginPath();</div><div class="line">      log(&quot;ctx.moveTo(&quot; + ongoingTouches[idx].pageX + &quot;, &quot; + ongoingTouches[idx].pageY + &quot;);&quot;);</div><div class="line">      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);</div><div class="line">      log(&quot;ctx.lineTo(&quot; + touches[i].pageX + &quot;, &quot; + touches[i].pageY + &quot;);&quot;);</div><div class="line">      ctx.lineTo(touches[i].pageX, touches[i].pageY);</div><div class="line">      ctx.lineWidth = 4;</div><div class="line">      ctx.strokeStyle = color;</div><div class="line">      ctx.stroke();</div><div class="line"></div><div class="line">      ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record</div><div class="line">      log(&quot;.&quot;);</div><div class="line">    &#125; else &#123;</div><div class="line">      log(&quot;can&apos;t figure out which touch to continue&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在画线完成后，在ongoingTouches 数组中， 调用Array.splice() 更新当前触摸点信息</p>
+<h2 id="处理触摸结束"><a href="#处理触摸结束" class="headerlink" title="处理触摸结束"></a>处理触摸结束</h2><p>当用户抬起手指，touchend事件就会触发，此时就会调用handleEnd()方法，它的作用是画出到最后一个点间的每个点，并移除触摸点列表中的触摸点信息。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">function handleEnd(evt) &#123;</div><div class="line">  evt.preventDefault();</div><div class="line">  log(&quot;touchend&quot;);</div><div class="line">  var el = document.getElementsByTagName(&quot;canvas&quot;)[0];</div><div class="line">  var ctx = el.getContext(&quot;2d&quot;);</div><div class="line">  var touches = evt.changedTouches;</div><div class="line"></div><div class="line">  for (var i = 0; i &lt; touches.length; i++) &#123;</div><div class="line">    var color = colorForTouch(touches[i]);</div><div class="line">    var idx = ongoingTouchIndexById(touches[i].identifier);</div><div class="line"></div><div class="line">    if (idx &gt;= 0) &#123;</div><div class="line">      ctx.lineWidth = 4;</div><div class="line">      ctx.fillStyle = color;</div><div class="line">      ctx.beginPath();</div><div class="line">      ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);</div><div class="line">      ctx.lineTo(touches[i].pageX, touches[i].pageY);</div><div class="line">      ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);  // and a square at the end</div><div class="line">      ongoingTouches.splice(idx, 1);  // remove it; we&apos;re done</div><div class="line">    &#125; else &#123;</div><div class="line">      log(&quot;can&apos;t figure out which touch to end&quot;);</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">```    </div><div class="line"></div><div class="line">## 处理取消触摸</div><div class="line"> touchcancel事件会在用户不需要的时候去调用</div></pre></td></tr></table></figure>
+<p> function handleCancel(evt) {<br>  evt.preventDefault();<br>  log(“touchcancel.”);<br>  var touches = evt.changedTouches;</p>
+<p>  for (var i = 0; i &lt; touches.length; i++) {<br>    var idx = ongoingTouchIndexById(touches[i].identifier);<br>    ongoingTouches.splice(idx, 1);  // remove it; we’re done<br>  }<br>}<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div><div class="line">实际例子</div></pre></td></tr></table></figure></p>
+<p>&lt;!DOCTYPE html&gt;</p>
+<p><html><br>    <head><br>        <link rel="stylesheet" type="text/css" href="https://developer.mozilla.org/en-US/docs/Template:CustomSampleCSS?raw=1"></head></html></p>
+<pre><code>&lt;/head&gt;
+&lt;body&gt;
+
+        &lt;canvas id=&quot;canvas&quot; width=&quot;600&quot; height=&quot;600&quot; style=&quot;border:solid black 1px;&quot;&gt;
+</code></pre><p>  Your browser does not support canvas element.<br><br><br></p>
+<p><button onclick="startup()">Initialize</button><br><br><br>Log: <pre id="log" style="border: 1px solid #ccc;"></pre></p>
+<pre><code>&lt;script type=&quot;text/javascript&quot;&gt;
+    function startup() {
+</code></pre><p>  var el = document.getElementsByTagName(“canvas”)[0];<br>  el.addEventListener(“touchstart”, handleStart, false);<br>  el.addEventListener(“touchend”, handleEnd, false);<br>  el.addEventListener(“touchcancel”, handleCancel, false);<br>  el.addEventListener(“touchmove”, handleMove, false);<br>  log(“initialized.”);<br>} var ongoingTouches = []; function handleStart(evt) {<br>  evt.preventDefault();<br>  log(“touchstart.”);<br>  var el = document.getElementsByTagName(“canvas”)[0];<br>  var ctx = el.getContext(“2d”);<br>  var touches = evt.changedTouches;</p>
+<p>  for (var i = 0; i &lt; touches.length; i++) {<br>    log(“touchstart:” + i + “…”);<br>    ongoingTouches.push(copyTouch(touches[i]));<br>    var color = colorForTouch(touches[i]);<br>    ctx.beginPath();<br>    ctx.arc(touches[i].pageX, touches[i].pageY, 4, 0, 2 * Math.PI, false);  // a circle at the start<br>    ctx.fillStyle = color;<br>    ctx.fill();<br>    log(“touchstart:” + i + “.”);<br>  }<br>} function handleMove(evt) {<br>  evt.preventDefault();<br>  var el = document.getElementsByTagName(“canvas”)[0];<br>  var ctx = el.getContext(“2d”);<br>  var touches = evt.changedTouches;</p>
+<p>  for (var i = 0; i &lt; touches.length; i++) {<br>    var color = colorForTouch(touches[i]);<br>    var idx = ongoingTouchIndexById(touches[i].identifier);</p>
+<pre><code>if (idx &gt;= 0) {
+  log(&quot;continuing touch &quot;+idx);
+  ctx.beginPath();
+  log(&quot;ctx.moveTo(&quot; + ongoingTouches[idx].pageX + &quot;, &quot; + ongoingTouches[idx].pageY + &quot;);&quot;);
+  ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+  log(&quot;ctx.lineTo(&quot; + touches[i].pageX + &quot;, &quot; + touches[i].pageY + &quot;);&quot;);
+  ctx.lineTo(touches[i].pageX, touches[i].pageY);
+  ctx.lineWidth = 4;
+  ctx.strokeStyle = color;
+  ctx.stroke();
+
+  ongoingTouches.splice(idx, 1, copyTouch(touches[i]));  // swap in the new touch record
+  log(&quot;.&quot;);
+} else {
+  log(&quot;can&apos;t figure out which touch to continue&quot;);
+}
+</code></pre><p>  }<br>} function handleEnd(evt) {<br>  evt.preventDefault();<br>  log(“touchend”);<br>  var el = document.getElementsByTagName(“canvas”)[0];<br>  var ctx = el.getContext(“2d”);<br>  var touches = evt.changedTouches;</p>
+<p>  for (var i = 0; i &lt; touches.length; i++) {<br>    var color = colorForTouch(touches[i]);<br>    var idx = ongoingTouchIndexById(touches[i].identifier);</p>
+<pre><code>if (idx &gt;= 0) {
+  ctx.lineWidth = 4;
+  ctx.fillStyle = color;
+  ctx.beginPath();
+  ctx.moveTo(ongoingTouches[idx].pageX, ongoingTouches[idx].pageY);
+  ctx.lineTo(touches[i].pageX, touches[i].pageY);
+  ctx.fillRect(touches[i].pageX - 4, touches[i].pageY - 4, 8, 8);  // and a square at the end
+  ongoingTouches.splice(idx, 1);  // remove it; we&apos;re done
+} else {
+  log(&quot;can&apos;t figure out which touch to end&quot;);
+}
+</code></pre><p>  }<br>} function handleCancel(evt) {<br>  evt.preventDefault();<br>  log(“touchcancel.”);<br>  var touches = evt.changedTouches;</p>
+<p>  for (var i = 0; i &lt; touches.length; i++) {<br>    var idx = ongoingTouchIndexById(touches[i].identifier);<br>    ongoingTouches.splice(idx, 1);  // remove it; we’re done<br>  }<br>} function colorForTouch(touch) {<br>  var r = touch.identifier % 16;<br>  var g = Math.floor(touch.identifier / 3) % 16;<br>  var b = Math.floor(touch.identifier / 7) % 16;<br>  r = r.toString(16); // make it a hex digit<br>  g = g.toString(16); // make it a hex digit<br>  b = b.toString(16); // make it a hex digit<br>  var color = “#” + r + g + b;<br>  log(“color for touch with identifier “ + touch.identifier + “ = “ + color);<br>  return color;<br>} function copyTouch(touch) {<br>  return { identifier: touch.identifier, pageX: touch.pageX, pageY: touch.pageY };<br>} function ongoingTouchIndexById(idToFind) {<br>  for (var i = 0; i &lt; ongoingTouches.length; i++) {<br>    var id = ongoingTouches[i].identifier;</p>
+<pre><code>if (id == idToFind) {
+  return i;
+}
+</code></pre><p>  }<br>  return -1;    // not found<br>} function log(msg) {<br>  var p = document.getElementById(‘log’);<br>  p.innerHTML = msg + “\n” + p.innerHTML;<br>}<br>            </p>
+<pre><code>&lt;/body&gt;
+</code></pre><p><br>```</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/24/android简历模板【人才拍卖网提供】/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -353,8 +542,7 @@
 
       
         
-          
-            <h1 id="Android程序员简历模板"><a href="#Android程序员简历模板" class="headerlink" title="Android程序员简历模板"></a>Android程序员简历模板</h1><p>本简历模板由国内首家互联网人才拍卖网站「 <a href="http://www.jobdeer.com" target="_blank" rel="external">JobDeer.com</a> 」提供。</p>
+          <h1 id="Android程序员简历模板"><a href="#Android程序员简历模板" class="headerlink" title="Android程序员简历模板"></a>Android程序员简历模板</h1><p>本简历模板由国内首家互联网人才拍卖网站「 <a href="http://www.jobdeer.com">JobDeer.com</a> 」提供。</p>
 <p>（括号里的是我们的顾问编写的说明，建议在简历书写完成后统一删除）</p>
 <h2 id="先讲讲怎样才是一份好的技术简历"><a href="#先讲讲怎样才是一份好的技术简历" class="headerlink" title="先讲讲怎样才是一份好的技术简历"></a>先讲讲怎样才是一份好的技术简历</h2><p>首先，一份好的简历不光说明事实，更通过FAB模式来增强其说服力。</p>
 <ul>
@@ -369,141 +557,13 @@
 <p>具体、量化、有说服力，是技术简历特别需要注重的地方。</p>
 <p>（以上内容在写完简历后，对每一段进行评估，完成后再删除）</p>
 <hr>
-<h1 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h1><p>（HR会打印你的简历，用于在面试的时候联系，所以联系方式放到最上边会比较方便）</p>
-<ul>
-<li>手机：135<strong><em>**</em></strong> （<code>如果是外地手机，可注明。如经常关机，要写上最优联系时间</code>）</li>
-<li>Email：goodman@gmail.com （<code>虽然我觉得QQ邮箱无所谓，不过有些技术人员比较反感，建议用G</code>）</li>
-<li>QQ/微信号：6<strong><em>*</em></strong>（<code>提供一个通过网络可以联系到你的方式</code>）</li>
-</ul>
-<hr>
-<h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><ul>
-<li>胶布帝/男/1990 </li>
-<li>本科/萌鹿大学计算机系 </li>
-<li>工作年限：3年</li>
-<li>微博：<a href="http://weibo.com/jobdeer" target="_blank" rel="external">@JobDeer</a> （<code>如果没有技术相关内容，也可以不放</code>）</li>
-<li>技术博客：<a href="http://blog.github.io" target="_blank" rel="external">http://blog.github.io</a> ( <code>使用GitHub Host的Big较高</code>  )</li>
-<li><p>GitHub：<a href="http://github.com/geekcompany" target="_blank" rel="external">http://github.com/geekcompany</a> ( <code>有原创repo的GitHub帐号会极大的提升你的个人品牌</code>  )</p>
-</li>
-<li><p>期望职位：Android高级程序员，应用架构师</p>
-</li>
-<li>期望薪资：税前月薪15k~20k，特别喜欢的公司可例外</li>
-<li>期望城市：北京</li>
-</ul>
-<hr>
-<h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><p>（工作经历按逆序排列，最新的在最前边，按公司做一级分组，公司内按二级分组）</p>
-<h2 id="ABC公司-（-2012年9月-2014年9月-）"><a href="#ABC公司-（-2012年9月-2014年9月-）" class="headerlink" title="ABC公司 （ 2012年9月 ~ 2014年9月 ）"></a>ABC公司 （ 2012年9月 ~ 2014年9月 ）</h2><h3 id="DEF项目"><a href="#DEF项目" class="headerlink" title="DEF项目"></a>DEF项目</h3><p>我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。</p>
-<h3 id="GHI项目"><a href="#GHI项目" class="headerlink" title="GHI项目"></a>GHI项目</h3><p>我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。</p>
-<h3 id="其他项目"><a href="#其他项目" class="headerlink" title="其他项目"></a>其他项目</h3><p>（每个公司写2~3个核心项目就好了，如果你有非常大量的项目，那么按分类进行合并，每一类选一个典型写出来。其他的一笔带过即可。）</p>
-<h2 id="JKL公司-（-2010年3月-2012年8月-）"><a href="#JKL公司-（-2010年3月-2012年8月-）" class="headerlink" title="JKL公司 （ 2010年3月 ~ 2012年8月 ）"></a>JKL公司 （ 2010年3月 ~ 2012年8月 ）</h2><h3 id="MNO项目"><a href="#MNO项目" class="headerlink" title="MNO项目"></a>MNO项目</h3><p>我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。</p>
-<h3 id="PQR项目"><a href="#PQR项目" class="headerlink" title="PQR项目"></a>PQR项目</h3><p>我在此项目负责了哪些工作，分别在哪些地方做得出色/和别人不一样/成长快，这个项目中，我最困难的问题是什么，我采取了什么措施，最后结果如何。这个项目中，我最自豪的技术细节是什么，为什么，实施前和实施后的数据对比如何，同事和领导对此的反应如何。</p>
-<h3 id="其他项目-1"><a href="#其他项目-1" class="headerlink" title="其他项目"></a>其他项目</h3><p>（每个公司写2~3个核心项目就好了，如果你有非常大量的项目，那么按分类进行合并，每一类选一个典型写出来。其他的一笔带过即可。）</p>
-<hr>
-<h1 id="开源项目和作品"><a href="#开源项目和作品" class="headerlink" title="开源项目和作品"></a>开源项目和作品</h1><p>（这一段用于放置工作以外的、可证明你的能力的材料）</p>
-<h2 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h2><p>（对于程序员来讲，没有什么比Show me the code能有说服力了）</p>
-<ul>
-<li><a href="http://github.com/yourname/projectname" target="_blank" rel="external">STU</a>：项目的简要说明，Star和Fork数多的可以注明</li>
-<li><a href="http://github.com/yourname/projectname" target="_blank" rel="external">WXYZ</a>：项目的简要说明，Star和Fork数多的可以注明</li>
-</ul>
-<h2 id="技术文章"><a href="#技术文章" class="headerlink" title="技术文章"></a>技术文章</h2><p>（挑选你写作或翻译的技术文章，好的文章可以从侧面证实你的表达和沟通能力，也帮助招聘方更了解你）</p>
-<ul>
-<li><a href="http://get.jobdeer.com/706.get" target="_blank" rel="external">一个产品经理眼中的云计算：前生今世和未来</a></li>
-<li><a href="http://get.jobdeer.com/343.get" target="_blank" rel="external">来自HeroKu的HTTP API 设计指南(翻译文章)</a> （ <code>好的翻译文章可以侧证你对英文技术文档的阅读能力</code>）</li>
-</ul>
-<h2 id="演讲和讲义"><a href="#演讲和讲义" class="headerlink" title="演讲和讲义"></a>演讲和讲义</h2><p>（放置你代表公司在一些技术会议上做过的演讲，以及你在公司分享时制作的讲义）</p>
-<ul>
-<li>2014架构师大会演讲：<a href="http://jobdeer.com" target="_blank" rel="external">如何通过Docker优化内部开发</a><ul>
-<li>9月公司内部分享：<a href="http://jobdeer.com" target="_blank" rel="external">云计算的前生今世</a></li>
-</ul>
-</li>
-</ul>
-<h1 id="技能清单"><a href="#技能清单" class="headerlink" title="技能清单"></a>技能清单</h1><p>（我一般主张将技能清单写入到工作经历里边去。不过很难完整，所以有这么一段也不错）</p>
-<p>以下均为我熟练使用的技能</p>
-<ul>
-<li>Web开发：PHP/Hack/Node</li>
-<li>Web框架：ThinkPHP/Yaf/Yii/Lavaral/LazyPHP</li>
-<li>前端框架：Bootstrap/AngularJS/EmberJS/HTML5/Cocos2dJS/ionic</li>
-<li>前端工具：Bower/Gulp/SaSS/LeSS/PhoneGap</li>
-<li>数据库相关：MySQL/PgSQL/PDO/SQLite</li>
-<li>版本管理、文档和自动化部署工具：Svn/Git/PHPDoc/Phing/Composer</li>
-<li>单元测试：PHPUnit/SimpleTest/Qunit</li>
-<li>云和开放平台：SAE/BAE/AWS/微博开放平台/微信应用开发</li>
-</ul>
-<h2 id="参考技能关键字"><a href="#参考技能关键字" class="headerlink" title="参考技能关键字"></a>参考技能关键字</h2><p>本技能关键字列表是从最近招聘Android的数百份JD中统计出来的，括号中是出现的词频。如果你的简历要投递给有机器（简历分选系统）和不如机器（不懂技术的HR）筛选简历环节的地方，请一定从下边高频关键词中选择5～10个适合你自己的。</p>
-<ul>
-<li>android(1830)</li>
-<li>java(386)</li>
-<li>ui(180)</li>
-<li>app(178)</li>
-<li>http(149)</li>
-<li>sdk(135)</li>
-<li>tcp(95)</li>
-<li>socket(93)</li>
-<li>api(60)</li>
-<li>xml(48)</li>
-<li>framework(48)</li>
-<li>eclipse(41)</li>
-<li>linux(38)</li>
-<li>json(28)</li>
-<li>ndk(27)</li>
-<li>ios(27)</li>
-<li>sqlite(26)</li>
-<li>andriod(25) 2%的HR把android给写错了 T_T</li>
-<li>html5(25)</li>
-<li>web(23)</li>
-<li>github(21)</li>
-<li>jni(20)</li>
-<li>svn(15)</li>
-<li>gui(14)</li>
-<li>git(13)</li>
-<li>wifi(10)</li>
-<li>3g(10)</li>
-<li>j2me(10)</li>
-<li>mysql(10)</li>
-<li>oracle(9)</li>
-<li>html(9)</li>
-<li>sql(8)</li>
-<li>tv(8)</li>
-<li>mvc(8)</li>
-<li>lbs(8)</li>
-<li>code review(7)</li>
-<li>im(7)</li>
-<li>mobile(6)</li>
-<li>view(6)</li>
-<li>stackoverflow(6)</li>
-<li>xmpp(6)</li>
-<li>o2o(5)</li>
-<li>ue(5)</li>
-<li>objective(5)</li>
-<li>js(5)</li>
-<li>blog(5)</li>
-<li>andorid(5)</li>
-<li>rom(5)</li>
-<li>launcher(5)</li>
-<li>restful(5)</li>
-<li>webservice(4)</li>
-<li>apk(4)</li>
-<li>androidsdk(4)</li>
-<li>oo(4)</li>
-<li>javascript(4)</li>
-<li>j2ee(4)</li>
-<li>opengl(4)</li>
-<li>uml(4)</li>
-<li>sms(3)</li>
-<li>windows(3)</li>
-<li>market(3)</li>
-<li>audio(3)</li>
-<li>httptps(3)</li>
-<li>udp(3)</li>
-<li>store(3)</li>
-<li>php(3)</li>
-<li>unity3d(3)</li>
-<li>native(3)</li>
-<li>webview(3)</li>
-</ul>
-<hr>
-<h1 id="致谢"><a href="#致谢" class="headerlink" title="致谢"></a>致谢</h1><p>感谢您花时间阅读我的简历，期待能有机会和您共事。</p>
-
-          
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/04/24/android简历模板【人才拍卖网提供】/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -951,7 +1011,7 @@ build/
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/Vue样式sass/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/21/vue/Vue样式sass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChrisLanbo">
@@ -973,7 +1033,7 @@ build/
             
               
                 
-                <a class="post-title-link" href="/2017/04/21/Vue样式sass/" itemprop="url">
+                <a class="post-title-link" href="/2017/04/21/vue/Vue样式sass/" itemprop="url">
                   Vue样式sass
                 </a>
               
@@ -1553,7 +1613,7 @@ build/
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/Vue无限滑动的事件冲突/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/18/vue/Vue无限滑动的事件冲突/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ChrisLanbo">
@@ -1575,7 +1635,7 @@ build/
             
               
                 
-                <a class="post-title-link" href="/2017/04/18/Vue无限滑动的事件冲突/" itemprop="url">
+                <a class="post-title-link" href="/2017/04/18/vue/Vue无限滑动的事件冲突/" itemprop="url">
                   Vue无限滑动的事件冲突
                 </a>
               
@@ -1687,146 +1747,6 @@ build/
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/17/诗和远方/无题/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="ChrisLanbo">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="http://olb3ncj28.bkt.clouddn.com/icon-meng.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="捡来·放去">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2017/04/17/诗和远方/无题/" itemprop="url">
-                  无题
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-17T14:51:25+08:00">
-                2017-04-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/诗和远方/" itemprop="url" rel="index">
-                    <span itemprop="name">诗和远方</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>关上灯<br>想着明天就要回去考试了<br>考上了<br>皆大欢喜<br>但 要是没有呢<br>这些日子 我欠的他太多<br>希望和他一起浪<br>喜欢和他一起吃<br>更期望和他一起老<br>我忍不住哭了出来<br>越来越伤心<br>他笑着安慰我<br>也只有千把块<br>可我知道 不单单如此</p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
@@ -1876,7 +1796,7 @@ build/
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">82</span>
+                <span class="site-state-item-count">83</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
